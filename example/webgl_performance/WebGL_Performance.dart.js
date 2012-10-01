@@ -11,86 +11,6 @@ init();
 
 var $$ = {};
 var $ = Isolate.$isolateProperties;
-$$.DateImplementation = {"":
- ["millisecondsSinceEpoch?", "isUtc"],
- "super": "Object",
- operator$eq$1: function(other) {
-  if (!(typeof other === 'object' && other !== null && !!other.is$Date))
-    return false;
-  return $.eq(this.millisecondsSinceEpoch, other.get$millisecondsSinceEpoch());
-},
- operator$lt$1: function(other) {
-  return $.lt(this.millisecondsSinceEpoch, other.get$millisecondsSinceEpoch());
-},
- operator$le$1: function(other) {
-  return $.le(this.millisecondsSinceEpoch, other.get$millisecondsSinceEpoch());
-},
- operator$gt$1: function(other) {
-  return $.gt(this.millisecondsSinceEpoch, other.get$millisecondsSinceEpoch());
-},
- operator$ge$1: function(other) {
-  return $.ge(this.millisecondsSinceEpoch, other.get$millisecondsSinceEpoch());
-},
- hashCode$0: function() {
-  return this.millisecondsSinceEpoch;
-},
- toString$0: function() {
-  var t1 = new $.DateImplementation_toString_fourDigits();
-  var t2 = new $.DateImplementation_toString_threeDigits();
-  var t3 = new $.DateImplementation_toString_twoDigits();
-  var y = t1.call$1(this.get$year());
-  var m = t3.call$1(this.get$month());
-  var d = t3.call$1(this.get$day());
-  var h = t3.call$1(this.get$hour());
-  var min = t3.call$1(this.get$minute());
-  var sec = t3.call$1(this.get$second());
-  var ms = t2.call$1(this.get$millisecond());
-  if (this.isUtc === true)
-    return $.S(y) + '-' + $.S(m) + '-' + $.S(d) + ' ' + $.S(h) + ':' + $.S(min) + ':' + $.S(sec) + '.' + $.S(ms) + 'Z';
-  else
-    return $.S(y) + '-' + $.S(m) + '-' + $.S(d) + ' ' + $.S(h) + ':' + $.S(min) + ':' + $.S(sec) + '.' + $.S(ms);
-},
- add$1: function(duration) {
-  return $.Date_Date$fromMillisecondsSinceEpoch($.add(this.millisecondsSinceEpoch, duration.get$inMilliseconds()), this.isUtc);
-},
- difference$1: function(other) {
-  return $.Duration$(0, 0, 0, 0, $.sub(this.millisecondsSinceEpoch, other.get$millisecondsSinceEpoch()));
-},
- get$year: function() {
-  return $.Primitives_getYear(this);
-},
- get$month: function() {
-  return $.Primitives_getMonth(this);
-},
- get$day: function() {
-  return $.Primitives_getDay(this);
-},
- get$hour: function() {
-  return $.Primitives_getHours(this);
-},
- get$minute: function() {
-  return $.Primitives_getMinutes(this);
-},
- get$second: function() {
-  return $.Primitives_getSeconds(this);
-},
- get$millisecond: function() {
-  return $.Primitives_getMilliseconds(this);
-},
- DateImplementation$fromMillisecondsSinceEpoch$2: function(millisecondsSinceEpoch, isUtc) {
-  var t1 = this.millisecondsSinceEpoch;
-  if ($.gtB($.abs(t1), 8640000000000000))
-    throw $.$$throw($.IllegalArgumentException$(t1));
-  t1 = this.isUtc;
-  if (t1 == null)
-    throw $.$$throw($.IllegalArgumentException$(t1));
-},
- DateImplementation$now$0: function() {
-  $.Primitives_lazyAsJsDate(this);
-},
- is$Date: true
-};
-
 $$.ExceptionImplementation = {"":
  ["message"],
  "super": "Object",
@@ -916,8 +836,41 @@ $$.StringBufferImpl = {"":
   if (str == null || $.isEmpty(str) === true)
     return this;
   $.add$1(this._buffer, str);
-  this._length = $.add(this._length, $.get$length(str));
+  var t1 = this._length;
+  if (typeof t1 !== 'number')
+    return this.add$1$bailout(1, str, t1);
+  var t3 = $.get$length(str);
+  if (typeof t3 !== 'number')
+    return this.add$1$bailout(2, t1, t3);
+  this._length = t1 + t3;
   return this;
+},
+ add$1$bailout: function(state, env0, env1) {
+  switch (state) {
+    case 1:
+      str = env0;
+      t1 = env1;
+      break;
+    case 2:
+      t1 = env0;
+      t3 = env1;
+      break;
+  }
+  switch (state) {
+    case 0:
+      var str = $.toString(obj);
+      if (str == null || $.isEmpty(str) === true)
+        return this;
+      $.add$1(this._buffer, str);
+      var t1 = this._length;
+    case 1:
+      state = 0;
+      var t3 = $.get$length(str);
+    case 2:
+      state = 0;
+      this._length = $.add(t1, t3);
+      return this;
+  }
 },
  addAll$1: function(objects) {
   for (var t1 = $.iterator(objects); t1.hasNext$0() === true;)
@@ -990,40 +943,6 @@ $$._AllMatchesIterator = {"":
   } else
     return true;
 }
-};
-
-$$.Duration = {"":
- ["inMilliseconds?"],
- "super": "Object",
- get$inHours: function() {
-  return $.tdiv(this.inMilliseconds, 3600000);
-},
- get$inMinutes: function() {
-  return $.tdiv(this.inMilliseconds, 60000);
-},
- get$inSeconds: function() {
-  return $.tdiv(this.inMilliseconds, 1000);
-},
- operator$eq$1: function(other) {
-  if (!(typeof other === 'object' && other !== null && !!other.is$Duration))
-    return false;
-  return this.inMilliseconds === other.inMilliseconds;
-},
- hashCode$0: function() {
-  return $.hashCode(this.inMilliseconds);
-},
- toString$0: function() {
-  var t1 = new $.Duration_toString_threeDigits();
-  var t2 = new $.Duration_toString_twoDigits();
-  var t3 = this.inMilliseconds;
-  if (t3 < 0)
-    return '-' + $.S($.Duration$(0, 0, 0, 0, -t3));
-  var twoDigitMinutes = t2.call$1($.remainder(this.get$inMinutes(), 60));
-  var twoDigitSeconds = t2.call$1($.remainder(this.get$inSeconds(), 60));
-  var threeDigitMs = t1.call$1($.remainder(t3, 1000));
-  return $.S(this.get$inHours()) + ':' + $.S(twoDigitMinutes) + ':' + $.S(twoDigitSeconds) + '.' + $.S(threeDigitMs);
-},
- is$Duration: true
 };
 
 $$.NoSuchMethodError = {"":
@@ -1335,7 +1254,7 @@ $$.StringMatch = {"":
 };
 
 $$.WebGL_Performance = {"":
- ["container?", "camera", "scene?", "renderer", "stats", "windowHalfX", "windowHalfY", "mouseX", "mouseY", "objects?"],
+ ["container", "camera", "scene?", "renderer", "windowHalfX", "windowHalfY", "mouseX", "mouseY", "objects?"],
  "super": "Object",
  run$0: function() {
   this.windowHalfX = $.div($.window().get$innerWidth(), 2);
@@ -1355,11 +1274,6 @@ $$.WebGL_Performance = {"":
   this.renderer = $.WebGLRenderer$(null, 'highp', true, true, true, true, false, 16777215, 0, 4);
   this.renderer.setSize$2($.window().get$innerWidth(), $.window().get$innerHeight());
   $.add$1(this.container.get$elements(), this.renderer.get$domElement());
-  this.stats = $.Stats$();
-  this.stats.get$container().get$style().set$position('absolute');
-  this.stats.get$container().get$style().set$top('0px');
-  this.stats.get$container().get$style().set$zIndex('100');
-  $.add$1(this.container.get$elements(), this.stats.get$container());
   $.window().get$on().get$resize().add$2(this.get$onWindowResize(), false);
 },
  onWindowResize$1: function(event$) {
@@ -1379,7 +1293,6 @@ $$.WebGL_Performance = {"":
  animate$1: function(time) {
   $.window().requestAnimationFrame$1(this.get$animate());
   this.render$0();
-  this.stats.update$0();
 },
  get$animate: function() { return new $.BoundClosure0(this, 'animate$1'); },
  render$0: function() {
@@ -1553,9 +1466,6 @@ $$._DocumentEventsImpl = {"":
 },
  get$load: function() {
   return this.operator$index$1('load');
-},
- get$mouseDown: function() {
-  return this.operator$index$1('mousedown');
 },
  get$mouseMove: function() {
   return this.operator$index$1('mousemove');
@@ -1943,9 +1853,6 @@ $$._ElementEventsImpl = {"":
  get$load: function() {
   return this.operator$index$1('load');
 },
- get$mouseDown: function() {
-  return this.operator$index$1('mousedown');
-},
  get$mouseMove: function() {
   return this.operator$index$1('mousemove');
 },
@@ -2332,9 +2239,6 @@ $$._SVGElementInstanceEventsImpl = {"":
  get$load: function() {
   return this.operator$index$1('load');
 },
- get$mouseDown: function() {
-  return this.operator$index$1('mousedown');
-},
  get$mouseMove: function() {
   return this.operator$index$1('mousemove');
 },
@@ -2402,9 +2306,6 @@ $$._WindowEventsImpl = {"":
 },
  get$load: function() {
   return this.operator$index$1('load');
-},
- get$mouseDown: function() {
-  return this.operator$index$1('mousedown');
 },
  get$mouseMove: function() {
   return this.operator$index$1('mousemove');
@@ -3206,10 +3107,10 @@ $$._Timer = {"":
  ["_once", "_handle"],
  "super": "Object",
  _Timer$repeating$2: function(milliSeconds, callback) {
-  this._handle = $._window().setInterval$2(new $.anon4(this, callback), milliSeconds);
+  this._handle = $._window().setInterval$2(new $.anon3(this, callback), milliSeconds);
 },
  _Timer$2: function(milliSeconds, callback) {
-  this._handle = $._window().setTimeout$2(new $.anon3(this, callback), milliSeconds);
+  this._handle = $._window().setTimeout$2(new $.anon2(this, callback), milliSeconds);
 }
 };
 
@@ -3229,7 +3130,7 @@ $$._Random = {"":
 };
 
 $$._JsonParser = {"":
- ["json", "length?", "position="],
+ ["json", "length?", "position?"],
  "super": "Object",
  length$0: function() { return this.length.call$0(); },
  position$1: function(arg0) { return this.position.call$1(arg0); },
@@ -5946,7 +5847,7 @@ $$.Vector4 = {"":
 };
 
 $$.Object3D = {"":
- ["id=", "name=", "parent=", "children?", "position=", "rotation?", "renderDepth?", "matrixWorld?", "visible?", "castShadow?", "receiveShadow?", "frustumCulled?"],
+ ["id=", "name=", "parent=", "children?", "position?", "rotation?", "renderDepth?", "matrixWorld?", "visible?", "castShadow?", "receiveShadow?", "frustumCulled?"],
  "super": "Object",
  position$1: function(arg0) { return this.position.call$1(arg0); },
  scale$1: function(arg0) { return this.scale.call$1(arg0); },
@@ -6855,9 +6756,9 @@ $$.Loader = {"":
   return material;
 },
  Loader$1: function(showStatus) {
-  this.onLoadStart = new $.anon0();
-  this.onLoadProgress = new $.anon1();
-  this.onLoadComplete = new $.anon2();
+  this.onLoadStart = new $.anon();
+  this.onLoadProgress = new $.anon0();
+  this.onLoadComplete = new $.anon1();
 }
 };
 
@@ -29341,118 +29242,6 @@ $$.Texture = {"":
  is$Texture: true
 };
 
-$$.Stats = {"":
- ["startTime", "prevTime", "ms", "msMin", "msMax", "fps", "fpsMin", "fpsMax", "frames", "mode=", "container?", "fpsDiv", "msDiv", "msText", "msGraph", "fpsGraph", "fpsText"],
- "super": "Object",
- setMode$1: function(value) {
-  this.mode = value;
-  switch (this.mode) {
-    case 0:
-      this.fpsDiv.get$style().set$display('block');
-      this.msDiv.get$style().set$display('none');
-      break;
-    case 1:
-      this.fpsDiv.get$style().set$display('none');
-      this.msDiv.get$style().set$display('block');
-      break;
-  }
-},
- updateGraph$2: function(element, value) {
-  var first = element.get$elements().get$first();
-  $.add$1(element.get$elements(), first);
-  var t1 = $.S($.toInt(value)) + 'px';
-  first.get$style().set$height(t1);
-},
- end$0: function() {
-  var time = $.Date_Date$now();
-  this.ms = time.difference$1(this.startTime);
-  this.msMin = $.min(this.msMin, this.ms.get$inMilliseconds());
-  this.msMax = $.max(this.msMax, this.ms.get$inMilliseconds());
-  var t1 = $.S(this.ms) + ' MS (' + $.S(this.msMin) + ' - ' + $.S(this.msMax) + ')';
-  this.msText.set$innerHTML(t1);
-  t1 = this.msGraph;
-  var t2 = $.mul($.div(this.ms.get$inMilliseconds(), 200), 30);
-  if (typeof t2 !== 'number')
-    throw $.iae(t2);
-  this.updateGraph$2(t1, $.min(30, 30 - t2));
-  this.frames = this.frames + 1;
-  if ($.gtB(time.get$millisecondsSinceEpoch(), $.add(this.prevTime.get$millisecondsSinceEpoch(), 1000))) {
-    t1 = this.frames * 1000;
-    t2 = time.difference$1(this.prevTime).get$inMilliseconds();
-    if (typeof t2 !== 'number')
-      throw $.iae(t2);
-    this.fps = $.round(t1 / t2);
-    this.fpsMin = $.min(this.fpsMin, this.fps);
-    this.fpsMax = $.max(this.fpsMax, this.fps);
-    var t3 = $.S(this.fps) + ' FPS (' + $.S(this.fpsMin) + ' - ' + $.S(this.fpsMax) + ')';
-    this.fpsText.set$innerHTML(t3);
-    t3 = this.fpsGraph;
-    var t4 = $.mul($.div(this.fps, 100), 30);
-    if (typeof t4 !== 'number')
-      throw $.iae(t4);
-    this.updateGraph$2(t3, $.min(30, 30 - t4));
-    this.prevTime = time;
-    this.frames = 0;
-  }
-  return time;
-},
- update$0: function() {
-  this.startTime = this.end$0();
-},
- Stats$0: function() {
-  this.ms = $.Duration$(0, 0, 0, 0, 0);
-  this.startTime = $.Date_Date$now();
-  this.prevTime = this.startTime;
-  this.container = $.DivElement_DivElement();
-  var t1 = this.container;
-  t1.set$id('stats');
-  $.add$1(t1.get$on().get$mouseDown(), new $.anon(this));
-  t1.get$style().set$cssText('width:80px;opacity:0.9;cursor:pointer');
-  this.fpsDiv = $.DivElement_DivElement();
-  var t2 = this.fpsDiv;
-  t2.set$id('fps');
-  t2.get$style().set$cssText('padding:0 0 3px 3px;text-align:left;background-color:#002');
-  $.add$1(t1.get$elements(), t2);
-  this.fpsText = $.DivElement_DivElement();
-  var t3 = this.fpsText;
-  t3.set$id('fpsText');
-  t3.get$style().set$cssText('color:#0ff;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:bold;line-height:15px');
-  t3.set$innerHTML('FPS');
-  $.add$1(t2.get$elements(), t3);
-  this.fpsGraph = $.DivElement_DivElement();
-  t3 = this.fpsGraph;
-  t3.set$id('fpsGraph');
-  t3.get$style().set$cssText('position:relative;width:74px;height:30px;background-color:#0ff');
-  $.add$1(t2.get$elements(), t3);
-  for (; $.ltB($.get$length(t3.get$elements()), 74);) {
-    var bar = $.SpanElement_SpanElement();
-    bar.get$style().set$cssText('width:1px;height:30px;float:left;background-color:#113');
-    $.add$1(t3.get$elements(), bar);
-  }
-  this.msDiv = $.DivElement_DivElement();
-  t2 = this.msDiv;
-  t2.set$id('ms');
-  t2.get$style().set$cssText('padding:0 0 3px 3px;text-align:left;background-color:#020;display:none');
-  $.add$1(t1.get$elements(), t2);
-  this.msText = $.DivElement_DivElement();
-  t3 = this.msText;
-  t3.set$id('msText');
-  t3.get$style().set$cssText('color:#0f0;font-family:Helvetica,Arial,sans-serif;font-size:9px;font-weight:bold;line-height:15px');
-  t3.set$innerHTML('MS');
-  $.add$1(t2.get$elements(), t3);
-  this.msGraph = $.DivElement_DivElement();
-  t3 = this.msGraph;
-  t3.set$id('msGraph');
-  t3.get$style().set$cssText('position:relative;width:74px;height:30px;background-color:#0f0');
-  $.add$1(t2.get$elements(), t3);
-  for (; $.ltB($.get$length(t3.get$elements()), 74);) {
-    bar = $.SpanElement_SpanElement();
-    bar.get$style().set$cssText('width:1px;height:30px;float:left;background-color:#131');
-    $.add$1(t3.get$elements(), bar);
-  }
-}
-};
-
 $$.Maps__emitMap_anon = {"":
  ["result_3", "box_0", "visiting_2"],
  "super": "Closure",
@@ -29502,95 +29291,22 @@ $$.WebGL_Performance_init_anon = {"":
   for (var t1 = this.material_0, t2 = this.this_1, i = 0; i < 5000; ++i) {
     var mesh = $.Mesh$(geometry, t1);
     var t3 = $.sub($.mul(rnd.nextDouble$0(), 8000), 4000);
-    mesh.position.set$x(t3);
-    t3 = $.sub($.mul(rnd.nextDouble$0(), 8000), 4000);
-    mesh.position.set$y(t3);
-    t3 = $.sub($.mul(rnd.nextDouble$0(), 8000), 4000);
-    mesh.position.set$z(t3);
-    t3 = $.mul($.mul(rnd.nextDouble$0(), 360), 0.017453292519943295);
-    var t4 = mesh.rotation;
+    var t4 = mesh.position;
     t4.set$x(t3);
-    t4.set$y($.mul($.mul(rnd.nextDouble$0(), 360), 0.017453292519943295));
-    t4 = $.add($.mul(rnd.nextDouble$0(), 50), 100);
-    t3 = mesh.scale;
-    t3.set$z(t4);
-    t3.set$y(t4);
+    t4.set$y($.sub($.mul(rnd.nextDouble$0(), 8000), 4000));
+    t4.set$z($.sub($.mul(rnd.nextDouble$0(), 8000), 4000));
+    t4 = $.mul($.mul(rnd.nextDouble$0(), 360), 0.017453292519943295);
+    t3 = mesh.rotation;
     t3.set$x(t4);
+    t3.set$y($.mul($.mul(rnd.nextDouble$0(), 360), 0.017453292519943295));
+    t3 = $.add($.mul(rnd.nextDouble$0(), 50), 100);
+    t4 = mesh.scale;
+    t4.set$z(t3);
+    t4.set$y(t3);
+    t4.set$x(t3);
     $.add$1(t2.get$objects(), mesh);
     $.add$1(t2.get$scene(), mesh);
   }
-}
-};
-
-$$.anon = {"":
- ["this_0"],
- "super": "Closure",
- call$1: function(event$) {
-  event$.preventDefault$0();
-  var t1 = this.this_0;
-  var t2 = $.add(t1.get$mode(), 1);
-  t1.set$mode(t2);
-  t1.setMode$1($.mod(t2, 2));
-}
-};
-
-$$.DateImplementation_toString_fourDigits = {"":
- [],
- "super": "Closure",
- call$1: function(n) {
-  var absN = $.abs(n);
-  var sign = $.ltB(n, 0) ? '-' : '';
-  if ($.geB(absN, 1000))
-    return $.S(n);
-  if ($.geB(absN, 100))
-    return sign + '0' + $.S(absN);
-  if ($.geB(absN, 10))
-    return sign + '00' + $.S(absN);
-  return sign + '000' + $.S(absN);
-}
-};
-
-$$.DateImplementation_toString_threeDigits = {"":
- [],
- "super": "Closure",
- call$1: function(n) {
-  if ($.geB(n, 100))
-    return $.S(n);
-  if ($.geB(n, 10))
-    return '0' + $.S(n);
-  return '00' + $.S(n);
-}
-};
-
-$$.DateImplementation_toString_twoDigits = {"":
- [],
- "super": "Closure",
- call$1: function(n) {
-  if ($.geB(n, 10))
-    return $.S(n);
-  return '0' + $.S(n);
-}
-};
-
-$$.Duration_toString_threeDigits = {"":
- [],
- "super": "Closure",
- call$1: function(n) {
-  if ($.geB(n, 100))
-    return $.S(n);
-  if ($.gtB(n, 10))
-    return '0' + $.S(n);
-  return '00' + $.S(n);
-}
-};
-
-$$.Duration_toString_twoDigits = {"":
- [],
- "super": "Closure",
- call$1: function(n) {
-  if ($.geB(n, 10))
-    return $.S(n);
-  return '0' + $.S(n);
 }
 };
 
@@ -30469,21 +30185,21 @@ $$.parseDDS_int32ToFourCC = {"":
 }
 };
 
-$$.anon0 = {"":
+$$.anon = {"":
  [],
  "super": "Closure",
  call$0: function() {
 }
 };
 
-$$.anon1 = {"":
+$$.anon0 = {"":
  [],
  "super": "Closure",
  call$1: function(data) {
 }
 };
 
-$$.anon2 = {"":
+$$.anon1 = {"":
  [],
  "super": "Closure",
  call$0: function() {
@@ -31144,7 +30860,7 @@ $$._EventLoop__runHelper_next = {"":
 }
 };
 
-$$.anon3 = {"":
+$$.anon2 = {"":
  ["this_1", "callback_0"],
  "super": "Closure",
  call$0: function() {
@@ -31152,7 +30868,7 @@ $$.anon3 = {"":
 }
 };
 
-$$.anon4 = {"":
+$$.anon3 = {"":
  ["this_1", "callback_0"],
  "super": "Closure",
  call$0: function() {
@@ -31860,17 +31576,17 @@ $._waitForPendingPorts = function(message, callback) {
   $.Futures_wait(finder.ports).then$1(new $._waitForPendingPorts_anon(callback));
 };
 
+$.getTypeNameOf = function(obj) {
+  if ($._getTypeNameOf == null)
+    $._getTypeNameOf = $.getFunctionForTypeNameOf();
+  return $._getTypeNameOf.call$1(obj);
+};
+
 $._deserializeMessage = function(message) {
   if ($._globalState().get$needSerialization() === true)
     return $._JsDeserializer$().deserialize$1(message);
   else
     return message;
-};
-
-$.getTypeNameOf = function(obj) {
-  if ($._getTypeNameOf == null)
-    $._getTypeNameOf = $.getFunctionForTypeNameOf();
-  return $._getTypeNameOf.call$1(obj);
 };
 
 $.FutureImpl_FutureImpl$immediate = function(value) {
@@ -32023,22 +31739,8 @@ $.ceil = function(receiver) {
   return Math.ceil(receiver);
 };
 
-$.Primitives_getYear = function(receiver) {
-  return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCFullYear() : $.Primitives_lazyAsJsDate(receiver).getFullYear();
-};
-
-$.Collections_map = function(source, destination, f) {
-  for (var t1 = $.iterator(source); t1.hasNext$0() === true;)
-    destination.push(f.call$1(t1.next$0()));
-  return destination;
-};
-
 $._FrozenElementListIterator$ = function(_list) {
   return new $._FrozenElementListIterator(_list, 0);
-};
-
-$.Primitives_getHours = function(receiver) {
-  return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCHours() : $.Primitives_lazyAsJsDate(receiver).getHours();
 };
 
 $.Maps_mapToString = function(m) {
@@ -32171,27 +31873,6 @@ $.regExpAttachGlobalNative = function(regExp) {
   regExp._re = $.regExpMakeNative(regExp, true);
 };
 
-$.DateImplementation$fromMillisecondsSinceEpoch = function(millisecondsSinceEpoch, isUtc) {
-  var t1 = new $.DateImplementation(millisecondsSinceEpoch, isUtc);
-  t1.DateImplementation$fromMillisecondsSinceEpoch$2(millisecondsSinceEpoch, isUtc);
-  return t1;
-};
-
-$.mod = function(a, b) {
-  if ($.checkNumbers(a, b)) {
-    var result = a % b;
-    if (result === 0)
-      return 0;
-    if (result > 0)
-      return result;
-    if (b < 0)
-      return result - b;
-    else
-      return result + b;
-  }
-  return a.operator$mod$1(b);
-};
-
 $._IDBRequestEventsImpl$ = function(_ptr) {
   return new $._IDBRequestEventsImpl(_ptr);
 };
@@ -32238,6 +31919,13 @@ $.DoubleLinkedQueue$ = function() {
   return t1;
 };
 
+$.filter = function(receiver, predicate) {
+  if (!$.isJsArray(receiver))
+    return receiver.filter$1(predicate);
+  else
+    return $.Collections_filter(receiver, [], predicate);
+};
+
 $.StringBufferImpl$ = function(content$) {
   var t1 = new $.StringBufferImpl(null, null);
   t1.StringBufferImpl$1(content$);
@@ -32256,22 +31944,17 @@ $._SVGElementInstanceEventsImpl$ = function(_ptr) {
   return new $._SVGElementInstanceEventsImpl(_ptr);
 };
 
-$._Elements_createDivElement = function() {
-  return $._document().$dom_createElement$1('div');
-};
-
-$.Primitives_getDay = function(receiver) {
-  return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCDate() : $.Primitives_lazyAsJsDate(receiver).getDate();
+$.Collections_filter = function(source, destination, f) {
+  for (var t1 = $.iterator(source); t1.hasNext$0() === true;) {
+    var t2 = t1.next$0();
+    if (f.call$1(t2) === true)
+      destination.push(t2);
+  }
+  return destination;
 };
 
 $._MainManagerStub$ = function() {
   return new $._MainManagerStub();
-};
-
-$.iterator = function(receiver) {
-  if ($.isJsArray(receiver))
-    return $.ListIterator$(receiver);
-  return receiver.iterator$0();
 };
 
 $.regExpTest = function(regExp, str) {
@@ -32286,16 +31969,16 @@ $.makeLiteralMap = function(keyValuePairs) {
   return result;
 };
 
+$._TypedArrayFactoryProvider__F32 = function(arg) {
+return new Float32Array(arg);
+};
+
 $.Scene$ = function() {
   var t1 = $.Three_Object3DCount;
   $.Three_Object3DCount = $.add(t1, 1);
   t1 = new $.Scene(null, null, null, null, null, null, t1, '', $.makeLiteralMap([]), null, [], $.Vector3$(0, 1, 0), $.Vector3$(0, 0, 0), $.Vector3$(0, 0, 0), $.Vector3$(1, 1, 1), 'XYZ', null, null, null, true, null, $.Matrix4$(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), $.Matrix4$(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), $.Matrix4$(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), true, true, $.Quaternion$(0, 0, 0, 1), false, 0, 1, true, false, false, true, $.Vector3$(0, 0, 0), null);
   t1.Scene$0();
   return t1;
-};
-
-$._TypedArrayFactoryProvider__F32 = function(arg) {
-return new Float32Array(arg);
 };
 
 $.Matrix4___v1 = function() {
@@ -32324,6 +32007,14 @@ $.gt$slow = function(a, b) {
   if ($.checkNumbers(a, b))
     return a > b;
   return a.operator$gt$1(b);
+};
+
+$.addAll = function(receiver, collection) {
+  if (!$.isJsArray(receiver))
+    return receiver.addAll$1(collection);
+  var iterator = $.iterator(collection);
+  for (; iterator.hasNext$0() === true;)
+    $.add$1(receiver, iterator.next$0());
 };
 
 $.WebGLCamera$_internal = function(camera) {
@@ -32358,14 +32049,6 @@ $.Collections__emitCollection = function(c, result, visiting) {
   $.removeLast(visiting);
 };
 
-$.addAll = function(receiver, collection) {
-  if (!$.isJsArray(receiver))
-    return receiver.addAll$1(collection);
-  var iterator = $.iterator(collection);
-  for (; iterator.hasNext$0() === true;)
-    $.add$1(receiver, iterator.next$0());
-};
-
 $.FilteredElementList$ = function(node) {
   return new $.FilteredElementList(node, node.get$nodes());
 };
@@ -32382,10 +32065,6 @@ $._IDBDatabaseEventsImpl$ = function(_ptr) {
   return new $._IDBDatabaseEventsImpl(_ptr);
 };
 
-$.WebGL_Performance$ = function() {
-  return new $.WebGL_Performance(null, null, null, null, null, null, null, 0, 0, []);
-};
-
 $.allMatches = function(receiver, str) {
   if (!(typeof receiver === 'string'))
     return receiver.allMatches$1(str);
@@ -32393,8 +32072,16 @@ $.allMatches = function(receiver, str) {
   return $.allMatchesInStringUnchecked(receiver, str);
 };
 
+$.WebGL_Performance$ = function() {
+  return new $.WebGL_Performance(null, null, null, null, null, null, 0, 0, []);
+};
+
 $.Uint8Array_Uint8Array$fromBuffer = function(buffer, byteOffset, length$) {
   return $._TypedArrayFactoryProvider_createUint8Array_fromBuffer(buffer, byteOffset, length$);
+};
+
+$.toStringForNativeObject = function(obj) {
+  return 'Instance of ' + $.getTypeNameOf(obj);
 };
 
 $.Mesh$ = function(geometry, material) {
@@ -32411,10 +32098,6 @@ $.JSSyntaxRegExp__globalVersionOf = function(other) {
   return re;
 };
 
-$.toStringForNativeObject = function(obj) {
-  return 'Instance of ' + $.getTypeNameOf(obj);
-};
-
 $.ltB = function(a, b) {
   return typeof a === 'number' && typeof b === 'number' ? a < b : $.lt$slow(a, b) === true;
 };
@@ -32423,13 +32106,6 @@ $.tdiv = function(a, b) {
   if ($.checkNumbers(a, b))
     return $.truncate(a / b);
   return a.operator$tdiv$1(b);
-};
-
-$.filter = function(receiver, predicate) {
-  if (!$.isJsArray(receiver))
-    return receiver.filter$1(predicate);
-  else
-    return $.Collections_filter(receiver, [], predicate);
 };
 
 $._MediaStreamTrackListEventsImpl$ = function(_ptr) {
@@ -32455,6 +32131,21 @@ $.Vector4$ = function(x, y, z, w) {
 
 $._Device_isIE = function() {
   return $._Device_isOpera() !== true && $.contains$2($._Device_userAgent(), 'MSIE', 0) === true;
+};
+
+$.startRootIsolate = function(entry) {
+  var t1 = $._Manager$();
+  $._globalState0(t1);
+  if ($._globalState().get$isWorker() === true)
+    return;
+  var rootContext = $._IsolateContext$();
+  $._globalState().set$rootContext(rootContext);
+  $._fillStatics(rootContext);
+  $._globalState().set$currentContext(rootContext);
+  if (!($._window() == null))
+    rootContext.eval$1(new $.startRootIsolate_anon());
+  rootContext.eval$1(entry);
+  $._globalState().get$topEventLoop().run$0();
 };
 
 $.Collections__emitObject = function(o, result, visiting) {
@@ -32494,21 +32185,6 @@ $._TypedArrayFactoryProvider_createInt32Array_fromBuffer = function(buffer, byte
   return $._TypedArrayFactoryProvider__I32_3(buffer, byteOffset, length$);
 };
 
-$.startRootIsolate = function(entry) {
-  var t1 = $._Manager$();
-  $._globalState0(t1);
-  if ($._globalState().get$isWorker() === true)
-    return;
-  var rootContext = $._IsolateContext$();
-  $._globalState().set$rootContext(rootContext);
-  $._fillStatics(rootContext);
-  $._globalState().set$currentContext(rootContext);
-  if (!($._window() == null))
-    rootContext.eval$1(new $.startRootIsolate_anon());
-  rootContext.eval$1(entry);
-  $._globalState().get$topEventLoop().run$0();
-};
-
 $.WebGLCamera_WebGLCamera = function(camera) {
   if ($.index(camera, '__webglCamera') == null)
     $.indexSet(camera, '__webglCamera', $.WebGLCamera$_internal(camera));
@@ -32521,6 +32197,13 @@ $.truncate = function(receiver) {
 
 $.StringImplementation_String$fromCharCodes = function(charCodes) {
   return $.StringImplementation__fromCharCodes(charCodes);
+};
+
+$.map = function(receiver, f) {
+  if (!$.isJsArray(receiver))
+    return receiver.map$1(f);
+  else
+    return $.Collections_map(receiver, [], f);
 };
 
 $._EventLoop$ = function() {
@@ -32538,21 +32221,6 @@ $.Primitives_stringFromCharCodes = function(charCodes) {
       throw $.$$throw($.IllegalArgumentException$(t2));
   }
   return String.fromCharCode.apply(null, charCodes);
-};
-
-$._Collections_map = function(source, destination, f) {
-  for (var t1 = $.iterator(source); t1.hasNext$0() === true;)
-    destination.push(f.call$1(t1.next$0()));
-  return destination;
-};
-
-$.Collections_filter = function(source, destination, f) {
-  for (var t1 = $.iterator(source); t1.hasNext$0() === true;) {
-    var t2 = t1.next$0();
-    if (f.call$1(t2) === true)
-      destination.push(t2);
-  }
-  return destination;
 };
 
 $._convertNativeToDart_IDBAny = function(object) {
@@ -32612,12 +32280,17 @@ $._ElementEventsImpl$ = function(_ptr) {
   return new $._ElementEventsImpl(_ptr);
 };
 
-$.Primitives_getMonth = function(receiver) {
-  return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCMonth() + 1 : $.Primitives_lazyAsJsDate(receiver).getMonth() + 1;
-};
-
 $._dynamicMetadata = function(table) {
   $dynamicMetadata = table;
+};
+
+$._Collections_filter = function(source, destination, f) {
+  for (var t1 = $.iterator(source); t1.hasNext$0() === true;) {
+    var t2 = t1.next$0();
+    if (f.call$1(t2) === true)
+      destination.push(t2);
+  }
+  return destination;
 };
 
 $._dynamicMetadata0 = function() {
@@ -32628,14 +32301,14 @@ $._dynamicMetadata0 = function() {
   return $dynamicMetadata;
 };
 
-$.isNegative = function(receiver) {
-  return receiver === 0 ? 1 / receiver < 0 : receiver < 0;
-};
-
 $.add$slow = function(a, b) {
   if ($.checkNumbers(a, b))
     return a + b;
   return a.operator$add$1(b);
+};
+
+$.isNegative = function(receiver) {
+  return receiver === 0 ? 1 / receiver < 0 : receiver < 0;
 };
 
 $.jsHasOwnProperty = function(jsObject, property) {
@@ -32688,12 +32361,6 @@ $.Futures_wait = function(futures) {
   var t2;
 };
 
-$.DateImplementation$now = function() {
-  var t1 = new $.DateImplementation($.Primitives_dateNow(), false);
-  t1.DateImplementation$now$0();
-  return t1;
-};
-
 $.Arrays_copy = function(src, srcStart, dst, dstStart, count) {
   if (typeof src !== 'string' && (typeof src !== 'object' || src === null || src.constructor !== Array && !src.is$JavaScriptIndexingBehavior()))
     return $.Arrays_copy$bailout(1, src, srcStart, dst, dstStart, count);
@@ -32723,12 +32390,14 @@ $.Arrays_copy = function(src, srcStart, dst, dstStart, count) {
     }
 };
 
-$._Elements_createSpanElement = function() {
-  return $._document().$dom_createElement$1('span');
-};
-
 $._PeerConnection00EventsImpl$ = function(_ptr) {
   return new $._PeerConnection00EventsImpl(_ptr);
+};
+
+$.Collections_map = function(source, destination, f) {
+  for (var t1 = $.iterator(source); t1.hasNext$0() === true;)
+    destination.push(f.call$1(t1.next$0()));
+  return destination;
 };
 
 $._AbstractWorkerEventsImpl$ = function(_ptr) {
@@ -32783,6 +32452,13 @@ $.Future_Future$immediate = function(value) {
   return $.FutureImpl_FutureImpl$immediate(value);
 };
 
+$.sort = function(receiver, compare) {
+  if (!$.isJsArray(receiver))
+    return receiver.sort$1(compare);
+  $.checkMutable(receiver, 'sort');
+  $.DualPivotQuicksort_sort(receiver, compare);
+};
+
 $.$$throw = function(ex) {
   if (ex == null)
     ex = $.CTC;
@@ -32800,6 +32476,10 @@ $._MessagePortEventsImpl$ = function(_ptr) {
 
 $._IsolateEvent$ = function(isolate, fn, message) {
   return new $._IsolateEvent(isolate, fn, message);
+};
+
+$.DualPivotQuicksort_sort = function(a, compare) {
+  $.DualPivotQuicksort__doSort(a, 0, $.sub($.get$length(a), 1), compare);
 };
 
 $.stringReplaceAllUnchecked = function(receiver, from, to) {
@@ -32862,13 +32542,6 @@ $.checkMutable = function(list, reason) {
     throw $.$$throw($.UnsupportedOperationException$(reason));
 };
 
-$.sort = function(receiver, compare) {
-  if (!$.isJsArray(receiver))
-    return receiver.sort$1(compare);
-  $.checkMutable(receiver, 'sort');
-  $.DualPivotQuicksort_sort(receiver, compare);
-};
-
 $.ShaderLib = function() {
   if ($.__ShaderLib == null)
     $.__ShaderLib = $.makeLiteralMap(['depth', $.makeLiteralMap(['uniforms', $.makeLiteralMap(['mNear', $.Uniform$('f', 1, null), 'mFar', $.Uniform$('f', 2000, null), 'opacity', $.Uniform$('f', 1, null)]), 'vertexShader', $.Strings_join(['void main() {', 'gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );', '}'], '\n'), 'fragmentShader', $.Strings_join(['uniform float mNear;', 'uniform float mFar;', 'uniform float opacity;', 'void main() {', 'float depth = gl_FragCoord.z / gl_FragCoord.w;', 'float color = 1.0 - smoothstep( mNear, mFar, depth );', 'gl_FragColor = vec4( vec3( color ), opacity );', '}'], '\n')]), 'normal', $.makeLiteralMap(['uniforms', $.makeLiteralMap(['opacity', $.Uniform$('f', 1, null)]), 'vertexShader', $.Strings_join(['varying vec3 vNormal;', 'void main() {', 'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );', 'vNormal = normalMatrix * normal;', 'gl_Position = projectionMatrix * mvPosition;', '}'], '\n'), 'fragmentShader', $.Strings_join(['uniform float opacity;', 'varying vec3 vNormal;', 'void main() {', 'gl_FragColor = vec4( 0.5 * normalize( vNormal ) + 0.5, opacity );', '}'], '\n')]), 'basic', $.makeLiteralMap(['uniforms', $.UniformsUtils_merge([$.index($.UniformsLib(), 'common'), $.index($.UniformsLib(), 'fog'), $.index($.UniformsLib(), 'shadowmap')]), 'vertexShader', $.Strings_join([$.index($.ShaderChunk(), 'map_pars_vertex'), $.index($.ShaderChunk(), 'lightmap_pars_vertex'), $.index($.ShaderChunk(), 'envmap_pars_vertex'), $.index($.ShaderChunk(), 'color_pars_vertex'), $.index($.ShaderChunk(), 'skinning_pars_vertex'), $.index($.ShaderChunk(), 'morphtarget_pars_vertex'), $.index($.ShaderChunk(), 'shadowmap_pars_vertex'), 'void main() {', 'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );', $.index($.ShaderChunk(), 'map_vertex'), $.index($.ShaderChunk(), 'lightmap_vertex'), $.index($.ShaderChunk(), 'envmap_vertex'), $.index($.ShaderChunk(), 'color_vertex'), $.index($.ShaderChunk(), 'skinbase_vertex'), $.index($.ShaderChunk(), 'skinning_vertex'), $.index($.ShaderChunk(), 'morphtarget_vertex'), $.index($.ShaderChunk(), 'default_vertex'), $.index($.ShaderChunk(), 'shadowmap_vertex'), '}'], '\n'), 'fragmentShader', $.Strings_join(['uniform vec3 diffuse;', 'uniform float opacity;', $.index($.ShaderChunk(), 'color_pars_fragment'), $.index($.ShaderChunk(), 'map_pars_fragment'), $.index($.ShaderChunk(), 'lightmap_pars_fragment'), $.index($.ShaderChunk(), 'envmap_pars_fragment'), $.index($.ShaderChunk(), 'fog_pars_fragment'), $.index($.ShaderChunk(), 'shadowmap_pars_fragment'), $.index($.ShaderChunk(), 'specularmap_pars_fragment'), 'void main() {', 'gl_FragColor = vec4( diffuse, opacity );', $.index($.ShaderChunk(), 'map_fragment'), $.index($.ShaderChunk(), 'alphatest_fragment'), $.index($.ShaderChunk(), 'specularmap_fragment'), $.index($.ShaderChunk(), 'lightmap_fragment'), $.index($.ShaderChunk(), 'color_fragment'), $.index($.ShaderChunk(), 'envmap_fragment'), $.index($.ShaderChunk(), 'shadowmap_fragment'), $.index($.ShaderChunk(), 'linear_to_gamma_fragment'), $.index($.ShaderChunk(), 'fog_fragment'), '}'], '\n')]), 'lambert', $.makeLiteralMap(['uniforms', $.UniformsUtils_merge([$.index($.UniformsLib(), 'common'), $.index($.UniformsLib(), 'fog'), $.index($.UniformsLib(), 'lights'), $.index($.UniformsLib(), 'shadowmap'), $.makeLiteralMap(['ambient', $.Uniform$('c', $.Color$(16777215), null), 'emissive', $.Uniform$('c', $.Color$(0), null), 'wrapRGB', $.Uniform$('v3', $.Vector3$(1, 1, 1), null)])]), 'vertexShader', $.Strings_join(['varying vec3 vLightFront;', '#ifdef DOUBLE_SIDED', 'varying vec3 vLightBack;', '#endif', $.index($.ShaderChunk(), 'map_pars_vertex'), $.index($.ShaderChunk(), 'lightmap_pars_vertex'), $.index($.ShaderChunk(), 'envmap_pars_vertex'), $.index($.ShaderChunk(), 'lights_lambert_pars_vertex'), $.index($.ShaderChunk(), 'color_pars_vertex'), $.index($.ShaderChunk(), 'skinning_pars_vertex'), $.index($.ShaderChunk(), 'morphtarget_pars_vertex'), $.index($.ShaderChunk(), 'shadowmap_pars_vertex'), 'void main() {', 'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );', $.index($.ShaderChunk(), 'map_vertex'), $.index($.ShaderChunk(), 'lightmap_vertex'), $.index($.ShaderChunk(), 'envmap_vertex'), $.index($.ShaderChunk(), 'color_vertex'), $.index($.ShaderChunk(), 'morphnormal_vertex'), $.index($.ShaderChunk(), 'skinbase_vertex'), $.index($.ShaderChunk(), 'skinnormal_vertex'), $.index($.ShaderChunk(), 'defaultnormal_vertex'), '#ifndef USE_ENVMAP', 'vec4 mPosition = modelMatrix * vec4( position, 1.0 );', '#endif', $.index($.ShaderChunk(), 'lights_lambert_vertex'), $.index($.ShaderChunk(), 'skinning_vertex'), $.index($.ShaderChunk(), 'morphtarget_vertex'), $.index($.ShaderChunk(), 'default_vertex'), $.index($.ShaderChunk(), 'shadowmap_vertex'), '}'], '\n'), 'fragmentShader', $.Strings_join(['uniform float opacity;', 'varying vec3 vLightFront;', '#ifdef DOUBLE_SIDED', 'varying vec3 vLightBack;', '#endif', $.index($.ShaderChunk(), 'color_pars_fragment'), $.index($.ShaderChunk(), 'map_pars_fragment'), $.index($.ShaderChunk(), 'lightmap_pars_fragment'), $.index($.ShaderChunk(), 'envmap_pars_fragment'), $.index($.ShaderChunk(), 'fog_pars_fragment'), $.index($.ShaderChunk(), 'shadowmap_pars_fragment'), $.index($.ShaderChunk(), 'specularmap_pars_fragment'), 'void main() {', 'gl_FragColor = vec4( vec3 ( 1.0 ), opacity );', $.index($.ShaderChunk(), 'map_fragment'), $.index($.ShaderChunk(), 'alphatest_fragment'), $.index($.ShaderChunk(), 'specularmap_fragment'), '#ifdef DOUBLE_SIDED', 'if ( gl_FrontFacing )', 'gl_FragColor.xyz *= vLightFront;', 'else', 'gl_FragColor.xyz *= vLightBack;', '#else', 'gl_FragColor.xyz *= vLightFront;', '#endif', $.index($.ShaderChunk(), 'lightmap_fragment'), $.index($.ShaderChunk(), 'color_fragment'), $.index($.ShaderChunk(), 'envmap_fragment'), $.index($.ShaderChunk(), 'shadowmap_fragment'), $.index($.ShaderChunk(), 'linear_to_gamma_fragment'), $.index($.ShaderChunk(), 'fog_fragment'), '}'], '\n')]), 'phong', $.makeLiteralMap(['uniforms', $.UniformsUtils_merge([$.index($.UniformsLib(), 'common'), $.index($.UniformsLib(), 'bump'), $.index($.UniformsLib(), 'fog'), $.index($.UniformsLib(), 'lights'), $.index($.UniformsLib(), 'shadowmap'), $.makeLiteralMap(['ambient', $.Uniform$('c', $.Color$(16777215), null), 'emissive', $.Uniform$('c', $.Color$(0), null), 'specular', $.Uniform$('c', $.Color$(1118481), null), 'shininess', $.Uniform$('f', 30, null), 'wrapRGB', $.Uniform$('v3', $.Vector3$(1, 1, 1), null)])]), 'vertexShader', $.Strings_join(['varying vec3 vViewPosition;', 'varying vec3 vNormal;', $.index($.ShaderChunk(), 'map_pars_vertex'), $.index($.ShaderChunk(), 'lightmap_pars_vertex'), $.index($.ShaderChunk(), 'envmap_pars_vertex'), $.index($.ShaderChunk(), 'lights_phong_pars_vertex'), $.index($.ShaderChunk(), 'color_pars_vertex'), $.index($.ShaderChunk(), 'skinning_pars_vertex'), $.index($.ShaderChunk(), 'morphtarget_pars_vertex'), $.index($.ShaderChunk(), 'shadowmap_pars_vertex'), 'void main() {', 'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );', $.index($.ShaderChunk(), 'map_vertex'), $.index($.ShaderChunk(), 'lightmap_vertex'), $.index($.ShaderChunk(), 'envmap_vertex'), $.index($.ShaderChunk(), 'color_vertex'), '#ifndef USE_ENVMAP', 'vec4 mPosition = modelMatrix * vec4( position, 1.0 );', '#endif', 'vViewPosition = -mvPosition.xyz;', $.index($.ShaderChunk(), 'morphnormal_vertex'), $.index($.ShaderChunk(), 'skinbase_vertex'), $.index($.ShaderChunk(), 'skinnormal_vertex'), $.index($.ShaderChunk(), 'defaultnormal_vertex'), 'vNormal = transformedNormal;', $.index($.ShaderChunk(), 'lights_phong_vertex'), $.index($.ShaderChunk(), 'skinning_vertex'), $.index($.ShaderChunk(), 'morphtarget_vertex'), $.index($.ShaderChunk(), 'default_vertex'), $.index($.ShaderChunk(), 'shadowmap_vertex'), '}'], '\n'), 'fragmentShader', $.Strings_join(['uniform vec3 diffuse;', 'uniform float opacity;', 'uniform vec3 ambient;', 'uniform vec3 emissive;', 'uniform vec3 specular;', 'uniform float shininess;', $.index($.ShaderChunk(), 'color_pars_fragment'), $.index($.ShaderChunk(), 'map_pars_fragment'), $.index($.ShaderChunk(), 'lightmap_pars_fragment'), $.index($.ShaderChunk(), 'envmap_pars_fragment'), $.index($.ShaderChunk(), 'fog_pars_fragment'), $.index($.ShaderChunk(), 'lights_phong_pars_fragment'), $.index($.ShaderChunk(), 'shadowmap_pars_fragment'), $.index($.ShaderChunk(), 'bumpmap_pars_fragment'), $.index($.ShaderChunk(), 'specularmap_pars_fragment'), 'void main() {', 'gl_FragColor = vec4( vec3 ( 1.0 ), opacity );', $.index($.ShaderChunk(), 'map_fragment'), $.index($.ShaderChunk(), 'alphatest_fragment'), $.index($.ShaderChunk(), 'specularmap_fragment'), $.index($.ShaderChunk(), 'lights_phong_fragment'), $.index($.ShaderChunk(), 'lightmap_fragment'), $.index($.ShaderChunk(), 'color_fragment'), $.index($.ShaderChunk(), 'envmap_fragment'), $.index($.ShaderChunk(), 'shadowmap_fragment'), $.index($.ShaderChunk(), 'linear_to_gamma_fragment'), $.index($.ShaderChunk(), 'fog_fragment'), '}'], '\n')]), 'particle_basic', $.makeLiteralMap(['uniforms', $.UniformsUtils_merge([$.index($.UniformsLib(), 'particle'), $.index($.UniformsLib(), 'shadowmap')]), 'vertexShader', $.Strings_join(['uniform float size;', 'uniform float scale;', $.index($.ShaderChunk(), 'color_pars_vertex'), $.index($.ShaderChunk(), 'shadowmap_pars_vertex'), 'void main() {', $.index($.ShaderChunk(), 'color_vertex'), 'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );', '#ifdef USE_SIZEATTENUATION', 'gl_PointSize = size * ( scale / length( mvPosition.xyz ) );', '#else', 'gl_PointSize = size;', '#endif', 'gl_Position = projectionMatrix * mvPosition;', $.index($.ShaderChunk(), 'shadowmap_vertex'), '}'], '\n'), 'fragmentShader', $.Strings_join(['uniform vec3 psColor;', 'uniform float opacity;', $.index($.ShaderChunk(), 'color_pars_fragment'), $.index($.ShaderChunk(), 'map_particle_pars_fragment'), $.index($.ShaderChunk(), 'fog_pars_fragment'), $.index($.ShaderChunk(), 'shadowmap_pars_fragment'), 'void main() {', 'gl_FragColor = vec4( psColor, opacity );', $.index($.ShaderChunk(), 'map_particle_fragment'), $.index($.ShaderChunk(), 'alphatest_fragment'), $.index($.ShaderChunk(), 'color_fragment'), $.index($.ShaderChunk(), 'shadowmap_fragment'), $.index($.ShaderChunk(), 'fog_fragment'), '}'], '\n')]), 'depthRGBA', $.makeLiteralMap(['uniforms', $.makeLiteralMap([]), 'vertexShader', $.Strings_join([$.index($.ShaderChunk(), 'skinning_pars_vertex'), $.index($.ShaderChunk(), 'morphtarget_pars_vertex'), 'void main() {', 'vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );', $.index($.ShaderChunk(), 'skinbase_vertex'), $.index($.ShaderChunk(), 'skinning_vertex'), $.index($.ShaderChunk(), 'morphtarget_vertex'), $.index($.ShaderChunk(), 'default_vertex'), '}'], '\n'), 'fragmentShader', $.Strings_join(['vec4 pack_depth( const in float depth ) {', 'const vec4 bit_shift = vec4( 256.0 * 256.0 * 256.0, 256.0 * 256.0, 256.0, 1.0 );', 'const vec4 bit_mask  = vec4( 0.0, 1.0 / 256.0, 1.0 / 256.0, 1.0 / 256.0 );', 'vec4 res = fract( depth * bit_shift );', 'res -= res.xxyz * bit_mask;', 'return res;', '}', 'void main() {', 'gl_FragData[ 0 ] = pack_depth( gl_FragCoord.z );', '}'], '\n')])]);
@@ -32879,10 +32552,6 @@ $.UniformsLib = function() {
   if ($.__UniformsLib == null)
     $.__UniformsLib = $.makeLiteralMap(['common', $.makeLiteralMap(['diffuse', $.Uniform$('c', $.Color$(15658734), null), 'opacity', $.Uniform$('f', 1, null), 'map', $.Uniform$('t', 0, null), 'offsetRepeat', $.Uniform$('v4', $.Vector4$(0, 0, 1, 1), null), 'lightMap', $.Uniform$('t', 2, null), 'specularMap', $.Uniform$('t', 3, null), 'envMap', $.Uniform$('t', 1, null), 'flipEnvMap', $.Uniform$('f', -1, null), 'useRefract', $.Uniform$('i', 0, null), 'reflectivity', $.Uniform$('f', 1, null), 'refractionRatio', $.Uniform$('f', 0.98, null), 'combine', $.Uniform$('i', 0, null), 'morphTargetInfluences', $.Uniform$('f', 0, null)]), 'bump', $.makeLiteralMap(['bumpMap', $.Uniform$('t', 4, null), 'bumpScale', $.Uniform$('f', 1, null)]), 'fog', $.makeLiteralMap(['fogDensity', $.Uniform$('f', 0.00025, null), 'fogNear', $.Uniform$('f', 1, null), 'fogFar', $.Uniform$('f', 2000, null), 'fogColor', $.Uniform$('c', $.Color$(16777215), null)]), 'lights', $.makeLiteralMap(['ambientLightColor', $.Uniform$('fv', [], null), 'directionalLightDirection', $.Uniform$('fv', [], null), 'directionalLightColor', $.Uniform$('fv', [], null), 'pointLightColor', $.Uniform$('fv', [], null), 'pointLightPosition', $.Uniform$('fv', [], null), 'pointLightDistance', $.Uniform$('fv1', [], null), 'spotLightColor', $.Uniform$('fv', [], null), 'spotLightPosition', $.Uniform$('fv', [], null), 'spotLightDirection', $.Uniform$('fv', [], null), 'spotLightDistance', $.Uniform$('fv1', [], null), 'spotLightAngle', $.Uniform$('fv1', [], null), 'spotLightExponent', $.Uniform$('fv1', [], null)]), 'particle', $.makeLiteralMap(['psColor', $.Uniform$('c', $.Color$(15658734), null), 'opacity', $.Uniform$('f', 1, null), 'size', $.Uniform$('f', 1, null), 'scale', $.Uniform$('f', 1, null), 'map', $.Uniform$('t', 0, null), 'fogDensity', $.Uniform$('f', 0.00025, null), 'fogNear', $.Uniform$('f', 1, null), 'fogFar', $.Uniform$('f', 2000, null), 'fogColor', $.Uniform$('c', $.Color$(16777215), null)]), 'shadowmap', $.makeLiteralMap(['shadowMap', $.Uniform$('tv', 6, []), 'shadowMapSize', $.Uniform$('v2v', [], null), 'shadowBias', $.Uniform$('fv1', [], null), 'shadowDarkness', $.Uniform$('fv1', [], null), 'shadowMatrix', $.Uniform$('m4v', [], null)])]);
   return $.__UniformsLib;
-};
-
-$.DualPivotQuicksort_sort = function(a, compare) {
-  $.DualPivotQuicksort__doSort(a, 0, $.sub($.get$length(a), 1), compare);
 };
 
 $.index = function(a, index) {
@@ -32931,10 +32600,6 @@ $.substring$1 = function(receiver, startIndex) {
 
 $._ElementFactoryProvider_createElement_tag = function(tag) {
 return document.createElement(tag)
-};
-
-$.Primitives_dateNow = function() {
-  return Date.now();
 };
 
 $.Matrix4___v2 = function() {
@@ -33056,6 +32721,12 @@ $.DoubleLinkedQueueEntry$ = function(e) {
   return t1;
 };
 
+$.last = function(receiver) {
+  if (!$.isJsArray(receiver))
+    return receiver.last$0();
+  return $.index(receiver, $.sub($.get$length(receiver), 1));
+};
+
 $.MeshPhongMaterial$ = function(color, ambient, emissive, specular, map, shininess, metal, perPixel, wrapAround, wrapRGB, lightMap, specularMap, envMap, bumpMap, bumpScale, combine, reflectivity, refractionRatio, shading, vertexColors, fog, wireframe, wireframeLinewidth, wireframeLinecap, wireframeLinejoin, skinning, morphTargets, morphNormals, name$, side, opacity, transparent, blending, blendSrc, blendDst, blendEquation, depthTest, depthWrite, polygonOffset, polygonOffsetFactor, polygonOffsetUnits, alphaTest, overdraw, visible) {
   var t1 = $.Color$(color);
   var t2 = $.Color$(ambient);
@@ -33073,10 +32744,6 @@ $.startsWith = function(receiver, other) {
   if (length$ > receiver.length)
     return false;
   return other == receiver.substring(0, length$);
-};
-
-$.FutureAlreadyCompleteException$ = function() {
-  return new $.FutureAlreadyCompleteException();
 };
 
 $.getRange = function(receiver, start, length$) {
@@ -33103,21 +32770,8 @@ $.getRange = function(receiver, start, length$) {
   return receiver.slice(start, end);
 };
 
-$.Frustum$ = function() {
-  return new $.Frustum([$.Vector4$(0, 0, 0, 1), $.Vector4$(0, 0, 0, 1), $.Vector4$(0, 0, 0, 1), $.Vector4$(0, 0, 0, 1), $.Vector4$(0, 0, 0, 1), $.Vector4$(0, 0, 0, 1)]);
-};
-
-$.convertDartClosureToJS = function(closure, arity) {
-  if (closure == null)
-    return;
-  var function$ = closure.$identity;
-  if (!!function$)
-    return function$;
-  function$ = function() {
-    return $.invokeClosure.call$5(closure, $._currentIsolate(), arity, arguments[0], arguments[1]);
-  };
-  closure.$identity = function$;
-  return function$;
+$.FutureAlreadyCompleteException$ = function() {
+  return new $.FutureAlreadyCompleteException();
 };
 
 $._Lists_getRange = function(a, start, length$, accumulator) {
@@ -33144,8 +32798,21 @@ $._Lists_getRange = function(a, start, length$, accumulator) {
   return accumulator;
 };
 
-$.Date_Date$fromMillisecondsSinceEpoch = function(millisecondsSinceEpoch, isUtc) {
-  return $.DateImplementation$fromMillisecondsSinceEpoch(millisecondsSinceEpoch, isUtc);
+$.Frustum$ = function() {
+  return new $.Frustum([$.Vector4$(0, 0, 0, 1), $.Vector4$(0, 0, 0, 1), $.Vector4$(0, 0, 0, 1), $.Vector4$(0, 0, 0, 1), $.Vector4$(0, 0, 0, 1), $.Vector4$(0, 0, 0, 1)]);
+};
+
+$.convertDartClosureToJS = function(closure, arity) {
+  if (closure == null)
+    return;
+  var function$ = closure.$identity;
+  if (!!function$)
+    return function$;
+  function$ = function() {
+    return $.invokeClosure.call$5(closure, $._currentIsolate(), arity, arguments[0], arguments[1]);
+  };
+  closure.$identity = function$;
+  return function$;
 };
 
 $.ObjectNotClosureException$ = function() {
@@ -33168,24 +32835,8 @@ $.Primitives_objectTypeName = function(object) {
   return $.charCodeAt(name$, 0) === 36 ? $.substring$1(name$, 1) : name$;
 };
 
-$.remainder = function(a, b) {
-  if ($.checkNumbers(a, b))
-    return a % b;
-  else
-    return a.remainder$1(b);
-};
-
 $.stringReplaceJS = function(receiver, replacer, to) {
   return receiver.replace(replacer, to.replace('$', '$$$$'));
-};
-
-$.round = function(receiver) {
-  if (!(typeof receiver === 'number'))
-    return receiver.round$0();
-  if (receiver < 0)
-    return -Math.round(-receiver);
-  else
-    return Math.round(receiver);
 };
 
 $.print = function(obj) {
@@ -33209,11 +32860,10 @@ $._DOMWindowCrossFrameImpl__close = function(win) {
 win.close()
 };
 
-$.forEach = function(receiver, f) {
-  if (!$.isJsArray(receiver))
-    return receiver.forEach$1(f);
-  else
-    return $.Collections_forEach(receiver, f);
+$.isEmpty = function(receiver) {
+  if (typeof receiver === 'string' || $.isJsArray(receiver))
+    return receiver.length === 0;
+  return receiver.isEmpty$0();
 };
 
 $._convertNativeToDart_AcceptStructuredClone = function(object) {
@@ -33252,6 +32902,13 @@ $._FrozenElementList$_wrap = function(_nodeList) {
   return new $._FrozenElementList(_nodeList);
 };
 
+$.forEach = function(receiver, f) {
+  if (!$.isJsArray(receiver))
+    return receiver.forEach$1(f);
+  else
+    return $.Collections_forEach(receiver, f);
+};
+
 $.Collections_forEach = function(iterable, f) {
   for (var t1 = $.iterator(iterable); t1.hasNext$0() === true;)
     f.call$1(t1.next$0());
@@ -33269,10 +32926,6 @@ $.UniformsUtils_merge = function(uniforms) {
   }
   return merged;
   var t2;
-};
-
-$.Date_Date$now = function() {
-  return $.DateImplementation$now();
 };
 
 $.DualPivotQuicksort_insertionSort_ = function(a, left, right, compare) {
@@ -33350,11 +33003,6 @@ $.CastExceptionImplementation$ = function(actualType, expectedType) {
   return new $.CastExceptionImplementation(actualType, expectedType);
 };
 
-$._Collections_forEach = function(iterable, f) {
-  for (var t1 = $.iterator(iterable); t1.hasNext$0() === true;)
-    f.call$1(t1.next$0());
-};
-
 $.indexSet$slow = function(a, index, value) {
   if ($.isJsArray(a)) {
     if (!(typeof index === 'number' && Math.floor(index) === index))
@@ -33407,10 +33055,6 @@ $.charCodeAt = function(receiver, index) {
     return receiver.charCodeAt$1(index);
 };
 
-$.add = function(a, b) {
-  return typeof a === 'number' && typeof b === 'number' ? a + b : $.add$slow(a, b);
-};
-
 $.StringImplementation__fromCharCodes = function(charCodes) {
   $.checkNull(charCodes);
   if (!$.isJsArray(charCodes))
@@ -33447,6 +33091,10 @@ $._BodyElementEventsImpl$ = function(_ptr) {
   return new $._BodyElementEventsImpl(_ptr);
 };
 
+$.add = function(a, b) {
+  return typeof a === 'number' && typeof b === 'number' ? a + b : $.add$slow(a, b);
+};
+
 $.Primitives_parseInt = function(string) {
   $.checkString(string);
   var match = /^\s*[+-]?(?:0(x)[a-f0-9]+|\d+)\s*$/i.exec(string);
@@ -33459,10 +33107,22 @@ $.Primitives_parseInt = function(string) {
   return result;
 };
 
+$.iterator = function(receiver) {
+  if ($.isJsArray(receiver))
+    return $.ListIterator$(receiver);
+  return receiver.iterator$0();
+};
+
 $._Timer$ = function(milliSeconds, callback) {
   var t1 = new $._Timer(true, null);
   t1._Timer$2(milliSeconds, callback);
   return t1;
+};
+
+$._Collections_map = function(source, destination, f) {
+  for (var t1 = $.iterator(source); t1.hasNext$0() === true;)
+    destination.push(f.call$1(t1.next$0()));
+  return destination;
 };
 
 $.isNaN = function(receiver) {
@@ -33473,17 +33133,6 @@ $.Face4$ = function(a, b, c, d, normalOrVertexNormals, colorOrVertexColors, mate
   var t1 = new $.Face4(a, b, c, d, null, null, null, null, null, materialIndex, null);
   t1.Face4$7(a, b, c, d, normalOrVertexNormals, colorOrVertexColors, materialIndex);
   return t1;
-};
-
-$.toInt = function(receiver) {
-  if (!(typeof receiver === 'number'))
-    return receiver.toInt$0();
-  if ($.isNaN(receiver) === true)
-    throw $.$$throw($.FormatException$('NaN'));
-  if ($.isInfinite(receiver) === true)
-    throw $.$$throw($.FormatException$('Infinity'));
-  var truncated = $.truncate(receiver);
-  return truncated == -0.0 ? 0 : truncated;
 };
 
 $.removeRange = function(receiver, start, length$) {
@@ -33509,14 +33158,24 @@ $.removeRange = function(receiver, start, length$) {
   $.set$length(receiver, t2);
 };
 
-$.UnsupportedOperationException$ = function(_message) {
-  return new $.UnsupportedOperationException(_message);
+$._Collections_forEach = function(iterable, f) {
+  for (var t1 = $.iterator(iterable); t1.hasNext$0() === true;)
+    f.call$1(t1.next$0());
 };
 
-$.isEmpty = function(receiver) {
-  if (typeof receiver === 'string' || $.isJsArray(receiver))
-    return receiver.length === 0;
-  return receiver.isEmpty$0();
+$.toInt = function(receiver) {
+  if (!(typeof receiver === 'number'))
+    return receiver.toInt$0();
+  if ($.isNaN(receiver) === true)
+    throw $.$$throw($.FormatException$('NaN'));
+  if ($.isInfinite(receiver) === true)
+    throw $.$$throw($.FormatException$('Infinity'));
+  var truncated = $.truncate(receiver);
+  return truncated == -0.0 ? 0 : truncated;
+};
+
+$.UnsupportedOperationException$ = function(_message) {
+  return new $.UnsupportedOperationException(_message);
 };
 
 $.BoundingSphere$ = function(radius) {
@@ -33552,21 +33211,17 @@ $.Primitives_printString = function(string) {
   }
 };
 
-$.Primitives_getMilliseconds = function(receiver) {
-  return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCMilliseconds() : $.Primitives_lazyAsJsDate(receiver).getMilliseconds();
+$.addLast = function(receiver, value) {
+  if (!$.isJsArray(receiver))
+    return receiver.addLast$1(value);
+  $.checkGrowable(receiver, 'addLast');
+  receiver.push(value);
 };
 
 $.WebGLGeometry_WebGLGeometry$from = function(geometry) {
   if ($.index(geometry, '__webglBuffer') == null)
     $.indexSet(geometry, '__webglBuffer', $.WebGLGeometry$_internal(geometry));
   return $.index(geometry, '__webglBuffer');
-};
-
-$.addLast = function(receiver, value) {
-  if (!$.isJsArray(receiver))
-    return receiver.addLast$1(value);
-  $.checkGrowable(receiver, 'addLast');
-  receiver.push(value);
 };
 
 $.dynamicSetMetadata = function(inputTable) {
@@ -33619,6 +33274,10 @@ $.Color$ = function(hex) {
   return t1;
 };
 
+$._WorkerEventsImpl$ = function(_ptr) {
+  return new $._WorkerEventsImpl(_ptr);
+};
+
 $.Matrix3$ = function() {
   return new $.Matrix3($.Float32Array_Float32Array(9));
 };
@@ -33669,10 +33328,6 @@ $.ShaderMaterial$ = function(attributes, fragmentShader, vertexShader, uniforms,
   return t1;
 };
 
-$._WorkerEventsImpl$ = function(_ptr) {
-  return new $._WorkerEventsImpl(_ptr);
-};
-
 $.Primitives_newList = function(length$) {
   if (length$ == null)
     return new Array();
@@ -33683,14 +33338,14 @@ $.Primitives_newList = function(length$) {
   return result;
 };
 
-$.ge = function(a, b) {
-  return typeof a === 'number' && typeof b === 'number' ? a >= b : $.ge$slow(a, b);
-};
-
 $._convertDartToNative_ImageData = function(imageData) {
   if (typeof imageData === 'object' && imageData !== null && imageData.is$_ImageDataImpl())
     return imageData;
   return {data: imageData.get$data(), height: imageData.get$height(), width: imageData.get$width()};
+};
+
+$._globalState = function() {
+return $globalState;
 };
 
 $.substring$2 = function(receiver, startIndex, endIndex) {
@@ -33710,10 +33365,6 @@ $.substring$2 = function(receiver, startIndex, endIndex) {
   return $.substringUnchecked(receiver, startIndex, endIndex);
 };
 
-$._globalState = function() {
-return $globalState;
-};
-
 $.window = function() {
 return window;
 };
@@ -33728,27 +33379,17 @@ $.HashMapImplementation$ = function() {
   return t1;
 };
 
-$.Primitives_lazyAsJsDate = function(receiver) {
-  if (receiver.date === (void 0))
-    receiver.date = new Date(receiver.millisecondsSinceEpoch);
-  return receiver.date;
-};
-
-$.Primitives_getMinutes = function(receiver) {
-  return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCMinutes() : $.Primitives_lazyAsJsDate(receiver).getMinutes();
-};
-
 $.Program$ = function(id, glProgram, code, usedTimes) {
   var t1 = $.makeLiteralMap([]);
   return new $.Program(id, glProgram, code, usedTimes, $.makeLiteralMap([]), t1);
 };
 
-$._FixedSizeListIterator$ = function(array) {
-  return new $._FixedSizeListIterator($.get$length(array), array, 0);
-};
-
 $.Buffer$ = function(glbuffer) {
   return new $.Buffer(glbuffer, null);
+};
+
+$._FixedSizeListIterator$ = function(array) {
+  return new $._FixedSizeListIterator($.get$length(array), array, 0);
 };
 
 $.propertyTypeCast = function(value, property) {
@@ -33777,12 +33418,6 @@ $.Float32Array_Float32Array$fromList = function(list) {
   return $._TypedArrayFactoryProvider__F32(list);
 };
 
-$.last = function(receiver) {
-  if (!$.isJsArray(receiver))
-    return receiver.last$0();
-  return $.index(receiver, $.sub($.get$length(receiver), 1));
-};
-
 $.HashMapImplementation__nextProbe = function(currentProbe, numberOfProbes, length$) {
   return $.and($.add(currentProbe, numberOfProbes), $.sub(length$, 1));
 };
@@ -33803,10 +33438,6 @@ $.HashMapImplementation__computeLoadLimit = function(capacity) {
   return $.tdiv(capacity * 3, 4);
 };
 
-$.DivElement_DivElement = function() {
-  return $._Elements_createDivElement();
-};
-
 $.throwRuntimeError = function(message) {
   throw $.$$throw($.RuntimeError$(message));
 };
@@ -33817,6 +33448,16 @@ $._WindowEventsImpl$ = function(_ptr) {
 
 $._EventListenerListImpl$ = function(_ptr, _type) {
   return new $._EventListenerListImpl(_ptr, _type);
+};
+
+$.removeLast = function(receiver) {
+  if ($.isJsArray(receiver)) {
+    $.checkGrowable(receiver, 'removeLast');
+    if ($.get$length(receiver) === 0)
+      throw $.$$throw($.IndexOutOfRangeException$(-1));
+    return receiver.pop();
+  }
+  return receiver.removeLast$0();
 };
 
 $.iae = function(argument) {
@@ -33986,16 +33627,6 @@ $.unwrapException = function(ex) {
   return ex;
 };
 
-$.removeLast = function(receiver) {
-  if ($.isJsArray(receiver)) {
-    $.checkGrowable(receiver, 'removeLast');
-    if ($.get$length(receiver) === 0)
-      throw $.$$throw($.IndexOutOfRangeException$(-1));
-    return receiver.pop();
-  }
-  return receiver.removeLast$0();
-};
-
 $.Loader__extractUrlBase = function(url) {
   var parts = url.split('/');
   $.removeLast(parts);
@@ -34064,14 +33695,6 @@ $._HttpRequestFactoryProvider_createHttpRequest = function() {
 return new XMLHttpRequest();
 };
 
-$.Element_Element$tag = function(tag) {
-  return $._ElementFactoryProvider_createElement_tag(tag);
-};
-
-$.Int32Array_Int32Array$fromBuffer = function(buffer, byteOffset, length$) {
-  return $._TypedArrayFactoryProvider_createInt32Array_fromBuffer(buffer, byteOffset, length$);
-};
-
 $.Arrays_indexOf = function(a, element, startIndex, endIndex) {
   if (typeof a !== 'string' && (typeof a !== 'object' || a === null || a.constructor !== Array && !a.is$JavaScriptIndexingBehavior()))
     return $.Arrays_indexOf$bailout(1, a, element, startIndex, endIndex);
@@ -34086,6 +33709,29 @@ $.Arrays_indexOf = function(a, element, startIndex, endIndex) {
       return i;
   }
   return -1;
+};
+
+$.toString = function(value) {
+  if (typeof value == "object" && value !== null)
+    if ($.isJsArray(value))
+      return $.Collections_collectionToString(value);
+    else
+      return value.toString$0();
+  if (value === 0 && (1 / value) < 0)
+    return '-0.0';
+  if (value == null)
+    return 'null';
+  if (typeof value == "function")
+    return 'Closure';
+  return String(value);
+};
+
+$.Int32Array_Int32Array$fromBuffer = function(buffer, byteOffset, length$) {
+  return $._TypedArrayFactoryProvider_createInt32Array_fromBuffer(buffer, byteOffset, length$);
+};
+
+$.Element_Element$tag = function(tag) {
+  return $._ElementFactoryProvider_createElement_tag(tag);
 };
 
 $._Lists_indexOf = function(a, element, startIndex, endIndex) {
@@ -34174,25 +33820,15 @@ $._SpeechRecognitionEventsImpl$ = function(_ptr) {
   return new $._SpeechRecognitionEventsImpl(_ptr);
 };
 
-$.Primitives_getSeconds = function(receiver) {
-  return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCSeconds() : $.Primitives_lazyAsJsDate(receiver).getSeconds();
-};
-
-$.WebGLRendererInfo$ = function() {
-  var t1 = new $.WebGLRendererInfo(null, null);
-  t1.WebGLRendererInfo$0();
-  return t1;
-};
-
 $.WebGLRenderer$ = function(canvas, precision, alpha, premultipliedAlpha, antialias, stencil, preserveDrawingBuffer, clearColorHex, clearAlpha, maxLights) {
   var t1 = new $.WebGLRenderer(canvas, null, precision, $.Color$(clearColorHex), clearAlpha, maxLights, alpha, premultipliedAlpha, antialias, stencil, preserveDrawingBuffer, true, true, true, true, true, true, true, false, false, false, false, true, true, true, false, false, 8, 4, true, [], [], $.WebGLRendererInfo$(), [], 0, null, null, -1, null, null, 0, -1, -1, -1, -1, -1, -1, -1, -1, null, null, null, null, 0, 0, 0, 0, 0, 0, $.Frustum$(), $.Matrix4$(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), $.Matrix4$(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1), $.Vector4$(0, 0, 0, 1), $.Vector3$(0, 0, 0), null, true, null, null, null, null, null, null, null, null, null, null);
   t1.WebGLRenderer$10(canvas, precision, alpha, premultipliedAlpha, antialias, stencil, preserveDrawingBuffer, clearColorHex, clearAlpha, maxLights);
   return t1;
 };
 
-$.Stats$ = function() {
-  var t1 = new $.Stats(null, null, null, 1000, 0, 0, 1000, 0, 0, 0, null, null, null, null, null, null, null);
-  t1.Stats$0();
+$.WebGLRendererInfo$ = function() {
+  var t1 = new $.WebGLRendererInfo(null, null);
+  t1.WebGLRendererInfo$0();
   return t1;
 };
 
@@ -34228,13 +33864,6 @@ $.Collections__containsRef = function(c, ref) {
       return true;
   }
   return false;
-};
-
-$.map = function(receiver, f) {
-  if (!$.isJsArray(receiver))
-    return receiver.map$1(f);
-  else
-    return $.Collections_map(receiver, [], f);
 };
 
 $._MediaElementEventsImpl$ = function(_ptr) {
@@ -34288,21 +33917,6 @@ $.Loader_addStatusElement = function() {
   return e;
 };
 
-$.toString = function(value) {
-  if (typeof value == "object" && value !== null)
-    if ($.isJsArray(value))
-      return $.Collections_collectionToString(value);
-    else
-      return value.toString$0();
-  if (value === 0 && (1 / value) < 0)
-    return '-0.0';
-  if (value == null)
-    return 'null';
-  if (typeof value == "function")
-    return 'Closure';
-  return String(value);
-};
-
 $._IDBOpenDBRequestEventsImpl$ = function(_ptr) {
   return new $._IDBOpenDBRequestEventsImpl(_ptr);
 };
@@ -34314,10 +33928,6 @@ $.checkGrowable = function(list, reason) {
 
 $.sqrt = function(x) {
   return Math.sqrt($.checkNum(x));
-};
-
-$.le = function(a, b) {
-  return typeof a === 'number' && typeof b === 'number' ? a <= b : $.le$slow(a, b);
 };
 
 $.JSSyntaxRegExp$ = function(pattern, multiLine, ignoreCase) {
@@ -34343,15 +33953,6 @@ $._DocumentEventsImpl$ = function(_ptr) {
   return new $._DocumentEventsImpl(_ptr);
 };
 
-$._Collections_filter = function(source, destination, f) {
-  for (var t1 = $.iterator(source); t1.hasNext$0() === true;) {
-    var t2 = t1.next$0();
-    if (f.call$1(t2) === true)
-      destination.push(t2);
-  }
-  return destination;
-};
-
 $._IDBVersionChangeRequestEventsImpl$ = function(_ptr) {
   return new $._IDBVersionChangeRequestEventsImpl(_ptr);
 };
@@ -34362,10 +33963,6 @@ $._MessageTraverserVisitedMap$ = function() {
 
 $.sin = function(x) {
   return Math.sin($.checkNum(x));
-};
-
-$.SpanElement_SpanElement = function() {
-  return $._Elements_createSpanElement();
 };
 
 $.FutureNotCompleteException$ = function() {
@@ -34438,13 +34035,6 @@ $.cos = function(x) {
 $.regExpGetNative = function(regExp) {
   var r = regExp._re;
   return r == null ? regExp._re = $.regExpMakeNative(regExp, false) : r;
-};
-
-$.Duration$ = function(days, hours, minutes, seconds, milliseconds) {
-  var t1 = days * 86400000 + hours * 3600000 + minutes * 60000 + seconds * 1000;
-  if (typeof milliseconds !== 'number')
-    throw $.iae(milliseconds);
-  return new $.Duration(t1 + milliseconds);
 };
 
 $._Manager$ = function() {
@@ -34962,7 +34552,6 @@ $.WebGLRenderingContext_ONE_MINUS_DST_ALPHA = 773;
 $.WebGLRenderingContext_SRC_ALPHA = 770;
 $.WebGLRenderingContext_TEXTURE_MAG_FILTER = 10240;
 $.WebGLRenderingContext_ARRAY_BUFFER = 34962;
-$.DateImplementation__MAX_MILLISECONDS_SINCE_EPOCH = 8640000000000000;
 $.EXTTextureFilterAnisotropic_MAX_TEXTURE_MAX_ANISOTROPY_EXT = 34047;
 $._JsonParser_CHAR_N = 110;
 $.WebGLRenderingContext_RGBA = 6408;
@@ -35042,7 +34631,6 @@ $._JsonParser_WHITESPACE = 32;
 $._TimerFactory__factory = null;
 $._JsonParser_CHAR_4 = 52;
 $.Primitives_DOLLAR_CHAR_VALUE = 36;
-$.Duration_MILLISECONDS_PER_MINUTE = 60000;
 $._JsonParser_LAST_ASCII = 125;
 $.Three_TextureCount = 0;
 $.Three_SubtractiveBlending = 3;
@@ -35060,8 +34648,6 @@ $.WebGLRenderingContext_DEPTH_STENCIL_ATTACHMENT = 33306;
 $._JsonParser_PLUS = 43;
 $.Three_FloatType = 15;
 $.WebGLRenderingContext_UNSIGNED_BYTE = 5121;
-$.Duration_MILLISECONDS_PER_SECOND = 1000;
-$.Duration_MILLISECONDS_PER_HOUR = 3600000;
 $.WebGLRenderingContext_LINE_STRIP = 3;
 $.Matrix4____v3 = null;
 $.WebGLRenderingContext_LINK_STATUS = 35714;
@@ -35073,12 +34659,11 @@ $.WebGLRenderingContext_DEPTH_TEST = 2929;
 $.Three_NoColors = 0;
 $.WebGLRenderingContext_VERTEX_SHADER = 35633;
 $.Three_SrcAlphaSaturateFactor = 210;
+$.Three_DoubleSide = 2;
 $.WebGLRenderingContext_TEXTURE_CUBE_MAP = 34067;
 $._JsonParser_CHAR_CAPITAL_E = 69;
-$.Three_DoubleSide = 2;
 $._JsonParser_TAB = 9;
 $.Three_RepeatWrapping = 0;
-$.Duration_HOURS_PER_DAY = 24;
 $._JsonParser_FALSE_STRING = 'false';
 $.Three_IntType = 13;
 $.HashMapImplementation__DELETED_KEY = Isolate.$isolateProperties.CTC7;
@@ -35104,7 +34689,6 @@ $._JsonParser_NULL_LITERAL = 110;
 $._JsonParser_CHAR_3 = 51;
 $._JsonParser_COLON = 58;
 $.WebGLRenderingContext_DEPTH_ATTACHMENT = 36096;
-$.Duration_MINUTES_PER_HOUR = 60;
 $.WebGLRenderingContext_CLAMP_TO_EDGE = 33071;
 $.Three_DstColorFactor = 208;
 $.__ShaderLib = null;
@@ -35135,7 +34719,6 @@ $.WebGLRenderingContext_LEQUAL = 515;
 $.Three_AddEquation = 100;
 $.Three_LinearMipMapLinearFilter = 8;
 $.Three_UnsignedIntType = 14;
-$.Duration_MILLISECONDS_PER_DAY = 86400000;
 $.Three_FlatShading = 1;
 $.WebGLRenderingContext_LINES = 1;
 $.Three_UnsignedByteType = 10;
@@ -35155,7 +34738,6 @@ $.Three_SubtractEquation = 101;
 $.WebGLRenderingContext_LUMINANCE = 6409;
 $.HashMapImplementation__INITIAL_CAPACITY = 8;
 $._JsonParser_STRING_LITERAL = 34;
-$.Duration_SECONDS_PER_MINUTE = 60;
 $.WebGLRenderingContext_CW = 2304;
 $.Three_NearestMipMapLinearFilter = 5;
 $.WebGLRenderingContext_TEXTURE_2D = 3553;
@@ -35168,8 +34750,8 @@ $.WebGLRenderingContext_REPEAT = 10497;
 $.WebGLRenderingContext_ONE = 1;
 $._JsonParser_CHAR_F = 102;
 $.Three_LinearFilter = 6;
-$._JsonParser_LBRACKET = 91;
 $._JsonParser_RBRACE = 125;
+$._JsonParser_LBRACKET = 91;
 $.Three_Object3DCount = 0;
 $.WebGLRenderingContext_DST_COLOR = 774;
 $.WebGLRenderingContext_CULL_FACE = 2884;
@@ -35381,7 +34963,7 @@ $.$defineNativeClass('WebKitCSSMatrix', ["a?", "b?", "c?", "d?"], {
 $.$defineNativeClass('CSSPageRule', ["style?"], {
 });
 
-$.$defineNativeClass('CSSRule', ["cssText!", "type?"], {
+$.$defineNativeClass('CSSRule', ["type?"], {
 });
 
 $.$defineNativeClass('CSSRuleList', ["length?"], {
@@ -35443,7 +35025,7 @@ return this[index];
  is$Collection: function() { return true; }
 });
 
-$.$defineNativeClass('CSSStyleDeclaration', ["cssText!", "length?"], {
+$.$defineNativeClass('CSSStyleDeclaration', ["length?"], {
  length$0: function() { return this.length.call$0(); },
  getPropertyValue$1: function(propertyName) {
   return this.getPropertyValue(propertyName);
@@ -35472,9 +35054,6 @@ $.$defineNativeClass('CSSStyleDeclaration', ["cssText!", "length?"], {
  set$color: function(value) {
   this.setProperty$3('color', value, '');
 },
- set$display: function(value) {
-  this.setProperty$3('display', value, '');
-},
  get$filter: function() {
   return this.getPropertyValue$1($.S($._browserPrefix()) + 'filter');
 },
@@ -35500,9 +35079,6 @@ $.$defineNativeClass('CSSStyleDeclaration', ["cssText!", "length?"], {
   return this.getPropertyValue$1('position');
 },
  position$1: function(arg0) { return this.get$position().call$1(arg0); },
- set$position: function(value) {
-  this.setProperty$3('position', value, '');
-},
  get$resize: function() {
   return this.getPropertyValue$1('resize');
 },
@@ -35524,9 +35100,6 @@ $.$defineNativeClass('CSSStyleDeclaration', ["cssText!", "length?"], {
   return this.getPropertyValue$1('top');
 },
  top$1: function(arg0) { return this.get$top().call$1(arg0); },
- set$top: function(value) {
-  this.setProperty$3('top', value, '');
-},
  get$width: function() {
   return this.getPropertyValue$1('width');
 },
@@ -35537,10 +35110,7 @@ $.$defineNativeClass('CSSStyleDeclaration', ["cssText!", "length?"], {
  get$zIndex: function() {
   return this.getPropertyValue$1('z-index');
 },
- zIndex$1: function(arg0) { return this.get$zIndex().call$1(arg0); },
- set$zIndex: function(value) {
-  this.setProperty$3('z-index', value, '');
-}
+ zIndex$1: function(arg0) { return this.get$zIndex().call$1(arg0); }
 });
 
 $.$defineNativeClass('CSSStyleRule', ["style?"], {
@@ -35549,9 +35119,6 @@ $.$defineNativeClass('CSSStyleRule', ["style?"], {
 $.$defineNativeClass('WebKitCSSTransformValue', [], {
  is$List: function() { return true; },
  is$Collection: function() { return true; }
-});
-
-$.$defineNativeClass('CSSValue', ["cssText!"], {
 });
 
 $.$defineNativeClass('CSSValueList', ["length?"], {
@@ -35741,9 +35308,6 @@ $.$defineNativeClass('DOMApplicationCache', ["status?"], {
 },
  $dom_removeEventListener$3: function(type, listener, useCapture) {
   return this.removeEventListener(type,$.convertDartClosureToJS(listener, 1),useCapture);
-},
- update$0: function() {
-  return this.update();
 }
 });
 
@@ -36283,9 +35847,6 @@ $.$defineNativeClass('EventException', ["code?", "name?"], {
 });
 
 $.$defineNativeClass('Event', ["type?"], {
- preventDefault$0: function() {
-  return this.preventDefault();
-}
 });
 
 $.$defineNativeClass('EventSource', ["readyState?"], {
@@ -37018,7 +36579,7 @@ $.$defineNativeClass('IDBRequest', ["error?", "readyState?"], {
 }
 });
 
-$.$defineNativeClass('IDBTransaction', ["error?", "mode?"], {
+$.$defineNativeClass('IDBTransaction', ["error?"], {
  get$on: function() {
   return $._IDBTransactionEventsImpl$(this);
 },
@@ -38415,7 +37976,7 @@ $.$defineNativeClass('SVGException', ["code?", "name?"], {
 }
 });
 
-$.$defineNativeClass('SVGFEBlendElement', ["mode?", "height?", "width?", "x?", "y?"], {
+$.$defineNativeClass('SVGFEBlendElement', ["height?", "width?", "x?", "y?"], {
  width$1: function(arg0) { return this.width.call$1(arg0); },
  is$Element: function() { return true; }
 });
@@ -39590,7 +39151,7 @@ $.$defineNativeClass('TextMetrics', ["width?"], {
  width$1: function(arg0) { return this.width.call$1(arg0); }
 });
 
-$.$defineNativeClass('TextTrackCue', ["id=", "position=", "size=", "text!"], {
+$.$defineNativeClass('TextTrackCue', ["id=", "position?", "size=", "text!"], {
  get$on: function() {
   return $._TextTrackCueEventsImpl$(this);
 },
@@ -39662,7 +39223,7 @@ return this[index];
  is$Collection: function() { return true; }
 });
 
-$.$defineNativeClass('TextTrack', ["mode="], {
+$.$defineNativeClass('TextTrack', [], {
  get$on: function() {
   return $._TextTrackEventsImpl$(this);
 },
@@ -40474,9 +40035,9 @@ $.$defineNativeClass('DOMWindow', [], {
 }
 });
 
-// 374 dynamic classes.
-// 425 classes
-// 37 !leaf
+// 373 dynamic classes.
+// 421 classes
+// 35 !leaf
 (function(){
   var v0/*class(_SVGTextPositioningElementImpl)*/ = 'SVGTextPositioningElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement';
   var v1/*class(_Uint8ArrayImpl)*/ = 'Uint8Array|Uint8ClampedArray|Uint8ClampedArray';
@@ -40490,23 +40051,22 @@ $.$defineNativeClass('DOMWindow', [], {
   var v9/*class(_DocumentImpl)*/ = 'HTMLDocument|SVGDocument|SVGDocument';
   var v10/*class(_DocumentFragmentImpl)*/ = 'DocumentFragment|ShadowRoot|ShadowRoot';
   var v11/*class(_CharacterDataImpl)*/ = 'CharacterData|Text|CDATASection|CDATASection|Comment|Text|CDATASection|CDATASection|Comment';
-  var v12/*class(_CSSValueListImpl)*/ = 'CSSValueList|WebKitCSSFilterValue|WebKitCSSTransformValue|WebKitCSSFilterValue|WebKitCSSTransformValue';
-  var v13/*class(_MouseEventImpl)*/ = 'MouseEvent|WheelEvent|WheelEvent';
-  var v14/*class(_WorkerContextImpl)*/ = 'WorkerContext|SharedWorkerContext|DedicatedWorkerContext|SharedWorkerContext|DedicatedWorkerContext';
-  var v15/*class(_NodeImpl)*/ = [v8/*class(_ElementImpl)*/,v9/*class(_DocumentImpl)*/,v10/*class(_DocumentFragmentImpl)*/,v11/*class(_CharacterDataImpl)*/,v8/*class(_ElementImpl)*/,v9/*class(_DocumentImpl)*/,v10/*class(_DocumentFragmentImpl)*/,v11/*class(_CharacterDataImpl)*/,'Node|ProcessingInstruction|Notation|EntityReference|Entity|DocumentType|Attr|ProcessingInstruction|Notation|EntityReference|Entity|DocumentType|Attr'].join('|');
-  var v16/*class(_MediaStreamImpl)*/ = 'MediaStream|LocalMediaStream|LocalMediaStream';
-  var v17/*class(_IDBRequestImpl)*/ = 'IDBRequest|IDBVersionChangeRequest|IDBOpenDBRequest|IDBVersionChangeRequest|IDBOpenDBRequest';
-  var v18/*class(_AbstractWorkerImpl)*/ = 'AbstractWorker|Worker|SharedWorker|Worker|SharedWorker';
+  var v12/*class(_MouseEventImpl)*/ = 'MouseEvent|WheelEvent|WheelEvent';
+  var v13/*class(_WorkerContextImpl)*/ = 'WorkerContext|SharedWorkerContext|DedicatedWorkerContext|SharedWorkerContext|DedicatedWorkerContext';
+  var v14/*class(_NodeImpl)*/ = [v8/*class(_ElementImpl)*/,v9/*class(_DocumentImpl)*/,v10/*class(_DocumentFragmentImpl)*/,v11/*class(_CharacterDataImpl)*/,v8/*class(_ElementImpl)*/,v9/*class(_DocumentImpl)*/,v10/*class(_DocumentFragmentImpl)*/,v11/*class(_CharacterDataImpl)*/,'Node|ProcessingInstruction|Notation|EntityReference|Entity|DocumentType|Attr|ProcessingInstruction|Notation|EntityReference|Entity|DocumentType|Attr'].join('|');
+  var v15/*class(_MediaStreamImpl)*/ = 'MediaStream|LocalMediaStream|LocalMediaStream';
+  var v16/*class(_IDBRequestImpl)*/ = 'IDBRequest|IDBVersionChangeRequest|IDBOpenDBRequest|IDBVersionChangeRequest|IDBOpenDBRequest';
+  var v17/*class(_AbstractWorkerImpl)*/ = 'AbstractWorker|Worker|SharedWorker|Worker|SharedWorker';
   var table = [
     // [dynamic-dispatch-tag, tags of classes implementing dynamic-dispatch-tag]
     ['SVGTextPositioningElement', v0/*class(_SVGTextPositioningElementImpl)*/],
     ['SVGTextContentElement', v2/*class(_SVGTextContentElementImpl)*/],
-    ['IDBRequest', v17/*class(_IDBRequestImpl)*/],
+    ['IDBRequest', v16/*class(_IDBRequestImpl)*/],
     ['HTMLMediaElement', v7/*class(_MediaElementImpl)*/],
-    ['MediaStream', v16/*class(_MediaStreamImpl)*/],
+    ['MediaStream', v15/*class(_MediaStreamImpl)*/],
     ['StyleSheet', 'StyleSheet|CSSStyleSheet|CSSStyleSheet'],
-    ['AbstractWorker', v18/*class(_AbstractWorkerImpl)*/],
-    ['MouseEvent', v13/*class(_MouseEventImpl)*/],
+    ['AbstractWorker', v17/*class(_AbstractWorkerImpl)*/],
+    ['MouseEvent', v12/*class(_MouseEventImpl)*/],
     ['Uint8Array', v1/*class(_Uint8ArrayImpl)*/],
     ['ArrayBufferView', [v1/*class(_Uint8ArrayImpl)*/,v1/*class(_Uint8ArrayImpl)*/,'ArrayBufferView|Uint32Array|Uint16Array|Int8Array|Int32Array|Int16Array|Float64Array|Float32Array|DataView|Uint32Array|Uint16Array|Int8Array|Int32Array|Int16Array|Float64Array|Float32Array|DataView'].join('|')],
     ['SVGGradientElement', v3/*class(_SVGGradientElementImpl)*/],
@@ -40517,19 +40077,18 @@ $.$defineNativeClass('DOMWindow', [], {
     ['HTMLDocument', v9/*class(_DocumentImpl)*/],
     ['DocumentFragment', v10/*class(_DocumentFragmentImpl)*/],
     ['CharacterData', v11/*class(_CharacterDataImpl)*/],
-    ['Node', v15/*class(_NodeImpl)*/],
+    ['Node', v14/*class(_NodeImpl)*/],
     ['NodeList', 'NodeList|RadioNodeList|RadioNodeList'],
     ['AudioParam', 'AudioParam|AudioGain|AudioGain'],
     ['Blob', 'Blob|File|File'],
     ['CSSRule', 'CSSRule|CSSUnknownRule|CSSStyleRule|CSSPageRule|CSSMediaRule|WebKitCSSKeyframesRule|WebKitCSSKeyframeRule|CSSImportRule|CSSFontFaceRule|CSSCharsetRule|CSSUnknownRule|CSSStyleRule|CSSPageRule|CSSMediaRule|WebKitCSSKeyframesRule|WebKitCSSKeyframeRule|CSSImportRule|CSSFontFaceRule|CSSCharsetRule'],
-    ['WorkerContext', v14/*class(_WorkerContextImpl)*/],
-    ['CSSValueList', v12/*class(_CSSValueListImpl)*/],
-    ['CSSValue', [v12/*class(_CSSValueListImpl)*/,v12/*class(_CSSValueListImpl)*/,'CSSValue|SVGColor|SVGPaint|SVGPaint|CSSPrimitiveValue|SVGColor|SVGPaint|SVGPaint|CSSPrimitiveValue'].join('|')],
+    ['WorkerContext', v13/*class(_WorkerContextImpl)*/],
+    ['CSSValueList', 'CSSValueList|WebKitCSSFilterValue|WebKitCSSTransformValue|WebKitCSSFilterValue|WebKitCSSTransformValue'],
     ['DOMTokenList', 'DOMTokenList|DOMSettableTokenList|DOMSettableTokenList'],
     ['Entry', 'Entry|FileEntry|DirectoryEntry|FileEntry|DirectoryEntry'],
     ['EntrySync', 'EntrySync|FileEntrySync|DirectoryEntrySync|FileEntrySync|DirectoryEntrySync'],
-    ['Event', [v13/*class(_MouseEventImpl)*/,v13/*class(_MouseEventImpl)*/,v13/*class(_MouseEventImpl)*/,v13/*class(_MouseEventImpl)*/,'Event|WebGLContextEvent|UIEvent|TouchEvent|TextEvent|SVGZoomEvent|KeyboardEvent|CompositionEvent|TouchEvent|TextEvent|SVGZoomEvent|KeyboardEvent|CompositionEvent|WebKitTransitionEvent|TrackEvent|StorageEvent|SpeechRecognitionEvent|SpeechRecognitionError|SpeechInputEvent|RTCIceCandidateEvent|ProgressEvent|XMLHttpRequestProgressEvent|XMLHttpRequestProgressEvent|PopStateEvent|PageTransitionEvent|OverflowEvent|OfflineAudioCompletionEvent|MutationEvent|MessageEvent|MediaStreamTrackEvent|MediaStreamEvent|MediaKeyEvent|IDBVersionChangeEvent|IDBUpgradeNeededEvent|HashChangeEvent|ErrorEvent|DeviceOrientationEvent|DeviceMotionEvent|CustomEvent|CloseEvent|BeforeLoadEvent|AudioProcessingEvent|WebKitAnimationEvent|WebGLContextEvent|UIEvent|TouchEvent|TextEvent|SVGZoomEvent|KeyboardEvent|CompositionEvent|TouchEvent|TextEvent|SVGZoomEvent|KeyboardEvent|CompositionEvent|WebKitTransitionEvent|TrackEvent|StorageEvent|SpeechRecognitionEvent|SpeechRecognitionError|SpeechInputEvent|RTCIceCandidateEvent|ProgressEvent|XMLHttpRequestProgressEvent|XMLHttpRequestProgressEvent|PopStateEvent|PageTransitionEvent|OverflowEvent|OfflineAudioCompletionEvent|MutationEvent|MessageEvent|MediaStreamTrackEvent|MediaStreamEvent|MediaKeyEvent|IDBVersionChangeEvent|IDBUpgradeNeededEvent|HashChangeEvent|ErrorEvent|DeviceOrientationEvent|DeviceMotionEvent|CustomEvent|CloseEvent|BeforeLoadEvent|AudioProcessingEvent|WebKitAnimationEvent'].join('|')],
-    ['EventTarget', [v14/*class(_WorkerContextImpl)*/,v15/*class(_NodeImpl)*/,v16/*class(_MediaStreamImpl)*/,v17/*class(_IDBRequestImpl)*/,v18/*class(_AbstractWorkerImpl)*/,v14/*class(_WorkerContextImpl)*/,v15/*class(_NodeImpl)*/,v16/*class(_MediaStreamImpl)*/,v17/*class(_IDBRequestImpl)*/,v18/*class(_AbstractWorkerImpl)*/,'EventTarget|DOMWindow|WebSocket|WebKitNamedFlow|TextTrack|TextTrackCue|SpeechRecognition|SVGElementInstance|RTCPeerConnection|Performance|PeerConnection00|Notification|MessagePort|MediaStreamTrackList|MediaStreamTrack|MediaSource|MediaController|IDBTransaction|IDBDatabase|XMLHttpRequestUpload|XMLHttpRequest|FileWriter|FileReader|EventSource|DOMApplicationCache|BatteryManager|AudioContext|DOMWindow|WebSocket|WebKitNamedFlow|TextTrack|TextTrackCue|SpeechRecognition|SVGElementInstance|RTCPeerConnection|Performance|PeerConnection00|Notification|MessagePort|MediaStreamTrackList|MediaStreamTrack|MediaSource|MediaController|IDBTransaction|IDBDatabase|XMLHttpRequestUpload|XMLHttpRequest|FileWriter|FileReader|EventSource|DOMApplicationCache|BatteryManager|AudioContext'].join('|')],
+    ['Event', [v12/*class(_MouseEventImpl)*/,v12/*class(_MouseEventImpl)*/,v12/*class(_MouseEventImpl)*/,v12/*class(_MouseEventImpl)*/,'Event|WebGLContextEvent|UIEvent|TouchEvent|TextEvent|SVGZoomEvent|KeyboardEvent|CompositionEvent|TouchEvent|TextEvent|SVGZoomEvent|KeyboardEvent|CompositionEvent|WebKitTransitionEvent|TrackEvent|StorageEvent|SpeechRecognitionEvent|SpeechRecognitionError|SpeechInputEvent|RTCIceCandidateEvent|ProgressEvent|XMLHttpRequestProgressEvent|XMLHttpRequestProgressEvent|PopStateEvent|PageTransitionEvent|OverflowEvent|OfflineAudioCompletionEvent|MutationEvent|MessageEvent|MediaStreamTrackEvent|MediaStreamEvent|MediaKeyEvent|IDBVersionChangeEvent|IDBUpgradeNeededEvent|HashChangeEvent|ErrorEvent|DeviceOrientationEvent|DeviceMotionEvent|CustomEvent|CloseEvent|BeforeLoadEvent|AudioProcessingEvent|WebKitAnimationEvent|WebGLContextEvent|UIEvent|TouchEvent|TextEvent|SVGZoomEvent|KeyboardEvent|CompositionEvent|TouchEvent|TextEvent|SVGZoomEvent|KeyboardEvent|CompositionEvent|WebKitTransitionEvent|TrackEvent|StorageEvent|SpeechRecognitionEvent|SpeechRecognitionError|SpeechInputEvent|RTCIceCandidateEvent|ProgressEvent|XMLHttpRequestProgressEvent|XMLHttpRequestProgressEvent|PopStateEvent|PageTransitionEvent|OverflowEvent|OfflineAudioCompletionEvent|MutationEvent|MessageEvent|MediaStreamTrackEvent|MediaStreamEvent|MediaKeyEvent|IDBVersionChangeEvent|IDBUpgradeNeededEvent|HashChangeEvent|ErrorEvent|DeviceOrientationEvent|DeviceMotionEvent|CustomEvent|CloseEvent|BeforeLoadEvent|AudioProcessingEvent|WebKitAnimationEvent'].join('|')],
+    ['EventTarget', [v13/*class(_WorkerContextImpl)*/,v14/*class(_NodeImpl)*/,v15/*class(_MediaStreamImpl)*/,v16/*class(_IDBRequestImpl)*/,v17/*class(_AbstractWorkerImpl)*/,v13/*class(_WorkerContextImpl)*/,v14/*class(_NodeImpl)*/,v15/*class(_MediaStreamImpl)*/,v16/*class(_IDBRequestImpl)*/,v17/*class(_AbstractWorkerImpl)*/,'EventTarget|DOMWindow|WebSocket|WebKitNamedFlow|TextTrack|TextTrackCue|SpeechRecognition|SVGElementInstance|RTCPeerConnection|Performance|PeerConnection00|Notification|MessagePort|MediaStreamTrackList|MediaStreamTrack|MediaSource|MediaController|IDBTransaction|IDBDatabase|XMLHttpRequestUpload|XMLHttpRequest|FileWriter|FileReader|EventSource|DOMApplicationCache|BatteryManager|AudioContext|DOMWindow|WebSocket|WebKitNamedFlow|TextTrack|TextTrackCue|SpeechRecognition|SVGElementInstance|RTCPeerConnection|Performance|PeerConnection00|Notification|MessagePort|MediaStreamTrackList|MediaStreamTrack|MediaSource|MediaController|IDBTransaction|IDBDatabase|XMLHttpRequestUpload|XMLHttpRequest|FileWriter|FileReader|EventSource|DOMApplicationCache|BatteryManager|AudioContext'].join('|')],
     ['HTMLCollection', 'HTMLCollection|HTMLOptionsCollection|HTMLOptionsCollection'],
     ['IDBCursor', 'IDBCursor|IDBCursorWithValue|IDBCursorWithValue']];
 $.dynamicSetMetadata(table);
