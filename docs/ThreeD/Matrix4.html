@@ -1,0 +1,1585 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Matrix4 Class / ThreeD Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="ThreeD" data-type="Matrix4">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../ThreeD.html">ThreeD</a> &rsaquo; <a href="../ThreeD/Matrix4.html">Matrix4</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="../CurveUtils.html">CurveUtils</a></h2><h2><div class="icon-library"></div><a href="../FontUtils.html">FontUtils</a></h2><h2><div class="icon-library"></div><a href="../GeometryUtils.html">GeometryUtils</a></h2><h2><div class="icon-library"></div><a href="../ImageUtils.html">ImageUtils</a></h2><h2><div class="icon-library"></div><a href="../SceneUtils.html">SceneUtils</a></h2><h2><div class="icon-library"></div><a href="../ShapeUtils.html">ShapeUtils</a></h2><h2><div class="icon-library"></div><a href="../ThreeD.html">ThreeD</a></h2><ul class="icon">
+<li><a href="../ThreeD/AmbientLight.html"><div class="icon-class"></div>AmbientLight</a></li>
+<li><a href="../ThreeD/ArcCurve.html"><div class="icon-class"></div>ArcCurve</a></li>
+<li><a href="../ThreeD/ArrowHelper.html"><div class="icon-class"></div>ArrowHelper</a></li>
+<li><a href="../ThreeD/AxisHelper.html"><div class="icon-class"></div>AxisHelper</a></li>
+<li><a href="../ThreeD/Bone.html"><div class="icon-class"></div>Bone</a></li>
+<li><a href="../ThreeD/BoundingBox.html"><div class="icon-class"></div>BoundingBox</a></li>
+<li><a href="../ThreeD/BoundingSphere.html"><div class="icon-class"></div>BoundingSphere</a></li>
+<li><a href="../ThreeD/Buffer.html"><div class="icon-class"></div>Buffer</a></li>
+<li><a href="../ThreeD/BufferGeometry.html"><div class="icon-class"></div>BufferGeometry</a></li>
+<li><a href="../ThreeD/Camera.html"><div class="icon-class"></div>Camera</a></li>
+<li><a href="../ThreeD/CanvasRenderData.html"><div class="icon-class"></div>CanvasRenderData</a></li>
+<li><a href="../ThreeD/CanvasRenderer.html"><div class="icon-class"></div>CanvasRenderer</a></li>
+<li><a href="../ThreeD/CircleGeometry.html"><div class="icon-class"></div>CircleGeometry</a></li>
+<li><a href="../ThreeD/ClosedSplineCurve3.html"><div class="icon-class"></div>ClosedSplineCurve3</a></li>
+<li><a href="../ThreeD/Color.html"><div class="icon-class"></div>Color</a></li>
+<li><a href="../ThreeD/ConvexGeometry.html"><div class="icon-class"></div>ConvexGeometry</a></li>
+<li><a href="../ThreeD/CubeGeomSides.html"><div class="icon-class"></div>CubeGeomSides</a></li>
+<li><a href="../ThreeD/CubeGeometry.html"><div class="icon-class"></div>CubeGeometry</a></li>
+<li><a href="../ThreeD/CubeReflectionMapping.html"><div class="icon-class"></div>CubeReflectionMapping</a></li>
+<li><a href="../ThreeD/CubeRefractionMapping.html"><div class="icon-class"></div>CubeRefractionMapping</a></li>
+<li><a href="../ThreeD/CubicBezierCurve.html"><div class="icon-class"></div>CubicBezierCurve</a></li>
+<li><a href="../ThreeD/CubicBezierCurve3.html"><div class="icon-class"></div>CubicBezierCurve3</a></li>
+<li><a href="../ThreeD/Curve.html"><div class="icon-class"></div>Curve&lt;V&gt;</a></li>
+<li><a href="../ThreeD/Curve2D.html"><div class="icon-class"></div>Curve2D</a></li>
+<li><a href="../ThreeD/Curve3D.html"><div class="icon-class"></div>Curve3D</a></li>
+<li><a href="../ThreeD/CurvePath.html"><div class="icon-class"></div>CurvePath</a></li>
+<li><a href="../ThreeD/CylinderGeometry.html"><div class="icon-class"></div>CylinderGeometry</a></li>
+<li><a href="../ThreeD/DataTexture.html"><div class="icon-class"></div>DataTexture</a></li>
+<li><a href="../ThreeD/DirectionalLight.html"><div class="icon-class"></div>DirectionalLight</a></li>
+<li><a href="../ThreeD/EllipseCurve.html"><div class="icon-class"></div>EllipseCurve</a></li>
+<li><a href="../ThreeD/EventEmitter.html"><div class="icon-class"></div>EventEmitter</a></li>
+<li><a href="../ThreeD/EventEmitterEvent.html"><div class="icon-class"></div>EventEmitterEvent</a></li>
+<li><a href="../ThreeD/ExtrudeGeometry.html"><div class="icon-class"></div>ExtrudeGeometry</a></li>
+<li><a href="../ThreeD/ExtrudeGeometryWorldUVGenerator.html"><div class="icon-class"></div>ExtrudeGeometryWorldUVGenerator</a></li>
+<li><a href="../ThreeD/Face3.html"><div class="icon-class"></div>Face3</a></li>
+<li><a href="../ThreeD/Face4.html"><div class="icon-class"></div>Face4</a></li>
+<li><a href="../ThreeD/Fog.html"><div class="icon-class"></div>Fog</a></li>
+<li><a href="../ThreeD/FogExp2.html"><div class="icon-class"></div>FogExp2</a></li>
+<li><a href="../ThreeD/FogLinear.html"><div class="icon-class"></div>FogLinear</a></li>
+<li><a href="../ThreeD/Frustum.html"><div class="icon-class"></div>Frustum</a></li>
+<li><a href="../ThreeD/Geometry.html"><div class="icon-class"></div>Geometry</a></li>
+<li><a href="../ThreeD/IFace3.html"><div class="icon-interface"></div>IFace3</a></li>
+<li><a href="../ThreeD/IFace4.html"><div class="icon-interface"></div>IFace4</a></li>
+<li><a href="../ThreeD/IMaterial.html"><div class="icon-interface"></div>IMaterial</a></li>
+<li><a href="../ThreeD/IParticleMaterial.html"><div class="icon-interface"></div>IParticleMaterial</a></li>
+<li><a href="../ThreeD/IRenderableFace3.html"><div class="icon-interface"></div>IRenderableFace3</a></li>
+<li><a href="../ThreeD/IRenderableFace4.html"><div class="icon-interface"></div>IRenderableFace4</a></li>
+<li><a href="../ThreeD/IRenderableObj.html"><div class="icon-interface"></div>IRenderableObj</a></li>
+<li><a href="../ThreeD/ITextureMapMaterial.html"><div class="icon-interface"></div>ITextureMapMaterial</a></li>
+<li><a href="../ThreeD/IVector2.html"><div class="icon-interface"></div>IVector2</a></li>
+<li><a href="../ThreeD/IVector3.html"><div class="icon-interface"></div>IVector3</a></li>
+<li><a href="../ThreeD/IVector4.html"><div class="icon-interface"></div>IVector4</a></li>
+<li><a href="../ThreeD/IcosahedronGeometry.html"><div class="icon-class"></div>IcosahedronGeometry</a></li>
+<li><a href="../ThreeD/ImageLoader.html"><div class="icon-class"></div>ImageLoader</a></li>
+<li><a href="../ThreeD/ImmediateRenderObject.html"><div class="icon-class"></div>ImmediateRenderObject</a></li>
+<li><a href="../ThreeD/Intersect.html"><div class="icon-class"></div>Intersect</a></li>
+<li><a href="../ThreeD/JSONLoader.html"><div class="icon-class"></div>JSONLoader</a></li>
+<li><a href="../ThreeD/LOD.html"><div class="icon-class"></div>LOD</a></li>
+<li><a href="../ThreeD/LatheGeometry.html"><div class="icon-class"></div>LatheGeometry</a></li>
+<li><a href="../ThreeD/LensFlare.html"><div class="icon-class"></div>LensFlare</a></li>
+<li><a href="../ThreeD/Light.html"><div class="icon-class"></div>Light</a></li>
+<li><a href="../ThreeD/Line.html"><div class="icon-class"></div>Line</a></li>
+<li><a href="../ThreeD/LineBasicMaterial.html"><div class="icon-class"></div>LineBasicMaterial</a></li>
+<li><a href="../ThreeD/LineCurve.html"><div class="icon-class"></div>LineCurve</a></li>
+<li><a href="../ThreeD/LineCurve3.html"><div class="icon-class"></div>LineCurve3</a></li>
+<li><a href="../ThreeD/LoadCompleteCallback.html"><div class="icon-interface"></div>LoadCompleteCallback</a></li>
+<li><a href="../ThreeD/LoadProgressCallback.html"><div class="icon-interface"></div>LoadProgressCallback</a></li>
+<li><a href="../ThreeD/LoadStartCallback.html"><div class="icon-interface"></div>LoadStartCallback</a></li>
+<li><a href="../ThreeD/LoadedCallback.html"><div class="icon-interface"></div>LoadedCallback</a></li>
+<li><a href="../ThreeD/Loader.html"><div class="icon-class"></div>Loader</a></li>
+<li><a href="../ThreeD/Material.html"><div class="icon-class"></div>Material</a></li>
+<li><a href="../ThreeD/Matrix3.html"><div class="icon-class"></div>Matrix3</a></li>
+<li><div class="icon-class"></div><strong>Matrix4</strong></li>
+<li><a href="../ThreeD/Mesh.html"><div class="icon-class"></div>Mesh</a></li>
+<li><a href="../ThreeD/MeshBasicMaterial.html"><div class="icon-class"></div>MeshBasicMaterial</a></li>
+<li><a href="../ThreeD/MeshDepthMaterial.html"><div class="icon-class"></div>MeshDepthMaterial</a></li>
+<li><a href="../ThreeD/MeshFaceMaterial.html"><div class="icon-class"></div>MeshFaceMaterial</a></li>
+<li><a href="../ThreeD/MeshLambertMaterial.html"><div class="icon-class"></div>MeshLambertMaterial</a></li>
+<li><a href="../ThreeD/MeshNormalMaterial.html"><div class="icon-class"></div>MeshNormalMaterial</a></li>
+<li><a href="../ThreeD/MeshPhongMaterial.html"><div class="icon-class"></div>MeshPhongMaterial</a></li>
+<li><a href="../ThreeD/MorphAnimMesh.html"><div class="icon-class"></div>MorphAnimMesh</a></li>
+<li><a href="../ThreeD/Object3D.html"><div class="icon-class"></div>Object3D</a></li>
+<li><a href="../ThreeD/OctahedronGeometry.html"><div class="icon-class"></div>OctahedronGeometry</a></li>
+<li><a href="../ThreeD/OrthographicCamera.html"><div class="icon-class"></div>OrthographicCamera</a></li>
+<li><a href="../ThreeD/ParametricGeometry.html"><div class="icon-class"></div>ParametricGeometry</a></li>
+<li><a href="../ThreeD/Particle.html"><div class="icon-class"></div>Particle</a></li>
+<li><a href="../ThreeD/ParticleBasicMaterial.html"><div class="icon-class"></div>ParticleBasicMaterial</a></li>
+<li><a href="../ThreeD/ParticleCanvasMaterial.html"><div class="icon-class"></div>ParticleCanvasMaterial</a></li>
+<li><a href="../ThreeD/ParticleCanvasMaterialProgram.html"><div class="icon-interface"></div>ParticleCanvasMaterialProgram</a></li>
+<li><a href="../ThreeD/ParticleSystem.html"><div class="icon-class"></div>ParticleSystem</a></li>
+<li><a href="../ThreeD/Path.html"><div class="icon-class"></div>Path</a></li>
+<li><a href="../ThreeD/PathAction.html"><div class="icon-class"></div>PathAction</a></li>
+<li><a href="../ThreeD/PerspectiveCamera.html"><div class="icon-class"></div>PerspectiveCamera</a></li>
+<li><a href="../ThreeD/PlaneGeometry.html"><div class="icon-class"></div>PlaneGeometry</a></li>
+<li><a href="../ThreeD/PointLight.html"><div class="icon-class"></div>PointLight</a></li>
+<li><a href="../ThreeD/PolyhedronGeometry.html"><div class="icon-class"></div>PolyhedronGeometry</a></li>
+<li><a href="../ThreeD/PolyhedronGeometryVertex.html"><div class="icon-class"></div>PolyhedronGeometryVertex</a></li>
+<li><a href="../ThreeD/Program.html"><div class="icon-class"></div>Program</a></li>
+<li><a href="../ThreeD/Projector.html"><div class="icon-class"></div>Projector</a></li>
+<li><a href="../ThreeD/ProjectorRenderData.html"><div class="icon-class"></div>ProjectorRenderData</a></li>
+<li><a href="../ThreeD/QuadraticBezierCurve.html"><div class="icon-class"></div>QuadraticBezierCurve</a></li>
+<li><a href="../ThreeD/QuadraticBezierCurve3.html"><div class="icon-class"></div>QuadraticBezierCurve3</a></li>
+<li><a href="../ThreeD/Quaternion.html"><div class="icon-class"></div>Quaternion</a></li>
+<li><a href="../ThreeD/Ray.html"><div class="icon-class"></div>Ray</a></li>
+<li><a href="../ThreeD/Rectangle.html"><div class="icon-class"></div>Rectangle</a></li>
+<li><a href="../ThreeD/RenderInts.html"><div class="icon-class"></div>RenderInts</a></li>
+<li><a href="../ThreeD/RenderableFace3.html"><div class="icon-class"></div>RenderableFace3</a></li>
+<li><a href="../ThreeD/RenderableFace4.html"><div class="icon-class"></div>RenderableFace4</a></li>
+<li><a href="../ThreeD/RenderableLine.html"><div class="icon-class"></div>RenderableLine</a></li>
+<li><a href="../ThreeD/RenderableObject.html"><div class="icon-class"></div>RenderableObject</a></li>
+<li><a href="../ThreeD/RenderableParticle.html"><div class="icon-class"></div>RenderableParticle</a></li>
+<li><a href="../ThreeD/RenderableVertex.html"><div class="icon-class"></div>RenderableVertex</a></li>
+<li><a href="../ThreeD/Renderer.html"><div class="icon-class"></div>Renderer</a></li>
+<li><a href="../ThreeD/Ribbon.html"><div class="icon-class"></div>Ribbon</a></li>
+<li><a href="../ThreeD/Scene.html"><div class="icon-class"></div>Scene</a></li>
+<li><a href="../ThreeD/ShaderMaterial.html"><div class="icon-class"></div>ShaderMaterial</a></li>
+<li><a href="../ThreeD/Shape.html"><div class="icon-class"></div>Shape</a></li>
+<li><a href="../ThreeD/SkinnedMesh.html"><div class="icon-class"></div>SkinnedMesh</a></li>
+<li><a href="../ThreeD/SphereGeometry.html"><div class="icon-class"></div>SphereGeometry</a></li>
+<li><a href="../ThreeD/SphericalReflectionMapping.html"><div class="icon-class"></div>SphericalReflectionMapping</a></li>
+<li><a href="../ThreeD/SphericalRefractionMapping.html"><div class="icon-class"></div>SphericalRefractionMapping</a></li>
+<li><a href="../ThreeD/SplineCurve.html"><div class="icon-class"></div>SplineCurve</a></li>
+<li><a href="../ThreeD/SplineCurve3.html"><div class="icon-class"></div>SplineCurve3</a></li>
+<li><a href="../ThreeD/SpotLight.html"><div class="icon-class"></div>SpotLight</a></li>
+<li><a href="../ThreeD/Sprite.html"><div class="icon-class"></div>Sprite</a></li>
+<li><a href="../ThreeD/SpriteAlignment.html"><div class="icon-class"></div>SpriteAlignment</a></li>
+<li><a href="../ThreeD/TetrahedronGeometry.html"><div class="icon-class"></div>TetrahedronGeometry</a></li>
+<li><a href="../ThreeD/TextGeometry.html"><div class="icon-class"></div>TextGeometry</a></li>
+<li><a href="../ThreeD/Texture.html"><div class="icon-class"></div>Texture</a></li>
+<li><a href="../ThreeD/Three.html"><div class="icon-class"></div>Three</a></li>
+<li><a href="../ThreeD/TorusGeometry.html"><div class="icon-class"></div>TorusGeometry</a></li>
+<li><a href="../ThreeD/TorusKnotGeometry.html"><div class="icon-class"></div>TorusKnotGeometry</a></li>
+<li><a href="../ThreeD/TubeGeometry.html"><div class="icon-class"></div>TubeGeometry</a></li>
+<li><a href="../ThreeD/UV.html"><div class="icon-class"></div>UV</a></li>
+<li><a href="../ThreeD/UVMapping.html"><div class="icon-class"></div>UVMapping</a></li>
+<li><a href="../ThreeD/Uniform.html"><div class="icon-class"></div>Uniform</a></li>
+<li><a href="../ThreeD/UniformsUtils.html"><div class="icon-class"></div>UniformsUtils</a></li>
+<li><a href="../ThreeD/Vector2.html"><div class="icon-class"></div>Vector2</a></li>
+<li><a href="../ThreeD/Vector3.html"><div class="icon-class"></div>Vector3</a></li>
+<li><a href="../ThreeD/Vector4.html"><div class="icon-class"></div>Vector4</a></li>
+<li><a href="../ThreeD/Vertex.html"><div class="icon-class"></div>Vertex</a></li>
+<li><a href="../ThreeD/WebGLCamera.html"><div class="icon-class"></div>WebGLCamera</a></li>
+<li><a href="../ThreeD/WebGLGeometry.html"><div class="icon-class"></div>WebGLGeometry</a></li>
+<li><a href="../ThreeD/WebGLMaterial.html"><div class="icon-class"></div>WebGLMaterial</a></li>
+<li><a href="../ThreeD/WebGLObject.html"><div class="icon-class"></div>WebGLObject</a></li>
+<li><a href="../ThreeD/WebGLRenderTarget.html"><div class="icon-class"></div>WebGLRenderTarget</a></li>
+<li><a href="../ThreeD/WebGLRenderTargetCube.html"><div class="icon-class"></div>WebGLRenderTargetCube</a></li>
+<li><a href="../ThreeD/WebGLRenderer.html"><div class="icon-class"></div>WebGLRenderer</a></li>
+<li><a href="../ThreeD/WebGLRendererInfo.html"><div class="icon-class"></div>WebGLRendererInfo</a></li>
+<li><a href="../ThreeD/WebGLRendererMemoryInfo.html"><div class="icon-class"></div>WebGLRendererMemoryInfo</a></li>
+<li><a href="../ThreeD/WebGLRendererRenderInfo.html"><div class="icon-class"></div>WebGLRendererRenderInfo</a></li>
+</ul>
+<h2><div class="icon-library"></div><a href="../ThreeMath.html">ThreeMath</a></h2></div>
+<div class="content">
+        <h2><strong>Matrix4</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>@author mr.doob / http://mrdoob.com/
+@author supereggbert / http://www.paulbrunt.co.uk/
+@author philogb / http://blog.thejit.org/
+@author jordi_ros / http://plattsoft.com
+@author D1plo1d / http://github.com/D1plo1d
+@author alteredq / http://alteredqualia.com/
+@author mikael emtinger / http://gomo.se/
+@author timknip / http://www.floorplanner.com/</p>
+<p>Ported to Dart from JS by:
+@author rob silverton / http://www.unwrong.com/</p>
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="Matrix4">
+<span class="show-code">Code</span>
+new <strong>Matrix4</strong>([<a href="http://api.dartlang.org/dart_core/num.html">num</a> n11 = 1, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n12 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n13 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n14 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n21 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n22 = 1, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n23 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n24 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n31 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n32 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n33 = 1, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n34 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n41 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n42 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n43 = 0, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n44 = 1]) <a class="anchor-link" href="#Matrix4"
+              title="Permalink to Matrix4.Matrix4">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4( [num n11 = 1, num n12 = 0, num n13 = 0, num n14 = 0, 
+          num n21 = 0, num n22 = 1, num n23 = 0, num n24 = 0, 
+          num n31 = 0, num n32 = 0, num n33 = 1, num n34 = 0, 
+          num n41 = 0, num n42 = 0, num n43 = 0, num n44 = 1] ) 
+    : elements = new Float32Array(16) {
+      
+  setValues(n11, n12, n13, n14, 
+            n21, n22, n23, n24, 
+            n31, n32, n33, n34, 
+            n41, n42, n43, n44);
+}
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="clone">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>clone</strong>() <a class="anchor-link" href="#clone"
+              title="Permalink to Matrix4.clone">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 clone() {
+  var te = elements;
+
+  return new Matrix4(
+
+    te[0], te[4], te[8], te[12],
+    te[1], te[5], te[9], te[13],
+    te[2], te[6], te[10], te[14],
+    te[3], te[7], te[11], te[15]
+
+  );
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="compose">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>compose</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> translation, <a href="../ThreeD/Quaternion.html">Quaternion</a> rotation, <a href="../ThreeD/Vector3.html">Vector3</a> s) <a class="anchor-link" href="#compose"
+              title="Permalink to Matrix4.compose">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 compose( Vector3 translation, Quaternion rotation, Vector3 s ) {
+  
+  var te = elements;
+  
+  Matrix4 mRotation = __m1;
+  Matrix4 mScale = __m2;
+
+  mRotation.identity();
+  mRotation.setRotationFromQuaternion( rotation );
+
+  mScale.makeScale( s.x, s.y, s.z );
+
+  multiply( mRotation, mScale );
+
+  te[12] = translation.x;
+  te[13] = translation.y;
+  te[14] = translation.z;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="copy">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>copy</strong>(<a href="../ThreeD/Matrix4.html">Matrix4</a> m) <a class="anchor-link" href="#copy"
+              title="Permalink to Matrix4.copy">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 copy( Matrix4 m ) {
+  var me = m.elements;
+
+  setValues(
+
+    me[0], me[4], me[8], me[12],
+    me[1], me[5], me[9], me[13],
+    me[2], me[6], me[10], me[14],
+    me[3], me[7], me[11], me[15]
+
+  );
+  
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="crossVector">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector4.html">Vector4</a> <strong>crossVector</strong>(<a href="../ThreeD/Vector4.html">Vector4</a> a) <a class="anchor-link" href="#crossVector"
+              title="Permalink to Matrix4.crossVector">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Vector4 crossVector( Vector4 a ) {
+  
+  var te = this.elements;
+  Vector4 v = new Vector4();
+
+  v.x = te[0] * a.x + te[4] * a.y + te[8] * a.z + te[12] * a.w;
+  v.y = te[1] * a.x + te[5] * a.y + te[9] * a.z + te[13] * a.w;
+  v.z = te[2] * a.x + te[6] * a.y + te[10] * a.z + te[14] * a.w;
+
+  v.w = (a.w != null) ? te[3] * a.x + te[7] * a.y + te[11] * a.z + te[15] * a.w : 1;
+
+  return v;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="decompose">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a> <strong>decompose</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> translation, <a href="../ThreeD/Quaternion.html">Quaternion</a> rotation, <a href="../ThreeD/Vector3.html">Vector3</a> scale) <a class="anchor-link" href="#decompose"
+              title="Permalink to Matrix4.decompose">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+List decompose( Vector3 translation, Quaternion rotation, Vector3 scale ) {
+  
+  var te = elements;
+  
+  // grab the axis vectors
+  Vector3 x = __v1;
+  Vector3 y = __v2;
+  Vector3 z = __v3;
+
+  x.setValues( te[0], te[1], te[2] );
+  y.setValues( te[4], te[5], te[6] );
+  z.setValues( te[8], te[9], te[10] );
+
+  translation = ( translation is Vector3 ) ? translation : new Vector3();
+  rotation = ( rotation is Quaternion ) ? rotation : new Quaternion();
+  scale = ( scale is Vector3 ) ? scale : new Vector3();
+
+  scale.x = x.length();
+  scale.y = y.length();
+  scale.z = z.length();
+
+  translation.x = te[12];
+  translation.y = te[13];
+  translation.z = te[14];
+
+  // scale the rotation part
+  Matrix4 matrix = __m1;
+
+  matrix.copy( this );
+
+  matrix.elements[0] /= scale.x;
+  matrix.elements[1] /= scale.x;
+  matrix.elements[2] /= scale.x;
+
+  matrix.elements[4] /= scale.y;
+  matrix.elements[5] /= scale.y;
+  matrix.elements[6] /= scale.y;
+
+  matrix.elements[8] /= scale.z;
+  matrix.elements[9] /= scale.z;
+  matrix.elements[10] /= scale.z;
+
+  rotation.setFromRotationMatrix( matrix );
+
+  return [ translation, rotation, scale ];
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="determinant">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a> <strong>determinant</strong>() <a class="anchor-link" href="#determinant"
+              title="Permalink to Matrix4.determinant">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+num determinant() {
+  var te = elements;
+
+  var n11 = te[0], n12 = te[4], n13 = te[8], n14 = te[12];
+  var n21 = te[1], n22 = te[5], n23 = te[9], n24 = te[13];
+  var n31 = te[2], n32 = te[6], n33 = te[10], n34 = te[14];
+  var n41 = te[3], n42 = te[7], n43 = te[11], n44 = te[15];
+
+  //TODO: make this more efficient
+  //( based on http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm )
+
+  return (
+    n14 * n23 * n32 * n41-
+    n13 * n24 * n32 * n41-
+    n14 * n22 * n33 * n41+
+    n12 * n24 * n33 * n41+
+
+    n13 * n22 * n34 * n41-
+    n12 * n23 * n34 * n41-
+    n14 * n23 * n31 * n42+
+    n13 * n24 * n31 * n42+
+
+    n14 * n21 * n33 * n42-
+    n11 * n24 * n33 * n42-
+    n13 * n21 * n34 * n42+
+    n11 * n23 * n34 * n42+
+
+    n14 * n22 * n31 * n43-
+    n12 * n24 * n31 * n43-
+    n14 * n21 * n32 * n43+
+    n11 * n24 * n32 * n43+
+
+    n12 * n21 * n34 * n43-
+    n11 * n22 * n34 * n43-
+    n13 * n22 * n31 * n44+
+    n12 * n23 * n31 * n44+
+
+    n13 * n21 * n32 * n44-
+    n11 * n23 * n32 * n44-
+    n12 * n21 * n33 * n44+
+    n11 * n22 * n33 * n44
+  );
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="extractPosition">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>extractPosition</strong>(<a href="../ThreeD/Matrix4.html">Matrix4</a> m) <a class="anchor-link" href="#extractPosition"
+              title="Permalink to Matrix4.extractPosition">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 extractPosition( Matrix4 m ) {
+  var te = elements;
+  var me = m.elements;
+
+  te[12] = me[12];
+  te[13] = me[13];
+  te[14] = me[14];
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="extractRotation">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>extractRotation</strong>(<a href="../ThreeD/Matrix4.html">Matrix4</a> m) <a class="anchor-link" href="#extractRotation"
+              title="Permalink to Matrix4.extractRotation">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 extractRotation( Matrix4 m ) {
+  
+  var te = elements;
+  var me = m.elements;
+  
+  Vector3 vector = __v1;
+
+  var scaleX = 1 / vector.setValues( me[0], me[1], me[2] ).length();
+  var scaleY = 1 / vector.setValues( me[4], me[5], me[6] ).length();
+  var scaleZ = 1 / vector.setValues( me[8], me[9], me[10] ).length();
+
+  te[0] = me[0] * scaleX;
+  te[1] = me[1] * scaleX;
+  te[2] = me[2] * scaleX;
+
+  te[4] = me[4] * scaleY;
+  te[5] = me[5] * scaleY;
+  te[6] = me[6] * scaleY;
+
+  te[8] = me[8] * scaleZ;
+  te[9] = me[9] * scaleZ;
+  te[10] = me[10] * scaleZ;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="flattenToArray">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a> <strong>flattenToArray</strong>(<a href="http://api.dartlang.org/dart_core/List.html">List</a> flat) <a class="anchor-link" href="#flattenToArray"
+              title="Permalink to Matrix4.flattenToArray">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+List flattenToArray( List flat ) {
+  var te = elements;
+  
+  flat[ 0 ] = te[0]; flat[ 1 ] = te[1]; flat[ 2 ] = te[2]; flat[ 3 ] = te[3];
+  flat[ 4 ] = te[4]; flat[ 5 ] = te[5]; flat[ 6 ] = te[6]; flat[ 7 ] = te[7];
+  flat[ 8 ]  = te[8]; flat[ 9 ]  = te[9]; flat[ 10 ] = te[10]; flat[ 11 ] = te[11];
+  flat[ 12 ] = te[12]; flat[ 13 ] = te[13]; flat[ 14 ] = te[14]; flat[ 15 ] = te[15];
+
+  return flat;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="flattenToArrayOffset">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a> <strong>flattenToArrayOffset</strong>(<a href="http://api.dartlang.org/dart_core/List.html">List</a> flat, <a href="http://api.dartlang.org/dart_core/int.html">int</a> offset) <a class="anchor-link" href="#flattenToArrayOffset"
+              title="Permalink to Matrix4.flattenToArrayOffset">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+List flattenToArrayOffset( List flat, int offset ) {
+  var te = elements;
+  
+  flat[ offset ] = te[0];
+  flat[ offset + 1 ] = te[1];
+  flat[ offset + 2 ] = te[2];
+  flat[ offset + 3 ] = te[3];
+
+  flat[ offset + 4 ] = te[4];
+  flat[ offset + 5 ] = te[5];
+  flat[ offset + 6 ] = te[6];
+  flat[ offset + 7 ] = te[7];
+
+  flat[ offset + 8 ]  = te[8];
+  flat[ offset + 9 ]  = te[9];
+  flat[ offset + 10 ] = te[10];
+  flat[ offset + 11 ] = te[11];
+
+  flat[ offset + 12 ] = te[12];
+  flat[ offset + 13 ] = te[13];
+  flat[ offset + 14 ] = te[14];
+  flat[ offset + 15 ] = te[15];
+
+  return flat;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getColumnX">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a> <strong>getColumnX</strong>() <a class="anchor-link" href="#getColumnX"
+              title="Permalink to Matrix4.getColumnX">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Vector3 getColumnX() =&gt; __v1.setValues( elements[0], elements[1], elements[2] );
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getColumnY">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a> <strong>getColumnY</strong>() <a class="anchor-link" href="#getColumnY"
+              title="Permalink to Matrix4.getColumnY">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Vector3 getColumnY() =&gt; __v1.setValues( elements[4], elements[5], elements[6] );
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getColumnZ">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a> <strong>getColumnZ</strong>() <a class="anchor-link" href="#getColumnZ"
+              title="Permalink to Matrix4.getColumnZ">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Vector3 getColumnZ() =&gt; __v1.setValues( elements[8], elements[9], elements[10] );
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getInverse">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>getInverse</strong>(<a href="../ThreeD/Matrix4.html">Matrix4</a> m) <a class="anchor-link" href="#getInverse"
+              title="Permalink to Matrix4.getInverse">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 getInverse( Matrix4 m ) {
+  // based on http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm
+  var te = elements;
+  var me = m.elements;
+
+  num n11 = me[0], n12 = me[4], n13 = me[8], n14 = me[12],
+      n21 = me[1], n22 = me[5], n23 = me[9], n24 = me[13],
+      n31 = me[2], n32 = me[6], n33 = me[10], n34 = me[14],
+      n41 = me[3], n42 = me[7], n43 = me[11], n44 = me[15];
+
+  te[0] = n23*n34*n42 - n24*n33*n42 + n24*n32*n43 - n22*n34*n43 - n23*n32*n44 + n22*n33*n44;
+  te[4] = n14*n33*n42 - n13*n34*n42 - n14*n32*n43 + n12*n34*n43 + n13*n32*n44 - n12*n33*n44;
+  te[8] = n13*n24*n42 - n14*n23*n42 + n14*n22*n43 - n12*n24*n43 - n13*n22*n44 + n12*n23*n44;
+  te[12] = n14*n23*n32 - n13*n24*n32 - n14*n22*n33 + n12*n24*n33 + n13*n22*n34 - n12*n23*n34;
+  te[1] = n24*n33*n41 - n23*n34*n41 - n24*n31*n43 + n21*n34*n43 + n23*n31*n44 - n21*n33*n44;
+  te[5] = n13*n34*n41 - n14*n33*n41 + n14*n31*n43 - n11*n34*n43 - n13*n31*n44 + n11*n33*n44;
+  te[9] = n14*n23*n41 - n13*n24*n41 - n14*n21*n43 + n11*n24*n43 + n13*n21*n44 - n11*n23*n44;
+  te[13] = n13*n24*n31 - n14*n23*n31 + n14*n21*n33 - n11*n24*n33 - n13*n21*n34 + n11*n23*n34;
+  te[2] = n22*n34*n41 - n24*n32*n41 + n24*n31*n42 - n21*n34*n42 - n22*n31*n44 + n21*n32*n44;
+  te[6] = n14*n32*n41 - n12*n34*n41 - n14*n31*n42 + n11*n34*n42 + n12*n31*n44 - n11*n32*n44;
+  te[10] = n12*n24*n41 - n14*n22*n41 + n14*n21*n42 - n11*n24*n42 - n12*n21*n44 + n11*n22*n44;
+  te[14] = n14*n22*n31 - n12*n24*n31 - n14*n21*n32 + n11*n24*n32 + n12*n21*n34 - n11*n22*n34;
+  te[3] = n23*n32*n41 - n22*n33*n41 - n23*n31*n42 + n21*n33*n42 + n22*n31*n43 - n21*n32*n43;
+  te[7] = n12*n33*n41 - n13*n32*n41 + n13*n31*n42 - n11*n33*n42 - n12*n31*n43 + n11*n32*n43;
+  te[11] = n13*n22*n41 - n12*n23*n41 - n13*n21*n42 + n11*n23*n42 + n12*n21*n43 - n11*n22*n43;
+  te[15] = n12*n23*n31 - n13*n22*n31 + n13*n21*n32 - n11*n23*n32 - n12*n21*n33 + n11*n22*n33;
+  this.multiplyScalar( 1 / m.determinant() );
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getMaxScaleOnAxis">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/double.html">double</a> <strong>getMaxScaleOnAxis</strong>() <a class="anchor-link" href="#getMaxScaleOnAxis"
+              title="Permalink to Matrix4.getMaxScaleOnAxis">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+double getMaxScaleOnAxis() {
+
+  var te = elements;
+
+  var scaleXSq =  te[0] * te[0] + te[1] * te[1] + te[2] * te[2];
+  var scaleYSq =  te[4] * te[4] + te[5] * te[5] + te[6] * te[6];
+  var scaleZSq =  te[8] * te[8] + te[9] * te[9] + te[10] * te[10];
+
+  return Math.sqrt( Math.max( scaleXSq, Math.max( scaleYSq, scaleZSq ) ) );
+
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getPosition">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a> <strong>getPosition</strong>() <a class="anchor-link" href="#getPosition"
+              title="Permalink to Matrix4.getPosition">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Vector3 getPosition() =&gt; __v1.setValues( elements[12], elements[13], elements[14] );
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="identity">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>identity</strong>() <a class="anchor-link" href="#identity"
+              title="Permalink to Matrix4.identity">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 identity() {
+  setValues(
+    1, 0, 0, 0,
+    0, 1, 0, 0,
+    0, 0, 1, 0,
+    0, 0, 0, 1
+  );
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="lookAt">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>lookAt</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> eye, <a href="../ThreeD/Vector3.html">Vector3</a> center, <a href="../ThreeD/Vector3.html">Vector3</a> up) <a class="anchor-link" href="#lookAt"
+              title="Permalink to Matrix4.lookAt">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 lookAt( Vector3 eye, Vector3 center, Vector3 up ) {
+  var te = elements;
+  
+  Vector3 x = __v1, 
+          y = __v2, 
+          z = __v3;
+  
+  z.sub( eye, center ).normalize();
+  
+  if ( z.length() === 0 ) {
+    z.z = 1;
+  }
+
+  x.cross( up, z ).normalize();
+  
+  if ( x.length() === 0 ) {
+    z.x += 0.0001;
+    x.cross( up, z ).normalize();
+  }
+
+  y.cross( z, x ).normalize();
+
+  te[0] = x.x; te[4] = y.x; te[8] = z.x;
+  te[1] = x.y; te[5] = y.y; te[9] = z.y;
+  te[2] = x.z; te[6] = y.z; te[10] = z.z;
+  
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="makeFrustum">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>makeFrustum</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> left, <a href="http://api.dartlang.org/dart_core/num.html">num</a> right, <a href="http://api.dartlang.org/dart_core/num.html">num</a> bottom, <a href="http://api.dartlang.org/dart_core/num.html">num</a> top, <a href="http://api.dartlang.org/dart_core/num.html">num</a> near, <a href="http://api.dartlang.org/dart_core/num.html">num</a> far) <a class="anchor-link" href="#makeFrustum"
+              title="Permalink to Matrix4.makeFrustum">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 makeFrustum( num left, num right, num bottom, num top, num near, num far ) {
+  var te = elements;
+  
+  num x, y, a, b, c, d;
+
+  x = 2 * near / ( right - left );
+  y = 2 * near / ( top - bottom );
+
+  a = ( right + left ) / ( right - left );
+  b = ( top + bottom ) / ( top - bottom );
+  c = - ( far + near ) / ( far - near );
+  d = - 2 * far * near / ( far - near );
+
+  te[0] = x;  te[4] = 0;  te[8] = a;   te[12] = 0;
+  te[1] = 0;  te[5] = y;  te[9] = b;   te[13] = 0;
+  te[2] = 0;  te[6] = 0;  te[10] = c;   te[14] = d;
+  te[3] = 0;  te[7] = 0;  te[11] = - 1; te[15] = 0;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="makeOrthographic">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>makeOrthographic</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> left, <a href="http://api.dartlang.org/dart_core/num.html">num</a> right, <a href="http://api.dartlang.org/dart_core/num.html">num</a> top, <a href="http://api.dartlang.org/dart_core/num.html">num</a> bottom, <a href="http://api.dartlang.org/dart_core/num.html">num</a> near, <a href="http://api.dartlang.org/dart_core/num.html">num</a> far) <a class="anchor-link" href="#makeOrthographic"
+              title="Permalink to Matrix4.makeOrthographic">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 makeOrthographic( num left, num right, num top, num bottom, num near, num far ) {
+  var te = elements;
+  
+  num x, y, z, w, h, p;
+
+  w = right - left;
+  h = top - bottom;
+  p = far - near;
+
+  x = ( right + left ) / w;
+  y = ( top + bottom ) / h;
+  z = ( far + near ) / p;
+
+  te[0] = 2 / w; te[4] = 0;     te[8] = 0;      te[12] = -x;
+  te[1] = 0;     te[5] = 2 / h; te[9] = 0;      te[13] = -y;
+  te[2] = 0;     te[6] = 0;     te[10] = -2 / p; te[14] = -z;
+  te[3] = 0;     te[7] = 0;     te[11] = 0;      te[15] = 1;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="makePerspective">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>makePerspective</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> fov, <a href="http://api.dartlang.org/dart_core/num.html">num</a> aspect, <a href="http://api.dartlang.org/dart_core/num.html">num</a> near, <a href="http://api.dartlang.org/dart_core/num.html">num</a> far) <a class="anchor-link" href="#makePerspective"
+              title="Permalink to Matrix4.makePerspective">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 makePerspective( num fov, num aspect, num near, num far ) {
+  num ymax, ymin, xmin, xmax;
+
+  ymax = near * Math.tan( fov * Math.PI / 360 );
+  ymin = - ymax;
+  xmin = ymin * aspect;
+  xmax = ymax * aspect;
+
+  return makeFrustum( xmin, xmax, ymin, ymax, near, far );
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="makeRotationAxis">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>makeRotationAxis</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> axis, <a href="http://api.dartlang.org/dart_core/num.html">num</a> angle) <a class="anchor-link" href="#makeRotationAxis"
+              title="Permalink to Matrix4.makeRotationAxis">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 makeRotationAxis( Vector3 axis, num angle ) {
+  // Based on http://www.gamedev.net/reference/articles/article1199.asp
+
+  num c = Math.cos( angle ),
+  s = Math.sin( angle ),
+  t = 1 - c,
+  x = axis.x, y = axis.y, z = axis.z,
+  tx = t * x, ty = t * y;
+
+  setValues(
+    tx * x + c, tx * y - s * z, tx * z + s * y, 0,
+    tx * y + s * z, ty * y + c, ty * z - s * x, 0,
+    tx * z - s * y, ty * z + s * x, t * z * z + c, 0,
+    0, 0, 0, 1
+  );
+
+   return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="makeRotationX">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>makeRotationX</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> theta) <a class="anchor-link" href="#makeRotationX"
+              title="Permalink to Matrix4.makeRotationX">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 makeRotationX( num theta ) {
+  num c = Math.cos( theta ), s = Math.sin( theta );
+
+  setValues(
+    1, 0,  0, 0,
+    0, c, -s, 0,
+    0, s,  c, 0,
+    0, 0,  0, 1
+  );
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="makeRotationY">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>makeRotationY</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> theta) <a class="anchor-link" href="#makeRotationY"
+              title="Permalink to Matrix4.makeRotationY">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 makeRotationY( num theta ) {
+  num c = Math.cos( theta ), s = Math.sin( theta );
+
+  setValues(
+     c, 0, s, 0,
+     0, 1, 0, 0,
+    -s, 0, c, 0,
+     0, 0, 0, 1
+  );
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="makeRotationZ">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>makeRotationZ</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> theta) <a class="anchor-link" href="#makeRotationZ"
+              title="Permalink to Matrix4.makeRotationZ">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 makeRotationZ( num theta ) {
+  num c = Math.cos( theta ), s = Math.sin( theta );
+
+  setValues(
+    c, -s, 0, 0,
+    s,  c, 0, 0,
+    0,  0, 1, 0,
+    0,  0, 0, 1
+  );
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="makeScale">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>makeScale</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> x, <a href="http://api.dartlang.org/dart_core/num.html">num</a> y, <a href="http://api.dartlang.org/dart_core/num.html">num</a> z) <a class="anchor-link" href="#makeScale"
+              title="Permalink to Matrix4.makeScale">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 makeScale( num x, num y, num z ) {
+  setValues(
+    x, 0, 0, 0,
+    0, y, 0, 0,
+    0, 0, z, 0,
+    0, 0, 0, 1
+  );
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="makeTranslation">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>makeTranslation</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> x, <a href="http://api.dartlang.org/dart_core/num.html">num</a> y, <a href="http://api.dartlang.org/dart_core/num.html">num</a> z) <a class="anchor-link" href="#makeTranslation"
+              title="Permalink to Matrix4.makeTranslation">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 makeTranslation( num x, num y, num z ) {
+  setValues(
+    1, 0, 0, x,
+    0, 1, 0, y,
+    0, 0, 1, z,
+    0, 0, 0, 1
+  );
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="multiply">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>multiply</strong>(<a href="../ThreeD/Matrix4.html">Matrix4</a> a, <a href="../ThreeD/Matrix4.html">Matrix4</a> b) <a class="anchor-link" href="#multiply"
+              title="Permalink to Matrix4.multiply">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 multiply( Matrix4 a, Matrix4 b ) {
+  var ae = a.elements;
+  var be = b.elements;
+  var te = elements;
+
+  var a11 = ae[0], a12 = ae[4], a13 = ae[8], a14 = ae[12];
+  var a21 = ae[1], a22 = ae[5], a23 = ae[9], a24 = ae[13];
+  var a31 = ae[2], a32 = ae[6], a33 = ae[10], a34 = ae[14];
+  var a41 = ae[3], a42 = ae[7], a43 = ae[11], a44 = ae[15];
+
+  var b11 = be[0], b12 = be[4], b13 = be[8], b14 = be[12];
+  var b21 = be[1], b22 = be[5], b23 = be[9], b24 = be[13];
+  var b31 = be[2], b32 = be[6], b33 = be[10], b34 = be[14];
+  var b41 = be[3], b42 = be[7], b43 = be[11], b44 = be[15];
+
+  te[0] = a11 * b11 + a12 * b21 + a13 * b31 + a14 * b41;
+  te[4] = a11 * b12 + a12 * b22 + a13 * b32 + a14 * b42;
+  te[8] = a11 * b13 + a12 * b23 + a13 * b33 + a14 * b43;
+  te[12] = a11 * b14 + a12 * b24 + a13 * b34 + a14 * b44;
+
+  te[1] = a21 * b11 + a22 * b21 + a23 * b31 + a24 * b41;
+  te[5] = a21 * b12 + a22 * b22 + a23 * b32 + a24 * b42;
+  te[9] = a21 * b13 + a22 * b23 + a23 * b33 + a24 * b43;
+  te[13] = a21 * b14 + a22 * b24 + a23 * b34 + a24 * b44;
+
+  te[2] = a31 * b11 + a32 * b21 + a33 * b31 + a34 * b41;
+  te[6] = a31 * b12 + a32 * b22 + a33 * b32 + a34 * b42;
+  te[10] = a31 * b13 + a32 * b23 + a33 * b33 + a34 * b43;
+  te[14] = a31 * b14 + a32 * b24 + a33 * b34 + a34 * b44;
+
+  te[3] = a41 * b11 + a42 * b21 + a43 * b31 + a44 * b41;
+  te[7] = a41 * b12 + a42 * b22 + a43 * b32 + a44 * b42;
+  te[11] = a41 * b13 + a42 * b23 + a43 * b33 + a44 * b43;
+  te[15] = a41 * b14 + a42 * b24 + a43 * b34 + a44 * b44;
+  
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="multiplyScalar">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>multiplyScalar</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> s) <a class="anchor-link" href="#multiplyScalar"
+              title="Permalink to Matrix4.multiplyScalar">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 multiplyScalar( num s ) {
+  var te = elements;
+
+  te[0] *= s; te[4] *= s; te[8] *= s; te[12] *= s;
+  te[1] *= s; te[5] *= s; te[9] *= s; te[13] *= s;
+  te[2] *= s; te[6] *= s; te[10] *= s; te[14] *= s;
+  te[3] *= s; te[7] *= s; te[11] *= s; te[15] *= s;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="multiplySelf">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>multiplySelf</strong>(<a href="../ThreeD/Matrix4.html">Matrix4</a> m) <a class="anchor-link" href="#multiplySelf"
+              title="Permalink to Matrix4.multiplySelf">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 multiplySelf( Matrix4 m ) =&gt; multiply( this, m );
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="multiplyToArray">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>multiplyToArray</strong>(<a href="../ThreeD/Matrix4.html">Matrix4</a> a, <a href="../ThreeD/Matrix4.html">Matrix4</a> b, <a href="http://api.dartlang.org/dart_core/List.html">List</a> r) <a class="anchor-link" href="#multiplyToArray"
+              title="Permalink to Matrix4.multiplyToArray">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 multiplyToArray( Matrix4 a, Matrix4 b, List r ) {
+  
+  var te = elements;
+  
+  multiply( a, b );
+
+  r[ 0 ] = te[0]; r[ 1 ] = te[1]; r[ 2 ] = te[2]; r[ 3 ] = te[3];
+  r[ 4 ] = te[4]; r[ 5 ] = te[5]; r[ 6 ] = te[6]; r[ 7 ] = te[7];
+  r[ 8 ]  = te[8]; r[ 9 ]  = te[9]; r[ 10 ] = te[10]; r[ 11 ] = te[11];
+  r[ 12 ] = te[12]; r[ 13 ] = te[13]; r[ 14 ] = te[14]; r[ 15 ] = te[15];
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="multiplyVector3">
+<span class="show-code">Code</span>
+<strong>multiplyVector3</strong>(<a href="../ThreeD/IVector3.html">IVector3</a> v) <a class="anchor-link" href="#multiplyVector3"
+              title="Permalink to Matrix4.multiplyVector3">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+multiplyVector3( IVector3 v ) {
+  var te = elements;
+
+  var vx = v.x, vy = v.y, vz = v.z;
+  var d = 1 / ( te[3] * vx + te[7] * vy + te[11] * vz + te[15] );
+
+  v.x = ( te[0] * vx + te[4] * vy + te[8] * vz + te[12] ) * d;
+  v.y = ( te[1] * vx + te[5] * vy + te[9] * vz + te[13] ) * d;
+  v.z = ( te[2] * vx + te[6] * vy + te[10] * vz + te[14] ) * d;
+
+  return v;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="multiplyVector3Array">
+<span class="show-code">Code</span>
+<strong>multiplyVector3Array</strong>(a) <a class="anchor-link" href="#multiplyVector3Array"
+              title="Permalink to Matrix4.multiplyVector3Array">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+multiplyVector3Array( a ) {
+
+  var tmp = Matrix4.__v1;
+
+  int il = a.length;
+  
+  for ( var i = 0; i &lt; il; i += 3 ) {
+
+    tmp.x = a[ i ];
+    tmp.y = a[ i + 1 ];
+    tmp.z = a[ i + 2 ];
+
+    multiplyVector3( tmp );
+
+    a[ i ]     = tmp.x;
+    a[ i + 1 ] = tmp.y;
+    a[ i + 2 ] = tmp.z;
+
+  }
+
+  return a;
+
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="multiplyVector4">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector4.html">Vector4</a> <strong>multiplyVector4</strong>(<a href="../ThreeD/Vector4.html">Vector4</a> v) <a class="anchor-link" href="#multiplyVector4"
+              title="Permalink to Matrix4.multiplyVector4">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Vector4 multiplyVector4( Vector4 v ) {
+  var te = elements;
+  var vx = v.x, vy = v.y, vz = v.z, vw = v.w;
+
+  v.x = te[0] * vx + te[4] * vy + te[8] * vz + te[12] * vw;
+  v.y = te[1] * vx + te[5] * vy + te[9] * vz + te[13] * vw;
+  v.z = te[2] * vx + te[6] * vy + te[10] * vz + te[14] * vw;
+  v.w = te[3] * vx + te[7] * vy + te[11] * vz + te[15] * vw;
+
+  return v;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="rotateAxis">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a> <strong>rotateAxis</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> v) <a class="anchor-link" href="#rotateAxis"
+              title="Permalink to Matrix4.rotateAxis">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Vector3 rotateAxis( Vector3 v ) {
+  var te = elements;
+  var vx = v.x, vy = v.y, vz = v.z;
+
+  v.x = vx * te[0] + vy * te[4] + vz * te[8];
+  v.y = vx * te[1] + vy * te[5] + vz * te[9];
+  v.z = vx * te[2] + vy * te[6] + vz * te[10];
+
+  v.normalize();
+
+  return v;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="rotateByAxis">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>rotateByAxis</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> axis, <a href="http://api.dartlang.org/dart_core/num.html">num</a> angle) <a class="anchor-link" href="#rotateByAxis"
+              title="Permalink to Matrix4.rotateByAxis">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 rotateByAxis( Vector3 axis, num angle ) {
+  var te = elements;
+  
+  // optimize by checking axis
+  if ( axis.x == 1 &amp;&amp; axis.y == 0 &amp;&amp; axis.z == 0 ) {
+    return rotateX( angle );
+  } else if ( axis.x == 0 &amp;&amp; axis.y == 1 &amp;&amp; axis.z == 0 ) {
+    return rotateY( angle );
+  } else if ( axis.x == 0 &amp;&amp; axis.y == 0 &amp;&amp; axis.z == 1 ) {
+    return rotateZ( angle );
+  }
+
+  num x = axis.x,
+    y = axis.y,
+    z = axis.z,
+    n = Math.sqrt(x * x + y * y + z * z);
+
+  x /= n;
+  y /= n;
+  z /= n;
+
+  num xx = x * x,
+    yy = y * y,
+    zz = z * z,
+    c = Math.cos(angle),
+    s = Math.sin(angle),
+    oneMinusCosine = 1 - c,
+    xy = x * y * oneMinusCosine,
+    xz = x * z * oneMinusCosine,
+    yz = y * z * oneMinusCosine,
+    xs = x * s,
+    ys = y * s,
+    zs = z * s,
+
+    r11 = xx + (1 - xx) * c,
+    r21 = xy + zs,
+    r31 = xz - ys,
+    r12 = xy - zs,
+    r22 = yy + (1 - yy) * c,
+    r32 = yz + xs,
+    r13 = xz + ys,
+    r23 = yz - xs,
+    r33 = zz + (1 - zz) * c;
+
+  var m11 = te[0], m21 = te[1], m31 = te[2], m41 = te[3];
+  var m12 = te[4], m22 = te[5], m32 = te[6], m42 = te[7];
+  var m13 = te[8], m23 = te[9], m33 = te[10], m43 = te[11];
+  var m14 = te[12], m24 = te[13], m34 = te[14], m44 = te[15];
+
+  te[0] = r11 * m11 + r21 * m12 + r31 * m13;
+  te[1] = r11 * m21 + r21 * m22 + r31 * m23;
+  te[2] = r11 * m31 + r21 * m32 + r31 * m33;
+  te[3] = r11 * m41 + r21 * m42 + r31 * m43;
+
+  te[4] = r12 * m11 + r22 * m12 + r32 * m13;
+  te[5] = r12 * m21 + r22 * m22 + r32 * m23;
+  te[6] = r12 * m31 + r22 * m32 + r32 * m33;
+  te[7] = r12 * m41 + r22 * m42 + r32 * m43;
+
+  te[8] = r13 * m11 + r23 * m12 + r33 * m13;
+  te[9] = r13 * m21 + r23 * m22 + r33 * m23;
+  te[10] = r13 * m31 + r23 * m32 + r33 * m33;
+  te[11] = r13 * m41 + r23 * m42 + r33 * m43;
+
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="rotateX">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>rotateX</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> angle) <a class="anchor-link" href="#rotateX"
+              title="Permalink to Matrix4.rotateX">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 rotateX( num angle ) {
+  var te = elements;
+  var m12 = te[4];
+  var m22 = te[5];
+  var m32 = te[6];
+  var m42 = te[7];
+  var m13 = te[8];
+  var m23 = te[9];
+  var m33 = te[10];
+  var m43 = te[11];
+  var c = Math.cos( angle );
+  var s = Math.sin( angle );
+
+  te[4] = c * m12 + s * m13;
+  te[5] = c * m22 + s * m23;
+  te[6] = c * m32 + s * m33;
+  te[7] = c * m42 + s * m43;
+
+  te[8] = c * m13 - s * m12;
+  te[9] = c * m23 - s * m22;
+  te[10] = c * m33 - s * m32;
+  te[11] = c * m43 - s * m42;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="rotateY">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>rotateY</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> angle) <a class="anchor-link" href="#rotateY"
+              title="Permalink to Matrix4.rotateY">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 rotateY( num angle ) {
+  var te = elements;
+  var m11 = te[0];
+  var m21 = te[1];
+  var m31 = te[2];
+  var m41 = te[3];
+  var m13 = te[8];
+  var m23 = te[9];
+  var m33 = te[10];
+  var m43 = te[11];
+  var c = Math.cos( angle );
+  var s = Math.sin( angle );
+
+  te[0] = c * m11 - s * m13;
+  te[1] = c * m21 - s * m23;
+  te[2] = c * m31 - s * m33;
+  te[3] = c * m41 - s * m43;
+
+  te[8] = c * m13 + s * m11;
+  te[9] = c * m23 + s * m21;
+  te[10] = c * m33 + s * m31;
+  te[11] = c * m43 + s * m41;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="rotateZ">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>rotateZ</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> angle) <a class="anchor-link" href="#rotateZ"
+              title="Permalink to Matrix4.rotateZ">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 rotateZ( num angle ) {
+  var te = elements;
+  var m11 = te[0];
+  var m21 = te[1];
+  var m31 = te[2];
+  var m41 = te[3];
+  var m12 = te[4];
+  var m22 = te[5];
+  var m32 = te[6];
+  var m42 = te[7];
+  var c = Math.cos( angle );
+  var s = Math.sin( angle );
+
+  te[0] = c * m11 + s * m12;
+  te[1] = c * m21 + s * m22;
+  te[2] = c * m31 + s * m32;
+  te[3] = c * m41 + s * m42;
+
+  te[4] = c * m12 - s * m11;
+  te[5] = c * m22 - s * m21;
+  te[6] = c * m32 - s * m31;
+  te[7] = c * m42 - s * m41;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="scale">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>scale</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> v) <a class="anchor-link" href="#scale"
+              title="Permalink to Matrix4.scale">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 scale( Vector3 v ) {
+  
+  var te = elements;
+  num x = v.x, y = v.y, z = v.z;
+
+  te[0] *= x; te[4] *= y; te[8] *= z;
+  te[1] *= x; te[5] *= y; te[9] *= z;
+  te[2] *= x; te[6] *= y; te[10] *= z;
+  te[3] *= x; te[7] *= y; te[11] *= z;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="setPosition">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>setPosition</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> v) <a class="anchor-link" href="#setPosition"
+              title="Permalink to Matrix4.setPosition">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 setPosition( Vector3 v ) {
+  var te = elements;
+
+  te[12] = v.x;
+  te[13] = v.y;
+  te[14] = v.z;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="setRotationFromEuler">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>setRotationFromEuler</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> v, [<a href="http://api.dartlang.org/dart_core/String.html">String</a> order = 'XYZ']) <a class="anchor-link" href="#setRotationFromEuler"
+              title="Permalink to Matrix4.setRotationFromEuler">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 setRotationFromEuler( Vector3 v, [String order = 'XYZ'] ) {
+  var te = elements;
+  num x = v.x, y = v.y, z = v.z,
+  a = Math.cos( x ), b = Math.sin( x ),
+  c = Math.cos( y ), d = Math.sin( y ),
+  e = Math.cos( z ), f = Math.sin( z );
+
+  switch ( order ) {
+    case 'YXZ':
+
+      num ce = c * e, cf = c * f, de = d * e, df = d * f;
+
+      te[0] = ce + df * b;
+      te[4] = de * b - cf;
+      te[8] = a * d;
+
+      te[1] = a * f;
+      te[5] = a * e;
+      te[9] = - b;
+
+      te[2] = cf * b - de;
+      te[6] = df + ce * b;
+      te[10] = a * c;
+      break;
+
+    case 'ZXY':
+
+      num ce = c * e, cf = c * f, de = d * e, df = d * f;
+
+      te[0] = ce - df * b;
+      te[4] = - a * f;
+      te[8] = de + cf * b;
+
+      te[1] = cf + de * b;
+      te[5] = a * e;
+      te[9] = df - ce * b;
+
+      te[2] = - a * d;
+      te[6] = b;
+      te[10] = a * c;
+      break;
+
+    case 'ZYX':
+
+      num ae = a * e, af = a * f, be = b * e, bf = b * f;
+
+      te[0] = c * e;
+      te[4] = be * d - af;
+      te[8] = ae * d + bf;
+
+      te[1] = c * f;
+      te[5] = bf * d + ae;
+      te[9] = af * d - be;
+
+      te[2] = - d;
+      te[6] = b * c;
+      te[10] = a * c;
+      break;
+
+    case 'YZX':
+
+      num ac = a * c, ad = a * d, bc = b * c, bd = b * d;
+
+      te[0] = c * e;
+      te[4] = bd - ac * f;
+      te[8] = bc * f + ad;
+
+      te[1] = f;
+      te[5] = a * e;
+      te[9] = - b * e;
+
+      te[2] = - d * e;
+      te[6] = ad * f + bc;
+      te[10] = ac - bd * f;
+      break;
+
+    case 'XZY':
+
+      num ac = a * c, ad = a * d, bc = b * c, bd = b * d;
+
+      te[0] = c * e;
+      te[4] = - f;
+      te[8] = d * e;
+
+      te[1] = ac * f + bd;
+      te[5] = a * e;
+      te[9] = ad * f - bc;
+
+      te[2] = bc * f - ad;
+      te[6] = b * e;
+      te[10] = bd * f + ac;
+      break;
+
+    default: // 'XYZ'
+
+      num ae = a * e, af = a * f, be = b * e, bf = b * f;
+
+      te[0] = c * e;
+      te[4] = - c * f;
+      te[8] = d;
+
+      te[1] = af + be * d;
+      te[5] = ae - bf * d;
+      te[9] = - b * c;
+
+      te[2] = bf - ae * d;
+      te[6] = be + af * d;
+      te[10] = a * c;
+      break;
+
+  }
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="setRotationFromQuaternion">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>setRotationFromQuaternion</strong>(<a href="../ThreeD/Quaternion.html">Quaternion</a> q) <a class="anchor-link" href="#setRotationFromQuaternion"
+              title="Permalink to Matrix4.setRotationFromQuaternion">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 setRotationFromQuaternion( Quaternion q ) {
+  var te = this.elements;
+  
+  num x = q.x, y = q.y, z = q.z, w = q.w,
+  x2 = x + x, y2 = y + y, z2 = z + z,
+  xx = x * x2, xy = x * y2, xz = x * z2,
+  yy = y * y2, yz = y * z2, zz = z * z2,
+  wx = w * x2, wy = w * y2, wz = w * z2;
+
+  te[0] = 1 - ( yy + zz );
+  te[4] = xy - wz;
+  te[8] = xz + wy;
+
+  te[1] = xy + wz;
+  te[5] = 1 - ( xx + zz );
+  te[9] = yz - wx;
+
+  te[2] = xz - wy;
+  te[6] = yz + wx;
+  te[10] = 1 - ( xx + yy );
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="setValues">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>setValues</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> n11, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n12, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n13, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n14, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n21, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n22, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n23, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n24, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n31, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n32, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n33, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n34, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n41, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n42, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n43, <a href="http://api.dartlang.org/dart_core/num.html">num</a> n44) <a class="anchor-link" href="#setValues"
+              title="Permalink to Matrix4.setValues">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 setValues( num n11, num n12, num n13, num n14, 
+                   num n21, num n22, num n23, num n24, 
+                   num n31, num n32, num n33, num n34, 
+                   num n41, num n42, num n43, num n44 ) {
+  var te = this.elements;
+
+  te[0] = n11; te[4] = n12; te[8] = n13; te[12] = n14;
+  te[1] = n21; te[5] = n22; te[9] = n23; te[13] = n24;
+  te[2] = n31; te[6] = n32; te[10] = n33; te[14] = n34;
+  te[3] = n41; te[7] = n42; te[11] = n43; te[15] = n44;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="translate">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>translate</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> v) <a class="anchor-link" href="#translate"
+              title="Permalink to Matrix4.translate">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 translate( Vector3 v ) {
+  var te = elements;
+  var x = v.x, y = v.y, z = v.z;
+
+  te[12] = te[0] * x + te[4] * y + te[8] * z + te[12];
+  te[13] = te[1] * x + te[5] * y + te[9] * z + te[13];
+  te[14] = te[2] * x + te[6] * y + te[10] * z + te[14];
+  te[15] = te[3] * x + te[7] * y + te[11] * z + te[15];
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="transpose">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a> <strong>transpose</strong>() <a class="anchor-link" href="#transpose"
+              title="Permalink to Matrix4.transpose">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Matrix4 transpose() {
+  var te = elements;
+  var tmp;
+
+  tmp = te[1]; te[1] = te[4]; te[4] = tmp;
+  tmp = te[2]; te[2] = te[8]; te[8] = tmp;
+  tmp = te[6]; te[6] = te[9]; te[9] = tmp;
+
+  tmp = te[3]; te[3] = te[12]; te[12] = tmp;
+  tmp = te[7]; te[7] = te[13]; te[13] = tmp;
+  tmp = te[11]; te[11] = te[14]; te[14] = tmp;
+
+  return this;
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="elements">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_html/Float32Array.html">Float32Array</a>         <strong>elements</strong> <a class="anchor-link"
+            href="#elements"
+            title="Permalink to Matrix4.elements">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Float32Array elements;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page was generated at 2012-10-01 16:04:45.553</div>
+        </div>
+        <script async src="../client-static.js"></script>
+        </body></html>
+        

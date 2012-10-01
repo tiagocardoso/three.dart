@@ -1,0 +1,978 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>WebGLMaterial Class / ThreeD Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="ThreeD" data-type="WebGLMaterial">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../ThreeD.html">ThreeD</a> &rsaquo; <a href="../ThreeD/WebGLMaterial.html">WebGLMaterial</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="../CurveUtils.html">CurveUtils</a></h2><h2><div class="icon-library"></div><a href="../FontUtils.html">FontUtils</a></h2><h2><div class="icon-library"></div><a href="../GeometryUtils.html">GeometryUtils</a></h2><h2><div class="icon-library"></div><a href="../ImageUtils.html">ImageUtils</a></h2><h2><div class="icon-library"></div><a href="../SceneUtils.html">SceneUtils</a></h2><h2><div class="icon-library"></div><a href="../ShapeUtils.html">ShapeUtils</a></h2><h2><div class="icon-library"></div><a href="../ThreeD.html">ThreeD</a></h2><ul class="icon">
+<li><a href="../ThreeD/AmbientLight.html"><div class="icon-class"></div>AmbientLight</a></li>
+<li><a href="../ThreeD/ArcCurve.html"><div class="icon-class"></div>ArcCurve</a></li>
+<li><a href="../ThreeD/ArrowHelper.html"><div class="icon-class"></div>ArrowHelper</a></li>
+<li><a href="../ThreeD/AxisHelper.html"><div class="icon-class"></div>AxisHelper</a></li>
+<li><a href="../ThreeD/Bone.html"><div class="icon-class"></div>Bone</a></li>
+<li><a href="../ThreeD/BoundingBox.html"><div class="icon-class"></div>BoundingBox</a></li>
+<li><a href="../ThreeD/BoundingSphere.html"><div class="icon-class"></div>BoundingSphere</a></li>
+<li><a href="../ThreeD/Buffer.html"><div class="icon-class"></div>Buffer</a></li>
+<li><a href="../ThreeD/BufferGeometry.html"><div class="icon-class"></div>BufferGeometry</a></li>
+<li><a href="../ThreeD/Camera.html"><div class="icon-class"></div>Camera</a></li>
+<li><a href="../ThreeD/CanvasRenderData.html"><div class="icon-class"></div>CanvasRenderData</a></li>
+<li><a href="../ThreeD/CanvasRenderer.html"><div class="icon-class"></div>CanvasRenderer</a></li>
+<li><a href="../ThreeD/CircleGeometry.html"><div class="icon-class"></div>CircleGeometry</a></li>
+<li><a href="../ThreeD/ClosedSplineCurve3.html"><div class="icon-class"></div>ClosedSplineCurve3</a></li>
+<li><a href="../ThreeD/Color.html"><div class="icon-class"></div>Color</a></li>
+<li><a href="../ThreeD/ConvexGeometry.html"><div class="icon-class"></div>ConvexGeometry</a></li>
+<li><a href="../ThreeD/CubeGeomSides.html"><div class="icon-class"></div>CubeGeomSides</a></li>
+<li><a href="../ThreeD/CubeGeometry.html"><div class="icon-class"></div>CubeGeometry</a></li>
+<li><a href="../ThreeD/CubeReflectionMapping.html"><div class="icon-class"></div>CubeReflectionMapping</a></li>
+<li><a href="../ThreeD/CubeRefractionMapping.html"><div class="icon-class"></div>CubeRefractionMapping</a></li>
+<li><a href="../ThreeD/CubicBezierCurve.html"><div class="icon-class"></div>CubicBezierCurve</a></li>
+<li><a href="../ThreeD/CubicBezierCurve3.html"><div class="icon-class"></div>CubicBezierCurve3</a></li>
+<li><a href="../ThreeD/Curve.html"><div class="icon-class"></div>Curve&lt;V&gt;</a></li>
+<li><a href="../ThreeD/Curve2D.html"><div class="icon-class"></div>Curve2D</a></li>
+<li><a href="../ThreeD/Curve3D.html"><div class="icon-class"></div>Curve3D</a></li>
+<li><a href="../ThreeD/CurvePath.html"><div class="icon-class"></div>CurvePath</a></li>
+<li><a href="../ThreeD/CylinderGeometry.html"><div class="icon-class"></div>CylinderGeometry</a></li>
+<li><a href="../ThreeD/DataTexture.html"><div class="icon-class"></div>DataTexture</a></li>
+<li><a href="../ThreeD/DirectionalLight.html"><div class="icon-class"></div>DirectionalLight</a></li>
+<li><a href="../ThreeD/EllipseCurve.html"><div class="icon-class"></div>EllipseCurve</a></li>
+<li><a href="../ThreeD/EventEmitter.html"><div class="icon-class"></div>EventEmitter</a></li>
+<li><a href="../ThreeD/EventEmitterEvent.html"><div class="icon-class"></div>EventEmitterEvent</a></li>
+<li><a href="../ThreeD/ExtrudeGeometry.html"><div class="icon-class"></div>ExtrudeGeometry</a></li>
+<li><a href="../ThreeD/ExtrudeGeometryWorldUVGenerator.html"><div class="icon-class"></div>ExtrudeGeometryWorldUVGenerator</a></li>
+<li><a href="../ThreeD/Face3.html"><div class="icon-class"></div>Face3</a></li>
+<li><a href="../ThreeD/Face4.html"><div class="icon-class"></div>Face4</a></li>
+<li><a href="../ThreeD/Fog.html"><div class="icon-class"></div>Fog</a></li>
+<li><a href="../ThreeD/FogExp2.html"><div class="icon-class"></div>FogExp2</a></li>
+<li><a href="../ThreeD/FogLinear.html"><div class="icon-class"></div>FogLinear</a></li>
+<li><a href="../ThreeD/Frustum.html"><div class="icon-class"></div>Frustum</a></li>
+<li><a href="../ThreeD/Geometry.html"><div class="icon-class"></div>Geometry</a></li>
+<li><a href="../ThreeD/IFace3.html"><div class="icon-interface"></div>IFace3</a></li>
+<li><a href="../ThreeD/IFace4.html"><div class="icon-interface"></div>IFace4</a></li>
+<li><a href="../ThreeD/IMaterial.html"><div class="icon-interface"></div>IMaterial</a></li>
+<li><a href="../ThreeD/IParticleMaterial.html"><div class="icon-interface"></div>IParticleMaterial</a></li>
+<li><a href="../ThreeD/IRenderableFace3.html"><div class="icon-interface"></div>IRenderableFace3</a></li>
+<li><a href="../ThreeD/IRenderableFace4.html"><div class="icon-interface"></div>IRenderableFace4</a></li>
+<li><a href="../ThreeD/IRenderableObj.html"><div class="icon-interface"></div>IRenderableObj</a></li>
+<li><a href="../ThreeD/ITextureMapMaterial.html"><div class="icon-interface"></div>ITextureMapMaterial</a></li>
+<li><a href="../ThreeD/IVector2.html"><div class="icon-interface"></div>IVector2</a></li>
+<li><a href="../ThreeD/IVector3.html"><div class="icon-interface"></div>IVector3</a></li>
+<li><a href="../ThreeD/IVector4.html"><div class="icon-interface"></div>IVector4</a></li>
+<li><a href="../ThreeD/IcosahedronGeometry.html"><div class="icon-class"></div>IcosahedronGeometry</a></li>
+<li><a href="../ThreeD/ImageLoader.html"><div class="icon-class"></div>ImageLoader</a></li>
+<li><a href="../ThreeD/ImmediateRenderObject.html"><div class="icon-class"></div>ImmediateRenderObject</a></li>
+<li><a href="../ThreeD/Intersect.html"><div class="icon-class"></div>Intersect</a></li>
+<li><a href="../ThreeD/JSONLoader.html"><div class="icon-class"></div>JSONLoader</a></li>
+<li><a href="../ThreeD/LOD.html"><div class="icon-class"></div>LOD</a></li>
+<li><a href="../ThreeD/LatheGeometry.html"><div class="icon-class"></div>LatheGeometry</a></li>
+<li><a href="../ThreeD/LensFlare.html"><div class="icon-class"></div>LensFlare</a></li>
+<li><a href="../ThreeD/Light.html"><div class="icon-class"></div>Light</a></li>
+<li><a href="../ThreeD/Line.html"><div class="icon-class"></div>Line</a></li>
+<li><a href="../ThreeD/LineBasicMaterial.html"><div class="icon-class"></div>LineBasicMaterial</a></li>
+<li><a href="../ThreeD/LineCurve.html"><div class="icon-class"></div>LineCurve</a></li>
+<li><a href="../ThreeD/LineCurve3.html"><div class="icon-class"></div>LineCurve3</a></li>
+<li><a href="../ThreeD/LoadCompleteCallback.html"><div class="icon-interface"></div>LoadCompleteCallback</a></li>
+<li><a href="../ThreeD/LoadProgressCallback.html"><div class="icon-interface"></div>LoadProgressCallback</a></li>
+<li><a href="../ThreeD/LoadStartCallback.html"><div class="icon-interface"></div>LoadStartCallback</a></li>
+<li><a href="../ThreeD/LoadedCallback.html"><div class="icon-interface"></div>LoadedCallback</a></li>
+<li><a href="../ThreeD/Loader.html"><div class="icon-class"></div>Loader</a></li>
+<li><a href="../ThreeD/Material.html"><div class="icon-class"></div>Material</a></li>
+<li><a href="../ThreeD/Matrix3.html"><div class="icon-class"></div>Matrix3</a></li>
+<li><a href="../ThreeD/Matrix4.html"><div class="icon-class"></div>Matrix4</a></li>
+<li><a href="../ThreeD/Mesh.html"><div class="icon-class"></div>Mesh</a></li>
+<li><a href="../ThreeD/MeshBasicMaterial.html"><div class="icon-class"></div>MeshBasicMaterial</a></li>
+<li><a href="../ThreeD/MeshDepthMaterial.html"><div class="icon-class"></div>MeshDepthMaterial</a></li>
+<li><a href="../ThreeD/MeshFaceMaterial.html"><div class="icon-class"></div>MeshFaceMaterial</a></li>
+<li><a href="../ThreeD/MeshLambertMaterial.html"><div class="icon-class"></div>MeshLambertMaterial</a></li>
+<li><a href="../ThreeD/MeshNormalMaterial.html"><div class="icon-class"></div>MeshNormalMaterial</a></li>
+<li><a href="../ThreeD/MeshPhongMaterial.html"><div class="icon-class"></div>MeshPhongMaterial</a></li>
+<li><a href="../ThreeD/MorphAnimMesh.html"><div class="icon-class"></div>MorphAnimMesh</a></li>
+<li><a href="../ThreeD/Object3D.html"><div class="icon-class"></div>Object3D</a></li>
+<li><a href="../ThreeD/OctahedronGeometry.html"><div class="icon-class"></div>OctahedronGeometry</a></li>
+<li><a href="../ThreeD/OrthographicCamera.html"><div class="icon-class"></div>OrthographicCamera</a></li>
+<li><a href="../ThreeD/ParametricGeometry.html"><div class="icon-class"></div>ParametricGeometry</a></li>
+<li><a href="../ThreeD/Particle.html"><div class="icon-class"></div>Particle</a></li>
+<li><a href="../ThreeD/ParticleBasicMaterial.html"><div class="icon-class"></div>ParticleBasicMaterial</a></li>
+<li><a href="../ThreeD/ParticleCanvasMaterial.html"><div class="icon-class"></div>ParticleCanvasMaterial</a></li>
+<li><a href="../ThreeD/ParticleCanvasMaterialProgram.html"><div class="icon-interface"></div>ParticleCanvasMaterialProgram</a></li>
+<li><a href="../ThreeD/ParticleSystem.html"><div class="icon-class"></div>ParticleSystem</a></li>
+<li><a href="../ThreeD/Path.html"><div class="icon-class"></div>Path</a></li>
+<li><a href="../ThreeD/PathAction.html"><div class="icon-class"></div>PathAction</a></li>
+<li><a href="../ThreeD/PerspectiveCamera.html"><div class="icon-class"></div>PerspectiveCamera</a></li>
+<li><a href="../ThreeD/PlaneGeometry.html"><div class="icon-class"></div>PlaneGeometry</a></li>
+<li><a href="../ThreeD/PointLight.html"><div class="icon-class"></div>PointLight</a></li>
+<li><a href="../ThreeD/PolyhedronGeometry.html"><div class="icon-class"></div>PolyhedronGeometry</a></li>
+<li><a href="../ThreeD/PolyhedronGeometryVertex.html"><div class="icon-class"></div>PolyhedronGeometryVertex</a></li>
+<li><a href="../ThreeD/Program.html"><div class="icon-class"></div>Program</a></li>
+<li><a href="../ThreeD/Projector.html"><div class="icon-class"></div>Projector</a></li>
+<li><a href="../ThreeD/ProjectorRenderData.html"><div class="icon-class"></div>ProjectorRenderData</a></li>
+<li><a href="../ThreeD/QuadraticBezierCurve.html"><div class="icon-class"></div>QuadraticBezierCurve</a></li>
+<li><a href="../ThreeD/QuadraticBezierCurve3.html"><div class="icon-class"></div>QuadraticBezierCurve3</a></li>
+<li><a href="../ThreeD/Quaternion.html"><div class="icon-class"></div>Quaternion</a></li>
+<li><a href="../ThreeD/Ray.html"><div class="icon-class"></div>Ray</a></li>
+<li><a href="../ThreeD/Rectangle.html"><div class="icon-class"></div>Rectangle</a></li>
+<li><a href="../ThreeD/RenderInts.html"><div class="icon-class"></div>RenderInts</a></li>
+<li><a href="../ThreeD/RenderableFace3.html"><div class="icon-class"></div>RenderableFace3</a></li>
+<li><a href="../ThreeD/RenderableFace4.html"><div class="icon-class"></div>RenderableFace4</a></li>
+<li><a href="../ThreeD/RenderableLine.html"><div class="icon-class"></div>RenderableLine</a></li>
+<li><a href="../ThreeD/RenderableObject.html"><div class="icon-class"></div>RenderableObject</a></li>
+<li><a href="../ThreeD/RenderableParticle.html"><div class="icon-class"></div>RenderableParticle</a></li>
+<li><a href="../ThreeD/RenderableVertex.html"><div class="icon-class"></div>RenderableVertex</a></li>
+<li><a href="../ThreeD/Renderer.html"><div class="icon-class"></div>Renderer</a></li>
+<li><a href="../ThreeD/Ribbon.html"><div class="icon-class"></div>Ribbon</a></li>
+<li><a href="../ThreeD/Scene.html"><div class="icon-class"></div>Scene</a></li>
+<li><a href="../ThreeD/ShaderMaterial.html"><div class="icon-class"></div>ShaderMaterial</a></li>
+<li><a href="../ThreeD/Shape.html"><div class="icon-class"></div>Shape</a></li>
+<li><a href="../ThreeD/SkinnedMesh.html"><div class="icon-class"></div>SkinnedMesh</a></li>
+<li><a href="../ThreeD/SphereGeometry.html"><div class="icon-class"></div>SphereGeometry</a></li>
+<li><a href="../ThreeD/SphericalReflectionMapping.html"><div class="icon-class"></div>SphericalReflectionMapping</a></li>
+<li><a href="../ThreeD/SphericalRefractionMapping.html"><div class="icon-class"></div>SphericalRefractionMapping</a></li>
+<li><a href="../ThreeD/SplineCurve.html"><div class="icon-class"></div>SplineCurve</a></li>
+<li><a href="../ThreeD/SplineCurve3.html"><div class="icon-class"></div>SplineCurve3</a></li>
+<li><a href="../ThreeD/SpotLight.html"><div class="icon-class"></div>SpotLight</a></li>
+<li><a href="../ThreeD/Sprite.html"><div class="icon-class"></div>Sprite</a></li>
+<li><a href="../ThreeD/SpriteAlignment.html"><div class="icon-class"></div>SpriteAlignment</a></li>
+<li><a href="../ThreeD/TetrahedronGeometry.html"><div class="icon-class"></div>TetrahedronGeometry</a></li>
+<li><a href="../ThreeD/TextGeometry.html"><div class="icon-class"></div>TextGeometry</a></li>
+<li><a href="../ThreeD/Texture.html"><div class="icon-class"></div>Texture</a></li>
+<li><a href="../ThreeD/Three.html"><div class="icon-class"></div>Three</a></li>
+<li><a href="../ThreeD/TorusGeometry.html"><div class="icon-class"></div>TorusGeometry</a></li>
+<li><a href="../ThreeD/TorusKnotGeometry.html"><div class="icon-class"></div>TorusKnotGeometry</a></li>
+<li><a href="../ThreeD/TubeGeometry.html"><div class="icon-class"></div>TubeGeometry</a></li>
+<li><a href="../ThreeD/UV.html"><div class="icon-class"></div>UV</a></li>
+<li><a href="../ThreeD/UVMapping.html"><div class="icon-class"></div>UVMapping</a></li>
+<li><a href="../ThreeD/Uniform.html"><div class="icon-class"></div>Uniform</a></li>
+<li><a href="../ThreeD/UniformsUtils.html"><div class="icon-class"></div>UniformsUtils</a></li>
+<li><a href="../ThreeD/Vector2.html"><div class="icon-class"></div>Vector2</a></li>
+<li><a href="../ThreeD/Vector3.html"><div class="icon-class"></div>Vector3</a></li>
+<li><a href="../ThreeD/Vector4.html"><div class="icon-class"></div>Vector4</a></li>
+<li><a href="../ThreeD/Vertex.html"><div class="icon-class"></div>Vertex</a></li>
+<li><a href="../ThreeD/WebGLCamera.html"><div class="icon-class"></div>WebGLCamera</a></li>
+<li><a href="../ThreeD/WebGLGeometry.html"><div class="icon-class"></div>WebGLGeometry</a></li>
+<li><div class="icon-class"></div><strong>WebGLMaterial</strong></li>
+<li><a href="../ThreeD/WebGLObject.html"><div class="icon-class"></div>WebGLObject</a></li>
+<li><a href="../ThreeD/WebGLRenderTarget.html"><div class="icon-class"></div>WebGLRenderTarget</a></li>
+<li><a href="../ThreeD/WebGLRenderTargetCube.html"><div class="icon-class"></div>WebGLRenderTargetCube</a></li>
+<li><a href="../ThreeD/WebGLRenderer.html"><div class="icon-class"></div>WebGLRenderer</a></li>
+<li><a href="../ThreeD/WebGLRendererInfo.html"><div class="icon-class"></div>WebGLRendererInfo</a></li>
+<li><a href="../ThreeD/WebGLRendererMemoryInfo.html"><div class="icon-class"></div>WebGLRendererMemoryInfo</a></li>
+<li><a href="../ThreeD/WebGLRendererRenderInfo.html"><div class="icon-class"></div>WebGLRendererRenderInfo</a></li>
+</ul>
+<h2><div class="icon-library"></div><a href="../ThreeMath.html">ThreeMath</a></h2></div>
+<div class="content">
+        <h2><strong>WebGLMaterial</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="WebGLMaterial.from">
+<span class="show-code">Code</span>
+factory <strong>WebGLMaterial</strong>.from(<a href="../ThreeD/Material.html">Material</a> material) <a class="anchor-link" href="#WebGLMaterial.from"
+              title="Permalink to WebGLMaterial.WebGLMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+factory WebGLMaterial.from(Material material) {
+
+  if (material["__webglMaterial"] == null) {
+    var webglMaterial = new WebGLMaterial._internal(material);
+    material["__webglMaterial"] = webglMaterial;
+  }
+    
+  return material["__webglMaterial"];
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="WebGLMaterial._internal">
+<span class="show-code">Code</span>
+new <strong>WebGLMaterial</strong>._internal(<a href="../ThreeD/Material.html">Material</a> material) <a class="anchor-link" href="#WebGLMaterial._internal"
+              title="Permalink to WebGLMaterial.WebGLMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+WebGLMaterial._internal(Material material) : _material = material;
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="alphaTest">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get alphaTest</strong>() <a class="anchor-link" href="#alphaTest"
+              title="Permalink to WebGLMaterial.get alphaTest">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int get alphaTest =&gt; _material.alphaTest;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="ambient">
+<span class="show-code">Code</span>
+<strong>get ambient</strong>() <a class="anchor-link" href="#ambient"
+              title="Permalink to WebGLMaterial.get ambient">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get ambient =&gt; (_material as Dynamic).ambient;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="attributes">
+<span class="show-code">Code</span>
+<strong>get attributes</strong>() <a class="anchor-link" href="#attributes"
+              title="Permalink to WebGLMaterial.get attributes">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get attributes =&gt; (isShaderMaterial)? (_material as ShaderMaterial).attributes : null;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="blendDst">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get blendDst</strong>() <a class="anchor-link" href="#blendDst"
+              title="Permalink to WebGLMaterial.get blendDst">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int get blendDst =&gt; _material.blendDst;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="blendEquation">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get blendEquation</strong>() <a class="anchor-link" href="#blendEquation"
+              title="Permalink to WebGLMaterial.get blendEquation">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int get blendEquation =&gt; _material.blendEquation;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="blendSrc">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get blendSrc</strong>() <a class="anchor-link" href="#blendSrc"
+              title="Permalink to WebGLMaterial.get blendSrc">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int get blendSrc =&gt; _material.blendSrc;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="blending">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get blending</strong>() <a class="anchor-link" href="#blending"
+              title="Permalink to WebGLMaterial.get blending">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int get blending =&gt; _material.blending;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="bumpMap">
+<span class="show-code">Code</span>
+<strong>get bumpMap</strong>() <a class="anchor-link" href="#bumpMap"
+              title="Permalink to WebGLMaterial.get bumpMap">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get bumpMap =&gt; isMeshPhongMaterial ? (_material as MeshPhongMaterial).bumpMap : null;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="color">
+<span class="show-code">Code</span>
+<strong>get color</strong>() <a class="anchor-link" href="#color"
+              title="Permalink to WebGLMaterial.get color">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get color =&gt; (_material as Dynamic).color;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="combine">
+<span class="show-code">Code</span>
+<strong>get combine</strong>() <a class="anchor-link" href="#combine"
+              title="Permalink to WebGLMaterial.get combine">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get combine =&gt; (_material as Dynamic).combine;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="depthTest">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get depthTest</strong>() <a class="anchor-link" href="#depthTest"
+              title="Permalink to WebGLMaterial.get depthTest">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get depthTest =&gt; _material.depthTest;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="depthWrite">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get depthWrite</strong>() <a class="anchor-link" href="#depthWrite"
+              title="Permalink to WebGLMaterial.get depthWrite">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get depthWrite =&gt; _material.depthWrite;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="emissive">
+<span class="show-code">Code</span>
+<strong>get emissive</strong>() <a class="anchor-link" href="#emissive"
+              title="Permalink to WebGLMaterial.get emissive">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get emissive =&gt; (_material as Dynamic).emissive;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="envMap">
+<span class="show-code">Code</span>
+<strong>get envMap</strong>() <a class="anchor-link" href="#envMap"
+              title="Permalink to WebGLMaterial.get envMap">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get envMap =&gt; _hasEnvMap ? (_material as Dynamic).envMap : null;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="fog">
+<span class="show-code">Code</span>
+<strong>get fog</strong>() <a class="anchor-link" href="#fog"
+              title="Permalink to WebGLMaterial.get fog">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get fog =&gt; _hasFog ? (_material as Dynamic).fog : false;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="fragmentShader=">
+<span class="show-code">Code</span>
+<strong>set fragmentShader</strong>(v) <a class="anchor-link" href="#fragmentShader="
+              title="Permalink to WebGLMaterial.set fragmentShader">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+set fragmentShader(v) =&gt; (isShaderMaterial)? (_material as ShaderMaterial).fragmentShader = v : _fragmentShader = v;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="fragmentShader">
+<span class="show-code">Code</span>
+<strong>get fragmentShader</strong>() <a class="anchor-link" href="#fragmentShader"
+              title="Permalink to WebGLMaterial.get fragmentShader">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get fragmentShader =&gt; (isShaderMaterial)? (_material as ShaderMaterial).fragmentShader : _fragmentShader;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get id</strong>() <a class="anchor-link" href="#id"
+              title="Permalink to WebGLMaterial.get id">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int get id =&gt; _material.id;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="isLineBasicMaterial">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get isLineBasicMaterial</strong>() <a class="anchor-link" href="#isLineBasicMaterial"
+              title="Permalink to WebGLMaterial.get isLineBasicMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get isLineBasicMaterial =&gt; _material is LineBasicMaterial;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="isMeshBasicMaterial">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get isMeshBasicMaterial</strong>() <a class="anchor-link" href="#isMeshBasicMaterial"
+              title="Permalink to WebGLMaterial.get isMeshBasicMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get isMeshBasicMaterial =&gt; _material is MeshBasicMaterial;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="isMeshDepthMaterial">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get isMeshDepthMaterial</strong>() <a class="anchor-link" href="#isMeshDepthMaterial"
+              title="Permalink to WebGLMaterial.get isMeshDepthMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get isMeshDepthMaterial =&gt; _material is MeshDepthMaterial;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="isMeshFaceMaterial">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get isMeshFaceMaterial</strong>() <a class="anchor-link" href="#isMeshFaceMaterial"
+              title="Permalink to WebGLMaterial.get isMeshFaceMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get isMeshFaceMaterial =&gt; _material is MeshFaceMaterial;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="isMeshLambertMaterial">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get isMeshLambertMaterial</strong>() <a class="anchor-link" href="#isMeshLambertMaterial"
+              title="Permalink to WebGLMaterial.get isMeshLambertMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get isMeshLambertMaterial =&gt; _material is MeshLambertMaterial;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="isMeshNormalMaterial">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get isMeshNormalMaterial</strong>() <a class="anchor-link" href="#isMeshNormalMaterial"
+              title="Permalink to WebGLMaterial.get isMeshNormalMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get isMeshNormalMaterial =&gt; _material is MeshNormalMaterial;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="isMeshPhongMaterial">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get isMeshPhongMaterial</strong>() <a class="anchor-link" href="#isMeshPhongMaterial"
+              title="Permalink to WebGLMaterial.get isMeshPhongMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get isMeshPhongMaterial =&gt; _material is MeshPhongMaterial;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="isParticleBasicMaterial">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get isParticleBasicMaterial</strong>() <a class="anchor-link" href="#isParticleBasicMaterial"
+              title="Permalink to WebGLMaterial.get isParticleBasicMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get isParticleBasicMaterial =&gt; _material is ParticleBasicMaterial;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="isShaderMaterial">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get isShaderMaterial</strong>() <a class="anchor-link" href="#isShaderMaterial"
+              title="Permalink to WebGLMaterial.get isShaderMaterial">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get isShaderMaterial =&gt; _material is ShaderMaterial;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="lightMap">
+<span class="show-code">Code</span>
+<strong>get lightMap</strong>() <a class="anchor-link" href="#lightMap"
+              title="Permalink to WebGLMaterial.get lightMap">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get lightMap =&gt; _hasLightMap ? (_material as Dynamic).lightMap : null;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="lights">
+<span class="show-code">Code</span>
+<strong>get lights</strong>() <a class="anchor-link" href="#lights"
+              title="Permalink to WebGLMaterial.get lights">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get lights =&gt; isShaderMaterial ? (_material as ShaderMaterial).lights : false;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="linewidth">
+<span class="show-code">Code</span>
+<strong>get linewidth</strong>() <a class="anchor-link" href="#linewidth"
+              title="Permalink to WebGLMaterial.get linewidth">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get linewidth =&gt; (isLineBasicMaterial) ? (_material as Dynamic).linewidth : null;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="map">
+<span class="show-code">Code</span>
+<strong>get map</strong>() <a class="anchor-link" href="#map"
+              title="Permalink to WebGLMaterial.get map">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get map =&gt; _hasTextureMap ? (_material as Dynamic).map : null;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="metal">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get metal</strong>() <a class="anchor-link" href="#metal"
+              title="Permalink to WebGLMaterial.get metal">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get metal =&gt; isMeshPhongMaterial ? (_material as MeshPhongMaterial).metal : false;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="morphNormals">
+<span class="show-code">Code</span>
+<strong>get morphNormals</strong>() <a class="anchor-link" href="#morphNormals"
+              title="Permalink to WebGLMaterial.get morphNormals">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get morphNormals =&gt; _hasMorphNormals ?  (_material as Dynamic).morphNormals : false;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="morphTargets">
+<span class="show-code">Code</span>
+<strong>get morphTargets</strong>() <a class="anchor-link" href="#morphTargets"
+              title="Permalink to WebGLMaterial.get morphTargets">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get morphTargets =&gt; _hasMorhTargets ?  (_material as Dynamic).morphTargets : false;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a> <strong>get name</strong>() <a class="anchor-link" href="#name"
+              title="Permalink to WebGLMaterial.get name">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+String get name =&gt; _material.name;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="needsNormals">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get needsNormals</strong>() <a class="anchor-link" href="#needsNormals"
+              title="Permalink to WebGLMaterial.get needsNormals">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get needsNormals 
+  =&gt; ! (( _material is MeshBasicMaterial &amp;&amp; (envMap == null) ) || _material is MeshDepthMaterial);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="needsSmoothNormals">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get needsSmoothNormals</strong>() <a class="anchor-link" href="#needsSmoothNormals"
+              title="Permalink to WebGLMaterial.get needsSmoothNormals">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get needsSmoothNormals
+  =&gt; (_material != null) &amp;&amp; (shading != null) &amp;&amp; (shading == Three.SmoothShading);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="needsUpdate">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get needsUpdate</strong>() <a class="anchor-link" href="#needsUpdate"
+              title="Permalink to WebGLMaterial.get needsUpdate">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get needsUpdate =&gt; _material.needsUpdate;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="needsUpdate=">
+<span class="show-code">Code</span>
+<strong>set needsUpdate</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> flag) <a class="anchor-link" href="#needsUpdate="
+              title="Permalink to WebGLMaterial.set needsUpdate">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+set needsUpdate(bool flag) =&gt; _material.needsUpdate = flag;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="opacity">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a> <strong>get opacity</strong>() <a class="anchor-link" href="#opacity"
+              title="Permalink to WebGLMaterial.get opacity">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+num get opacity =&gt; _material.opacity;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="overdraw">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get overdraw</strong>() <a class="anchor-link" href="#overdraw"
+              title="Permalink to WebGLMaterial.get overdraw">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get overdraw =&gt; _material.overdraw;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="perPixel">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get perPixel</strong>() <a class="anchor-link" href="#perPixel"
+              title="Permalink to WebGLMaterial.get perPixel">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get perPixel =&gt; isMeshPhongMaterial ? (_material as MeshPhongMaterial).perPixel : false;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="polygonOffset">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get polygonOffset</strong>() <a class="anchor-link" href="#polygonOffset"
+              title="Permalink to WebGLMaterial.get polygonOffset">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get polygonOffset =&gt; _material.polygonOffset;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="polygonOffsetFactor">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get polygonOffsetFactor</strong>() <a class="anchor-link" href="#polygonOffsetFactor"
+              title="Permalink to WebGLMaterial.get polygonOffsetFactor">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int get polygonOffsetFactor =&gt; _material.polygonOffsetFactor;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="polygonOffsetUnits">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get polygonOffsetUnits</strong>() <a class="anchor-link" href="#polygonOffsetUnits"
+              title="Permalink to WebGLMaterial.get polygonOffsetUnits">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int get polygonOffsetUnits =&gt; _material.polygonOffsetUnits;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="reflectivity">
+<span class="show-code">Code</span>
+<strong>get reflectivity</strong>() <a class="anchor-link" href="#reflectivity"
+              title="Permalink to WebGLMaterial.get reflectivity">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get reflectivity =&gt; (_material as Dynamic).reflectivity;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="refractionRatio">
+<span class="show-code">Code</span>
+<strong>get refractionRatio</strong>() <a class="anchor-link" href="#refractionRatio"
+              title="Permalink to WebGLMaterial.get refractionRatio">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get refractionRatio =&gt; (_material as Dynamic).refractionRatio;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="shading">
+<span class="show-code">Code</span>
+<strong>get shading</strong>() <a class="anchor-link" href="#shading"
+              title="Permalink to WebGLMaterial.get shading">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get shading =&gt; (_material as Dynamic).shading;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="side">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get side</strong>() <a class="anchor-link" href="#side"
+              title="Permalink to WebGLMaterial.get side">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int get side =&gt; _material.side;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="size">
+<span class="show-code">Code</span>
+<strong>get size</strong>() <a class="anchor-link" href="#size"
+              title="Permalink to WebGLMaterial.get size">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get size =&gt; isParticleBasicMaterial ? (_material as ParticleBasicMaterial).size : null;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="sizeAttenuation">
+<span class="show-code">Code</span>
+<strong>get sizeAttenuation</strong>() <a class="anchor-link" href="#sizeAttenuation"
+              title="Permalink to WebGLMaterial.get sizeAttenuation">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get sizeAttenuation =&gt; isParticleBasicMaterial ? (_material as ParticleBasicMaterial).sizeAttenuation : false;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="skinning">
+<span class="show-code">Code</span>
+<strong>get skinning</strong>() <a class="anchor-link" href="#skinning"
+              title="Permalink to WebGLMaterial.get skinning">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get skinning =&gt; _hasSkinning ?  (_material as Dynamic).skinning : false;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="specularMap">
+<span class="show-code">Code</span>
+<strong>get specularMap</strong>() <a class="anchor-link" href="#specularMap"
+              title="Permalink to WebGLMaterial.get specularMap">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get specularMap =&gt; _hasSpecularMap ? (_material as Dynamic).specularMap : null;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="transparent">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get transparent</strong>() <a class="anchor-link" href="#transparent"
+              title="Permalink to WebGLMaterial.get transparent">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get transparent =&gt; _material.transparent;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="uniforms=">
+<span class="show-code">Code</span>
+<strong>set uniforms</strong>(v) <a class="anchor-link" href="#uniforms="
+              title="Permalink to WebGLMaterial.set uniforms">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+set uniforms(v) =&gt; (isShaderMaterial)? (_material as ShaderMaterial).uniforms = v : _uniforms = v;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="uniforms">
+<span class="show-code">Code</span>
+<strong>get uniforms</strong>() <a class="anchor-link" href="#uniforms"
+              title="Permalink to WebGLMaterial.get uniforms">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get uniforms =&gt; (isShaderMaterial)? (_material as ShaderMaterial).uniforms : _uniforms;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="vertexColors">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>get vertexColors</strong>() <a class="anchor-link" href="#vertexColors"
+              title="Permalink to WebGLMaterial.get vertexColors">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int get vertexColors =&gt; _hasVertexColors ? (_material as Dynamic).vertexColors : Three.NoColors;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="vertexShader=">
+<span class="show-code">Code</span>
+<strong>set vertexShader</strong>(v) <a class="anchor-link" href="#vertexShader="
+              title="Permalink to WebGLMaterial.set vertexShader">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+set vertexShader(v) =&gt; (isShaderMaterial)? (_material as ShaderMaterial).vertexShader = v: _vertexShader = v;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="vertexShader">
+<span class="show-code">Code</span>
+<strong>get vertexShader</strong>() <a class="anchor-link" href="#vertexShader"
+              title="Permalink to WebGLMaterial.get vertexShader">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get vertexShader =&gt; (isShaderMaterial)? (_material as ShaderMaterial).vertexShader : _vertexShader;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="visible">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get visible</strong>() <a class="anchor-link" href="#visible"
+              title="Permalink to WebGLMaterial.get visible">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get visible =&gt; _material.visible;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="wireframe">
+<span class="show-code">Code</span>
+<strong>get wireframe</strong>() <a class="anchor-link" href="#wireframe"
+              title="Permalink to WebGLMaterial.get wireframe">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get wireframe =&gt; !isLineBasicMaterial &amp;&amp; !isParticleBasicMaterial &amp;&amp; (_material as Dynamic).wireframe;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="wireframeLinewidth">
+<span class="show-code">Code</span>
+<strong>get wireframeLinewidth</strong>() <a class="anchor-link" href="#wireframeLinewidth"
+              title="Permalink to WebGLMaterial.get wireframeLinewidth">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get wireframeLinewidth =&gt; (isLineBasicMaterial) ? (_material as Dynamic).wireframeLinewidth : null;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="wrapAround">
+<span class="show-code">Code</span>
+<strong>get wrapAround</strong>() <a class="anchor-link" href="#wrapAround"
+              title="Permalink to WebGLMaterial.get wrapAround">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+get wrapAround =&gt; _hasWrapAround ?  (_material as Dynamic).wrapAround : false;
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="numSupportedMorphNormals">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>numSupportedMorphNormals</strong> <a class="anchor-link"
+            href="#numSupportedMorphNormals"
+            title="Permalink to WebGLMaterial.numSupportedMorphNormals">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num numSupportedMorphTargets, numSupportedMorphNormals;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="numSupportedMorphTargets">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>numSupportedMorphTargets</strong> <a class="anchor-link"
+            href="#numSupportedMorphTargets"
+            title="Permalink to WebGLMaterial.numSupportedMorphTargets">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num numSupportedMorphTargets, numSupportedMorphNormals;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="program">
+<span class="show-code">Code</span>
+var         <strong>program</strong> <a class="anchor-link"
+            href="#program"
+            title="Permalink to WebGLMaterial.program">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+var program;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="uniformsList">
+<span class="show-code">Code</span>
+var         <strong>uniformsList</strong> <a class="anchor-link"
+            href="#uniformsList"
+            title="Permalink to WebGLMaterial.uniformsList">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+var uniformsList;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page was generated at 2012-10-01 16:04:45.603</div>
+        </div>
+        <script async src="../client-static.js"></script>
+        </body></html>
+        

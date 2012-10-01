@@ -1,0 +1,936 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Object3D Class / ThreeD Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="ThreeD" data-type="Object3D">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../ThreeD.html">ThreeD</a> &rsaquo; <a href="../ThreeD/Object3D.html">Object3D</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="../CurveUtils.html">CurveUtils</a></h2><h2><div class="icon-library"></div><a href="../FontUtils.html">FontUtils</a></h2><h2><div class="icon-library"></div><a href="../GeometryUtils.html">GeometryUtils</a></h2><h2><div class="icon-library"></div><a href="../ImageUtils.html">ImageUtils</a></h2><h2><div class="icon-library"></div><a href="../SceneUtils.html">SceneUtils</a></h2><h2><div class="icon-library"></div><a href="../ShapeUtils.html">ShapeUtils</a></h2><h2><div class="icon-library"></div><a href="../ThreeD.html">ThreeD</a></h2><ul class="icon">
+<li><a href="../ThreeD/AmbientLight.html"><div class="icon-class"></div>AmbientLight</a></li>
+<li><a href="../ThreeD/ArcCurve.html"><div class="icon-class"></div>ArcCurve</a></li>
+<li><a href="../ThreeD/ArrowHelper.html"><div class="icon-class"></div>ArrowHelper</a></li>
+<li><a href="../ThreeD/AxisHelper.html"><div class="icon-class"></div>AxisHelper</a></li>
+<li><a href="../ThreeD/Bone.html"><div class="icon-class"></div>Bone</a></li>
+<li><a href="../ThreeD/BoundingBox.html"><div class="icon-class"></div>BoundingBox</a></li>
+<li><a href="../ThreeD/BoundingSphere.html"><div class="icon-class"></div>BoundingSphere</a></li>
+<li><a href="../ThreeD/Buffer.html"><div class="icon-class"></div>Buffer</a></li>
+<li><a href="../ThreeD/BufferGeometry.html"><div class="icon-class"></div>BufferGeometry</a></li>
+<li><a href="../ThreeD/Camera.html"><div class="icon-class"></div>Camera</a></li>
+<li><a href="../ThreeD/CanvasRenderData.html"><div class="icon-class"></div>CanvasRenderData</a></li>
+<li><a href="../ThreeD/CanvasRenderer.html"><div class="icon-class"></div>CanvasRenderer</a></li>
+<li><a href="../ThreeD/CircleGeometry.html"><div class="icon-class"></div>CircleGeometry</a></li>
+<li><a href="../ThreeD/ClosedSplineCurve3.html"><div class="icon-class"></div>ClosedSplineCurve3</a></li>
+<li><a href="../ThreeD/Color.html"><div class="icon-class"></div>Color</a></li>
+<li><a href="../ThreeD/ConvexGeometry.html"><div class="icon-class"></div>ConvexGeometry</a></li>
+<li><a href="../ThreeD/CubeGeomSides.html"><div class="icon-class"></div>CubeGeomSides</a></li>
+<li><a href="../ThreeD/CubeGeometry.html"><div class="icon-class"></div>CubeGeometry</a></li>
+<li><a href="../ThreeD/CubeReflectionMapping.html"><div class="icon-class"></div>CubeReflectionMapping</a></li>
+<li><a href="../ThreeD/CubeRefractionMapping.html"><div class="icon-class"></div>CubeRefractionMapping</a></li>
+<li><a href="../ThreeD/CubicBezierCurve.html"><div class="icon-class"></div>CubicBezierCurve</a></li>
+<li><a href="../ThreeD/CubicBezierCurve3.html"><div class="icon-class"></div>CubicBezierCurve3</a></li>
+<li><a href="../ThreeD/Curve.html"><div class="icon-class"></div>Curve&lt;V&gt;</a></li>
+<li><a href="../ThreeD/Curve2D.html"><div class="icon-class"></div>Curve2D</a></li>
+<li><a href="../ThreeD/Curve3D.html"><div class="icon-class"></div>Curve3D</a></li>
+<li><a href="../ThreeD/CurvePath.html"><div class="icon-class"></div>CurvePath</a></li>
+<li><a href="../ThreeD/CylinderGeometry.html"><div class="icon-class"></div>CylinderGeometry</a></li>
+<li><a href="../ThreeD/DataTexture.html"><div class="icon-class"></div>DataTexture</a></li>
+<li><a href="../ThreeD/DirectionalLight.html"><div class="icon-class"></div>DirectionalLight</a></li>
+<li><a href="../ThreeD/EllipseCurve.html"><div class="icon-class"></div>EllipseCurve</a></li>
+<li><a href="../ThreeD/EventEmitter.html"><div class="icon-class"></div>EventEmitter</a></li>
+<li><a href="../ThreeD/EventEmitterEvent.html"><div class="icon-class"></div>EventEmitterEvent</a></li>
+<li><a href="../ThreeD/ExtrudeGeometry.html"><div class="icon-class"></div>ExtrudeGeometry</a></li>
+<li><a href="../ThreeD/ExtrudeGeometryWorldUVGenerator.html"><div class="icon-class"></div>ExtrudeGeometryWorldUVGenerator</a></li>
+<li><a href="../ThreeD/Face3.html"><div class="icon-class"></div>Face3</a></li>
+<li><a href="../ThreeD/Face4.html"><div class="icon-class"></div>Face4</a></li>
+<li><a href="../ThreeD/Fog.html"><div class="icon-class"></div>Fog</a></li>
+<li><a href="../ThreeD/FogExp2.html"><div class="icon-class"></div>FogExp2</a></li>
+<li><a href="../ThreeD/FogLinear.html"><div class="icon-class"></div>FogLinear</a></li>
+<li><a href="../ThreeD/Frustum.html"><div class="icon-class"></div>Frustum</a></li>
+<li><a href="../ThreeD/Geometry.html"><div class="icon-class"></div>Geometry</a></li>
+<li><a href="../ThreeD/IFace3.html"><div class="icon-interface"></div>IFace3</a></li>
+<li><a href="../ThreeD/IFace4.html"><div class="icon-interface"></div>IFace4</a></li>
+<li><a href="../ThreeD/IMaterial.html"><div class="icon-interface"></div>IMaterial</a></li>
+<li><a href="../ThreeD/IParticleMaterial.html"><div class="icon-interface"></div>IParticleMaterial</a></li>
+<li><a href="../ThreeD/IRenderableFace3.html"><div class="icon-interface"></div>IRenderableFace3</a></li>
+<li><a href="../ThreeD/IRenderableFace4.html"><div class="icon-interface"></div>IRenderableFace4</a></li>
+<li><a href="../ThreeD/IRenderableObj.html"><div class="icon-interface"></div>IRenderableObj</a></li>
+<li><a href="../ThreeD/ITextureMapMaterial.html"><div class="icon-interface"></div>ITextureMapMaterial</a></li>
+<li><a href="../ThreeD/IVector2.html"><div class="icon-interface"></div>IVector2</a></li>
+<li><a href="../ThreeD/IVector3.html"><div class="icon-interface"></div>IVector3</a></li>
+<li><a href="../ThreeD/IVector4.html"><div class="icon-interface"></div>IVector4</a></li>
+<li><a href="../ThreeD/IcosahedronGeometry.html"><div class="icon-class"></div>IcosahedronGeometry</a></li>
+<li><a href="../ThreeD/ImageLoader.html"><div class="icon-class"></div>ImageLoader</a></li>
+<li><a href="../ThreeD/ImmediateRenderObject.html"><div class="icon-class"></div>ImmediateRenderObject</a></li>
+<li><a href="../ThreeD/Intersect.html"><div class="icon-class"></div>Intersect</a></li>
+<li><a href="../ThreeD/JSONLoader.html"><div class="icon-class"></div>JSONLoader</a></li>
+<li><a href="../ThreeD/LOD.html"><div class="icon-class"></div>LOD</a></li>
+<li><a href="../ThreeD/LatheGeometry.html"><div class="icon-class"></div>LatheGeometry</a></li>
+<li><a href="../ThreeD/LensFlare.html"><div class="icon-class"></div>LensFlare</a></li>
+<li><a href="../ThreeD/Light.html"><div class="icon-class"></div>Light</a></li>
+<li><a href="../ThreeD/Line.html"><div class="icon-class"></div>Line</a></li>
+<li><a href="../ThreeD/LineBasicMaterial.html"><div class="icon-class"></div>LineBasicMaterial</a></li>
+<li><a href="../ThreeD/LineCurve.html"><div class="icon-class"></div>LineCurve</a></li>
+<li><a href="../ThreeD/LineCurve3.html"><div class="icon-class"></div>LineCurve3</a></li>
+<li><a href="../ThreeD/LoadCompleteCallback.html"><div class="icon-interface"></div>LoadCompleteCallback</a></li>
+<li><a href="../ThreeD/LoadProgressCallback.html"><div class="icon-interface"></div>LoadProgressCallback</a></li>
+<li><a href="../ThreeD/LoadStartCallback.html"><div class="icon-interface"></div>LoadStartCallback</a></li>
+<li><a href="../ThreeD/LoadedCallback.html"><div class="icon-interface"></div>LoadedCallback</a></li>
+<li><a href="../ThreeD/Loader.html"><div class="icon-class"></div>Loader</a></li>
+<li><a href="../ThreeD/Material.html"><div class="icon-class"></div>Material</a></li>
+<li><a href="../ThreeD/Matrix3.html"><div class="icon-class"></div>Matrix3</a></li>
+<li><a href="../ThreeD/Matrix4.html"><div class="icon-class"></div>Matrix4</a></li>
+<li><a href="../ThreeD/Mesh.html"><div class="icon-class"></div>Mesh</a></li>
+<li><a href="../ThreeD/MeshBasicMaterial.html"><div class="icon-class"></div>MeshBasicMaterial</a></li>
+<li><a href="../ThreeD/MeshDepthMaterial.html"><div class="icon-class"></div>MeshDepthMaterial</a></li>
+<li><a href="../ThreeD/MeshFaceMaterial.html"><div class="icon-class"></div>MeshFaceMaterial</a></li>
+<li><a href="../ThreeD/MeshLambertMaterial.html"><div class="icon-class"></div>MeshLambertMaterial</a></li>
+<li><a href="../ThreeD/MeshNormalMaterial.html"><div class="icon-class"></div>MeshNormalMaterial</a></li>
+<li><a href="../ThreeD/MeshPhongMaterial.html"><div class="icon-class"></div>MeshPhongMaterial</a></li>
+<li><a href="../ThreeD/MorphAnimMesh.html"><div class="icon-class"></div>MorphAnimMesh</a></li>
+<li><div class="icon-class"></div><strong>Object3D</strong></li>
+<li><a href="../ThreeD/OctahedronGeometry.html"><div class="icon-class"></div>OctahedronGeometry</a></li>
+<li><a href="../ThreeD/OrthographicCamera.html"><div class="icon-class"></div>OrthographicCamera</a></li>
+<li><a href="../ThreeD/ParametricGeometry.html"><div class="icon-class"></div>ParametricGeometry</a></li>
+<li><a href="../ThreeD/Particle.html"><div class="icon-class"></div>Particle</a></li>
+<li><a href="../ThreeD/ParticleBasicMaterial.html"><div class="icon-class"></div>ParticleBasicMaterial</a></li>
+<li><a href="../ThreeD/ParticleCanvasMaterial.html"><div class="icon-class"></div>ParticleCanvasMaterial</a></li>
+<li><a href="../ThreeD/ParticleCanvasMaterialProgram.html"><div class="icon-interface"></div>ParticleCanvasMaterialProgram</a></li>
+<li><a href="../ThreeD/ParticleSystem.html"><div class="icon-class"></div>ParticleSystem</a></li>
+<li><a href="../ThreeD/Path.html"><div class="icon-class"></div>Path</a></li>
+<li><a href="../ThreeD/PathAction.html"><div class="icon-class"></div>PathAction</a></li>
+<li><a href="../ThreeD/PerspectiveCamera.html"><div class="icon-class"></div>PerspectiveCamera</a></li>
+<li><a href="../ThreeD/PlaneGeometry.html"><div class="icon-class"></div>PlaneGeometry</a></li>
+<li><a href="../ThreeD/PointLight.html"><div class="icon-class"></div>PointLight</a></li>
+<li><a href="../ThreeD/PolyhedronGeometry.html"><div class="icon-class"></div>PolyhedronGeometry</a></li>
+<li><a href="../ThreeD/PolyhedronGeometryVertex.html"><div class="icon-class"></div>PolyhedronGeometryVertex</a></li>
+<li><a href="../ThreeD/Program.html"><div class="icon-class"></div>Program</a></li>
+<li><a href="../ThreeD/Projector.html"><div class="icon-class"></div>Projector</a></li>
+<li><a href="../ThreeD/ProjectorRenderData.html"><div class="icon-class"></div>ProjectorRenderData</a></li>
+<li><a href="../ThreeD/QuadraticBezierCurve.html"><div class="icon-class"></div>QuadraticBezierCurve</a></li>
+<li><a href="../ThreeD/QuadraticBezierCurve3.html"><div class="icon-class"></div>QuadraticBezierCurve3</a></li>
+<li><a href="../ThreeD/Quaternion.html"><div class="icon-class"></div>Quaternion</a></li>
+<li><a href="../ThreeD/Ray.html"><div class="icon-class"></div>Ray</a></li>
+<li><a href="../ThreeD/Rectangle.html"><div class="icon-class"></div>Rectangle</a></li>
+<li><a href="../ThreeD/RenderInts.html"><div class="icon-class"></div>RenderInts</a></li>
+<li><a href="../ThreeD/RenderableFace3.html"><div class="icon-class"></div>RenderableFace3</a></li>
+<li><a href="../ThreeD/RenderableFace4.html"><div class="icon-class"></div>RenderableFace4</a></li>
+<li><a href="../ThreeD/RenderableLine.html"><div class="icon-class"></div>RenderableLine</a></li>
+<li><a href="../ThreeD/RenderableObject.html"><div class="icon-class"></div>RenderableObject</a></li>
+<li><a href="../ThreeD/RenderableParticle.html"><div class="icon-class"></div>RenderableParticle</a></li>
+<li><a href="../ThreeD/RenderableVertex.html"><div class="icon-class"></div>RenderableVertex</a></li>
+<li><a href="../ThreeD/Renderer.html"><div class="icon-class"></div>Renderer</a></li>
+<li><a href="../ThreeD/Ribbon.html"><div class="icon-class"></div>Ribbon</a></li>
+<li><a href="../ThreeD/Scene.html"><div class="icon-class"></div>Scene</a></li>
+<li><a href="../ThreeD/ShaderMaterial.html"><div class="icon-class"></div>ShaderMaterial</a></li>
+<li><a href="../ThreeD/Shape.html"><div class="icon-class"></div>Shape</a></li>
+<li><a href="../ThreeD/SkinnedMesh.html"><div class="icon-class"></div>SkinnedMesh</a></li>
+<li><a href="../ThreeD/SphereGeometry.html"><div class="icon-class"></div>SphereGeometry</a></li>
+<li><a href="../ThreeD/SphericalReflectionMapping.html"><div class="icon-class"></div>SphericalReflectionMapping</a></li>
+<li><a href="../ThreeD/SphericalRefractionMapping.html"><div class="icon-class"></div>SphericalRefractionMapping</a></li>
+<li><a href="../ThreeD/SplineCurve.html"><div class="icon-class"></div>SplineCurve</a></li>
+<li><a href="../ThreeD/SplineCurve3.html"><div class="icon-class"></div>SplineCurve3</a></li>
+<li><a href="../ThreeD/SpotLight.html"><div class="icon-class"></div>SpotLight</a></li>
+<li><a href="../ThreeD/Sprite.html"><div class="icon-class"></div>Sprite</a></li>
+<li><a href="../ThreeD/SpriteAlignment.html"><div class="icon-class"></div>SpriteAlignment</a></li>
+<li><a href="../ThreeD/TetrahedronGeometry.html"><div class="icon-class"></div>TetrahedronGeometry</a></li>
+<li><a href="../ThreeD/TextGeometry.html"><div class="icon-class"></div>TextGeometry</a></li>
+<li><a href="../ThreeD/Texture.html"><div class="icon-class"></div>Texture</a></li>
+<li><a href="../ThreeD/Three.html"><div class="icon-class"></div>Three</a></li>
+<li><a href="../ThreeD/TorusGeometry.html"><div class="icon-class"></div>TorusGeometry</a></li>
+<li><a href="../ThreeD/TorusKnotGeometry.html"><div class="icon-class"></div>TorusKnotGeometry</a></li>
+<li><a href="../ThreeD/TubeGeometry.html"><div class="icon-class"></div>TubeGeometry</a></li>
+<li><a href="../ThreeD/UV.html"><div class="icon-class"></div>UV</a></li>
+<li><a href="../ThreeD/UVMapping.html"><div class="icon-class"></div>UVMapping</a></li>
+<li><a href="../ThreeD/Uniform.html"><div class="icon-class"></div>Uniform</a></li>
+<li><a href="../ThreeD/UniformsUtils.html"><div class="icon-class"></div>UniformsUtils</a></li>
+<li><a href="../ThreeD/Vector2.html"><div class="icon-class"></div>Vector2</a></li>
+<li><a href="../ThreeD/Vector3.html"><div class="icon-class"></div>Vector3</a></li>
+<li><a href="../ThreeD/Vector4.html"><div class="icon-class"></div>Vector4</a></li>
+<li><a href="../ThreeD/Vertex.html"><div class="icon-class"></div>Vertex</a></li>
+<li><a href="../ThreeD/WebGLCamera.html"><div class="icon-class"></div>WebGLCamera</a></li>
+<li><a href="../ThreeD/WebGLGeometry.html"><div class="icon-class"></div>WebGLGeometry</a></li>
+<li><a href="../ThreeD/WebGLMaterial.html"><div class="icon-class"></div>WebGLMaterial</a></li>
+<li><a href="../ThreeD/WebGLObject.html"><div class="icon-class"></div>WebGLObject</a></li>
+<li><a href="../ThreeD/WebGLRenderTarget.html"><div class="icon-class"></div>WebGLRenderTarget</a></li>
+<li><a href="../ThreeD/WebGLRenderTargetCube.html"><div class="icon-class"></div>WebGLRenderTargetCube</a></li>
+<li><a href="../ThreeD/WebGLRenderer.html"><div class="icon-class"></div>WebGLRenderer</a></li>
+<li><a href="../ThreeD/WebGLRendererInfo.html"><div class="icon-class"></div>WebGLRendererInfo</a></li>
+<li><a href="../ThreeD/WebGLRendererMemoryInfo.html"><div class="icon-class"></div>WebGLRendererMemoryInfo</a></li>
+<li><a href="../ThreeD/WebGLRendererRenderInfo.html"><div class="icon-class"></div>WebGLRendererRenderInfo</a></li>
+</ul>
+<h2><div class="icon-library"></div><a href="../ThreeMath.html">ThreeMath</a></h2></div>
+<div class="content">
+        <h2><strong>Object3D</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>@author mr.doob / http://mrdoob.com/
+@author mikael emtinger / http://gomo.se/
+@author alteredq / http://alteredqualia.com/</p>
+<p>Ported to Dart from JS by:
+@author rob silverton / http://www.unwrong.com/</p>
+</div>
+<h3>Subclasses</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../ThreeD/ArrowHelper.html">ArrowHelper</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/AxisHelper.html">AxisHelper</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/Bone.html">Bone</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/Camera.html">Camera</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/ImmediateRenderObject.html">ImmediateRenderObject</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/LOD.html">LOD</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/LensFlare.html">LensFlare</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/Light.html">Light</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/Line.html">Line</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/Mesh.html">Mesh</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/Particle.html">Particle</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/ParticleSystem.html">ParticleSystem</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/Ribbon.html">Ribbon</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/Scene.html">Scene</a></span>, <span class="type-box"><span class="icon-class"></span><a href="../ThreeD/Sprite.html">Sprite</a></span></p>
+<h3>Constructors</h3>
+<div class="method"><h4 id="Object3D">
+<span class="show-code">Code</span>
+new <strong>Object3D</strong>() <a class="anchor-link" href="#Object3D"
+              title="Permalink to Object3D.Object3D">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Object3D()
+    : id = Three.Object3DCount++,
+    
+      name = '',
+      properties = {},
+          
+      parent = null,
+      children = [],
+  
+      up = new Vector3( 0, 1, 0),
+  
+      position = new Vector3(),
+      rotation = new Vector3(),
+      eulerOrder = 'XYZ',
+      scale = new Vector3( 1, 1, 1 ),
+  
+      renderDepth = null,
+  
+      rotationAutoUpdate = true,
+  
+      matrix = new Matrix4(),
+      matrixWorld = new Matrix4(),
+      matrixRotationWorld = new Matrix4(),
+  
+      matrixAutoUpdate = true,
+      matrixWorldNeedsUpdate = true,
+  
+      quaternion = new Quaternion(),
+      useQuaternion = false,
+  
+      boundRadius = 0.0,
+      boundRadiusScale = 1.0,
+  
+      visible = true,
+  
+      castShadow = false,
+      receiveShadow = false,
+  
+      frustumCulled = true,
+  
+      _vector = new Vector3();
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="Dynamic">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>get Dynamic</strong>() <a class="anchor-link" href="#Dynamic"
+              title="Permalink to Object3D.get Dynamic">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool get isDynamic =&gt; _dynamic;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="Dynamic=">
+<span class="show-code">Code</span>
+<strong>set Dynamic</strong>(<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> flag) <a class="anchor-link" href="#Dynamic="
+              title="Permalink to Object3D.set Dynamic">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+set isDynamic(bool flag) =&gt; _dynamic = flag;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="add">
+<span class="show-code">Code</span>
+void <strong>add</strong>(<a href="../ThreeD/Object3D.html">Object3D</a> object) <a class="anchor-link" href="#add"
+              title="Permalink to Object3D.add">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+void add( Object3D object ) {
+  if ( object === this ) {
+    print( 'THREE.Object3D.add: An object can\'t be added as a child of itself.' );
+    return;
+  }
+  
+
+  if ( object.parent != null ) {
+    object.parent.remove( object );
+  }
+
+  object.parent = this;
+  children.add( object );
+
+  // add to scene
+  Object3D scene = this;
+  
+  while ( scene.parent !== null ) {
+    scene = scene.parent;
+  }
+
+  if ( scene is Scene ) {
+    scene.addObject( object );
+  }
+  
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="applyMatrix">
+<span class="show-code">Code</span>
+void <strong>applyMatrix</strong>(matrix) <a class="anchor-link" href="#applyMatrix"
+              title="Permalink to Object3D.applyMatrix">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+void applyMatrix ( matrix ) {
+
+  this.matrix.multiply(matrix, this.matrix);
+
+  this.scale.getScaleFromMatrix( this.matrix );
+
+  var mat = new Matrix4().extractRotation( this.matrix );
+  this.rotation.setEulerFromRotationMatrix( mat, this.eulerOrder );
+
+  this.position.getPositionFromMatrix( this.matrix );
+
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="clone">
+<span class="show-code">Code</span>
+<strong>clone</strong>() <a class="anchor-link" href="#clone"
+              title="Permalink to Object3D.clone">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+clone() {
+
+  // TODO
+
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getChildByName">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Object3D.html">Object3D</a> <strong>getChildByName</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> name, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> doRecurse) <a class="anchor-link" href="#getChildByName"
+              title="Permalink to Object3D.getChildByName">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Object3D getChildByName( String name, bool doRecurse ) {
+  int c;
+  int cl = children.length;
+  Object3D child, recurseResult;
+
+  children.forEach((child){
+
+    if ( child.name === name ) {
+      return child;
+    }
+
+    if ( doRecurse ) {
+      recurseResult = child.getChildByName( name, doRecurse );
+
+      if ( recurseResult != null ) {
+        return recurseResult;
+      }
+    }
+  });
+
+  return null;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="localToWorld">
+<span class="show-code">Code</span>
+<strong>localToWorld</strong>(vector) <a class="anchor-link" href="#localToWorld"
+              title="Permalink to Object3D.localToWorld">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+localToWorld( vector ) =&gt; matrixWorld.multiplyVector3( vector );
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="lookAt">
+<span class="show-code">Code</span>
+void <strong>lookAt</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> vector) <a class="anchor-link" href="#lookAt"
+              title="Permalink to Object3D.lookAt">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+void lookAt( Vector3 vector ) {
+  // TODO: Add hierarchy support.
+
+  matrix.lookAt( vector, position, up );
+
+  if ( rotationAutoUpdate ) {
+    rotation.setEulerFromRotationMatrix( matrix, eulerOrder );
+  }
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="operator []">
+<span class="show-code">Code</span>
+<strong>operator []</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> key) <a class="anchor-link" href="#operator []"
+              title="Permalink to Object3D.operator []">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+operator [] (String key) =&gt; _data[key];
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="operator []=">
+<span class="show-code">Code</span>
+<strong>operator []=</strong>(<a href="http://api.dartlang.org/dart_core/String.html">String</a> key, value) <a class="anchor-link" href="#operator []="
+              title="Permalink to Object3D.operator []=">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+operator []= (String key, value) =&gt; _data[key] = value;
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="remove">
+<span class="show-code">Code</span>
+void <strong>remove</strong>(<a href="../ThreeD/Object3D.html">Object3D</a> object) <a class="anchor-link" href="#remove"
+              title="Permalink to Object3D.remove">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+void remove( Object3D object ) {
+  
+  int index = children.indexOf( object );
+
+  if ( index !== - 1 ){
+    
+    object.parent = null;
+    children.removeRange(index, 1);
+    // children.splice( index, 1 );
+
+    // remove from scene
+    Object3D scene = this;
+
+    while ( scene.parent !== null ) {
+      scene = scene.parent;
+    }
+
+    if (scene is Scene ) {
+      scene.removeObject( object );
+    }
+  }
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="translate">
+<span class="show-code">Code</span>
+void <strong>translate</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> distance, <a href="../ThreeD/Vector3.html">Vector3</a> axis) <a class="anchor-link" href="#translate"
+              title="Permalink to Object3D.translate">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+void translate( num distance, Vector3 axis ) {
+  matrix.rotateAxis( axis );
+  position.addSelf( axis.multiplyScalar( distance ) );
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="translateX">
+<span class="show-code">Code</span>
+void <strong>translateX</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> distance) <a class="anchor-link" href="#translateX"
+              title="Permalink to Object3D.translateX">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+void translateX( num distance ) =&gt; translate( distance, _vector.setValues( 1, 0, 0 ) );
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="translateY">
+<span class="show-code">Code</span>
+void <strong>translateY</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> distance) <a class="anchor-link" href="#translateY"
+              title="Permalink to Object3D.translateY">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+void translateY( num distance ) =&gt; translate( distance, _vector.setValues( 0, 1, 0 ) );
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="translateZ">
+<span class="show-code">Code</span>
+void <strong>translateZ</strong>(<a href="http://api.dartlang.org/dart_core/num.html">num</a> distance) <a class="anchor-link" href="#translateZ"
+              title="Permalink to Object3D.translateZ">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+void translateZ( num distance ) =&gt; translate( distance, _vector.setValues( 0, 0, 1 ) );
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="updateMatrix">
+<span class="show-code">Code</span>
+void <strong>updateMatrix</strong>() <a class="anchor-link" href="#updateMatrix"
+              title="Permalink to Object3D.updateMatrix">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+void updateMatrix() {
+  matrix.setPosition( position );
+
+  if ( useQuaternion ) {
+    matrix.setRotationFromQuaternion( quaternion );
+  } else {
+    matrix.setRotationFromEuler( rotation, eulerOrder );
+  }
+
+  if ( scale.x !== 1 || scale.y !== 1 || scale.z !== 1 ) {
+    matrix.scale( scale );
+    boundRadiusScale = Math.max( scale.x, Math.max( scale.y, scale.z ) );
+  }
+
+  matrixWorldNeedsUpdate = true;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="updateMatrixWorld">
+<span class="show-code">Code</span>
+void <strong>updateMatrixWorld</strong>([<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> force = false]) <a class="anchor-link" href="#updateMatrixWorld"
+              title="Permalink to Object3D.updateMatrixWorld">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+void updateMatrixWorld( [bool force=false] ) {
+
+ if (matrixAutoUpdate) updateMatrix();
+
+  // update matrixWorld
+  if ( matrixWorldNeedsUpdate || force ) {
+    if ( parent != null ) {
+      matrixWorld.multiply( parent.matrixWorld, matrix );
+    } else {
+      matrixWorld.copy( matrix );
+    }
+
+    matrixWorldNeedsUpdate = false;
+
+    force = true;
+  }
+
+  // update children
+  children.forEach((c) =&gt; c.updateMatrixWorld( force ) );
+
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="worldToLocal">
+<span class="show-code">Code</span>
+<strong>worldToLocal</strong>(vector) <a class="anchor-link" href="#worldToLocal"
+              title="Permalink to Object3D.worldToLocal">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+worldToLocal( vector ) =&gt; __m1.getInverse( this.matrixWorld ).multiplyVector3( vector );
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="boundRadius">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>boundRadius</strong> <a class="anchor-link"
+            href="#boundRadius"
+            title="Permalink to Object3D.boundRadius">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num boundRadius, boundRadiusScale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="boundRadiusScale">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>boundRadiusScale</strong> <a class="anchor-link"
+            href="#boundRadiusScale"
+            title="Permalink to Object3D.boundRadiusScale">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num boundRadius, boundRadiusScale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="castShadow">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>castShadow</strong> <a class="anchor-link"
+            href="#castShadow"
+            title="Permalink to Object3D.castShadow">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool visible = false, castShadow = false, receiveShadow = false, frustumCulled = false;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="children">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>         <strong>children</strong> <a class="anchor-link"
+            href="#children"
+            title="Permalink to Object3D.children">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+List children;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="doubleSided">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>doubleSided</strong> <a class="anchor-link"
+            href="#doubleSided"
+            title="Permalink to Object3D.doubleSided">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool _dynamic, doubleSided, flipSided, rotationAutoUpdate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="eulerOrder">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>eulerOrder</strong> <a class="anchor-link"
+            href="#eulerOrder"
+            title="Permalink to Object3D.eulerOrder">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String eulerOrder;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="flipSided">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>flipSided</strong> <a class="anchor-link"
+            href="#flipSided"
+            title="Permalink to Object3D.flipSided">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool _dynamic, doubleSided, flipSided, rotationAutoUpdate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="frustumCulled">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>frustumCulled</strong> <a class="anchor-link"
+            href="#frustumCulled"
+            title="Permalink to Object3D.frustumCulled">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool visible = false, castShadow = false, receiveShadow = false, frustumCulled = false;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="id">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>id</strong> <a class="anchor-link"
+            href="#id"
+            title="Permalink to Object3D.id">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+int id;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="matrix">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a>         <strong>matrix</strong> <a class="anchor-link"
+            href="#matrix"
+            title="Permalink to Object3D.matrix">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Matrix4 matrix, matrixWorld, matrixRotationWorld;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="matrixAutoUpdate">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>matrixAutoUpdate</strong> <a class="anchor-link"
+            href="#matrixAutoUpdate"
+            title="Permalink to Object3D.matrixAutoUpdate">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool matrixAutoUpdate = false, matrixWorldNeedsUpdate = false;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="matrixRotationWorld">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a>         <strong>matrixRotationWorld</strong> <a class="anchor-link"
+            href="#matrixRotationWorld"
+            title="Permalink to Object3D.matrixRotationWorld">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Matrix4 matrix, matrixWorld, matrixRotationWorld;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="matrixWorld">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Matrix4.html">Matrix4</a>         <strong>matrixWorld</strong> <a class="anchor-link"
+            href="#matrixWorld"
+            title="Permalink to Object3D.matrixWorld">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Matrix4 matrix, matrixWorld, matrixRotationWorld;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="matrixWorldNeedsUpdate">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>matrixWorldNeedsUpdate</strong> <a class="anchor-link"
+            href="#matrixWorldNeedsUpdate"
+            title="Permalink to Object3D.matrixWorldNeedsUpdate">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool matrixAutoUpdate = false, matrixWorldNeedsUpdate = false;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="name">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/String.html">String</a>         <strong>name</strong> <a class="anchor-link"
+            href="#name"
+            title="Permalink to Object3D.name">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+String name;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="parent">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Object3D.html">Object3D</a>         <strong>parent</strong> <a class="anchor-link"
+            href="#parent"
+            title="Permalink to Object3D.parent">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Object3D parent;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="position">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a>         <strong>position</strong> <a class="anchor-link"
+            href="#position"
+            title="Permalink to Object3D.position">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Vector3 up, position, rotation, scale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="properties">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/Map.html">Map</a>         <strong>properties</strong> <a class="anchor-link"
+            href="#properties"
+            title="Permalink to Object3D.properties">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Map properties;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="quaternion">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Quaternion.html">Quaternion</a>         <strong>quaternion</strong> <a class="anchor-link"
+            href="#quaternion"
+            title="Permalink to Object3D.quaternion">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Quaternion quaternion;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="receiveShadow">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>receiveShadow</strong> <a class="anchor-link"
+            href="#receiveShadow"
+            title="Permalink to Object3D.receiveShadow">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool visible = false, castShadow = false, receiveShadow = false, frustumCulled = false;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="renderDepth">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a>         <strong>renderDepth</strong> <a class="anchor-link"
+            href="#renderDepth"
+            title="Permalink to Object3D.renderDepth">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+int renderDepth;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rotation">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a>         <strong>rotation</strong> <a class="anchor-link"
+            href="#rotation"
+            title="Permalink to Object3D.rotation">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Vector3 up, position, rotation, scale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="rotationAutoUpdate">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>rotationAutoUpdate</strong> <a class="anchor-link"
+            href="#rotationAutoUpdate"
+            title="Permalink to Object3D.rotationAutoUpdate">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool _dynamic, doubleSided, flipSided, rotationAutoUpdate;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="scale">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a>         <strong>scale</strong> <a class="anchor-link"
+            href="#scale"
+            title="Permalink to Object3D.scale">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Vector3 up, position, rotation, scale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="up">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a>         <strong>up</strong> <a class="anchor-link"
+            href="#up"
+            title="Permalink to Object3D.up">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+Vector3 up, position, rotation, scale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="useQuaternion">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>useQuaternion</strong> <a class="anchor-link"
+            href="#useQuaternion"
+            title="Permalink to Object3D.useQuaternion">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool useQuaternion;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="visible">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a>         <strong>visible</strong> <a class="anchor-link"
+            href="#visible"
+            title="Permalink to Object3D.visible">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+bool visible = false, castShadow = false, receiveShadow = false, frustumCulled = false;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page was generated at 2012-10-01 16:04:45.443</div>
+        </div>
+        <script async src="../client-static.js"></script>
+        </body></html>
+        

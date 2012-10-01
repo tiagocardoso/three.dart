@@ -1,0 +1,867 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>Projector Class / ThreeD Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="ThreeD" data-type="Projector">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../ThreeD.html">ThreeD</a> &rsaquo; <a href="../ThreeD/Projector.html">Projector</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="../CurveUtils.html">CurveUtils</a></h2><h2><div class="icon-library"></div><a href="../FontUtils.html">FontUtils</a></h2><h2><div class="icon-library"></div><a href="../GeometryUtils.html">GeometryUtils</a></h2><h2><div class="icon-library"></div><a href="../ImageUtils.html">ImageUtils</a></h2><h2><div class="icon-library"></div><a href="../SceneUtils.html">SceneUtils</a></h2><h2><div class="icon-library"></div><a href="../ShapeUtils.html">ShapeUtils</a></h2><h2><div class="icon-library"></div><a href="../ThreeD.html">ThreeD</a></h2><ul class="icon">
+<li><a href="../ThreeD/AmbientLight.html"><div class="icon-class"></div>AmbientLight</a></li>
+<li><a href="../ThreeD/ArcCurve.html"><div class="icon-class"></div>ArcCurve</a></li>
+<li><a href="../ThreeD/ArrowHelper.html"><div class="icon-class"></div>ArrowHelper</a></li>
+<li><a href="../ThreeD/AxisHelper.html"><div class="icon-class"></div>AxisHelper</a></li>
+<li><a href="../ThreeD/Bone.html"><div class="icon-class"></div>Bone</a></li>
+<li><a href="../ThreeD/BoundingBox.html"><div class="icon-class"></div>BoundingBox</a></li>
+<li><a href="../ThreeD/BoundingSphere.html"><div class="icon-class"></div>BoundingSphere</a></li>
+<li><a href="../ThreeD/Buffer.html"><div class="icon-class"></div>Buffer</a></li>
+<li><a href="../ThreeD/BufferGeometry.html"><div class="icon-class"></div>BufferGeometry</a></li>
+<li><a href="../ThreeD/Camera.html"><div class="icon-class"></div>Camera</a></li>
+<li><a href="../ThreeD/CanvasRenderData.html"><div class="icon-class"></div>CanvasRenderData</a></li>
+<li><a href="../ThreeD/CanvasRenderer.html"><div class="icon-class"></div>CanvasRenderer</a></li>
+<li><a href="../ThreeD/CircleGeometry.html"><div class="icon-class"></div>CircleGeometry</a></li>
+<li><a href="../ThreeD/ClosedSplineCurve3.html"><div class="icon-class"></div>ClosedSplineCurve3</a></li>
+<li><a href="../ThreeD/Color.html"><div class="icon-class"></div>Color</a></li>
+<li><a href="../ThreeD/ConvexGeometry.html"><div class="icon-class"></div>ConvexGeometry</a></li>
+<li><a href="../ThreeD/CubeGeomSides.html"><div class="icon-class"></div>CubeGeomSides</a></li>
+<li><a href="../ThreeD/CubeGeometry.html"><div class="icon-class"></div>CubeGeometry</a></li>
+<li><a href="../ThreeD/CubeReflectionMapping.html"><div class="icon-class"></div>CubeReflectionMapping</a></li>
+<li><a href="../ThreeD/CubeRefractionMapping.html"><div class="icon-class"></div>CubeRefractionMapping</a></li>
+<li><a href="../ThreeD/CubicBezierCurve.html"><div class="icon-class"></div>CubicBezierCurve</a></li>
+<li><a href="../ThreeD/CubicBezierCurve3.html"><div class="icon-class"></div>CubicBezierCurve3</a></li>
+<li><a href="../ThreeD/Curve.html"><div class="icon-class"></div>Curve&lt;V&gt;</a></li>
+<li><a href="../ThreeD/Curve2D.html"><div class="icon-class"></div>Curve2D</a></li>
+<li><a href="../ThreeD/Curve3D.html"><div class="icon-class"></div>Curve3D</a></li>
+<li><a href="../ThreeD/CurvePath.html"><div class="icon-class"></div>CurvePath</a></li>
+<li><a href="../ThreeD/CylinderGeometry.html"><div class="icon-class"></div>CylinderGeometry</a></li>
+<li><a href="../ThreeD/DataTexture.html"><div class="icon-class"></div>DataTexture</a></li>
+<li><a href="../ThreeD/DirectionalLight.html"><div class="icon-class"></div>DirectionalLight</a></li>
+<li><a href="../ThreeD/EllipseCurve.html"><div class="icon-class"></div>EllipseCurve</a></li>
+<li><a href="../ThreeD/EventEmitter.html"><div class="icon-class"></div>EventEmitter</a></li>
+<li><a href="../ThreeD/EventEmitterEvent.html"><div class="icon-class"></div>EventEmitterEvent</a></li>
+<li><a href="../ThreeD/ExtrudeGeometry.html"><div class="icon-class"></div>ExtrudeGeometry</a></li>
+<li><a href="../ThreeD/ExtrudeGeometryWorldUVGenerator.html"><div class="icon-class"></div>ExtrudeGeometryWorldUVGenerator</a></li>
+<li><a href="../ThreeD/Face3.html"><div class="icon-class"></div>Face3</a></li>
+<li><a href="../ThreeD/Face4.html"><div class="icon-class"></div>Face4</a></li>
+<li><a href="../ThreeD/Fog.html"><div class="icon-class"></div>Fog</a></li>
+<li><a href="../ThreeD/FogExp2.html"><div class="icon-class"></div>FogExp2</a></li>
+<li><a href="../ThreeD/FogLinear.html"><div class="icon-class"></div>FogLinear</a></li>
+<li><a href="../ThreeD/Frustum.html"><div class="icon-class"></div>Frustum</a></li>
+<li><a href="../ThreeD/Geometry.html"><div class="icon-class"></div>Geometry</a></li>
+<li><a href="../ThreeD/IFace3.html"><div class="icon-interface"></div>IFace3</a></li>
+<li><a href="../ThreeD/IFace4.html"><div class="icon-interface"></div>IFace4</a></li>
+<li><a href="../ThreeD/IMaterial.html"><div class="icon-interface"></div>IMaterial</a></li>
+<li><a href="../ThreeD/IParticleMaterial.html"><div class="icon-interface"></div>IParticleMaterial</a></li>
+<li><a href="../ThreeD/IRenderableFace3.html"><div class="icon-interface"></div>IRenderableFace3</a></li>
+<li><a href="../ThreeD/IRenderableFace4.html"><div class="icon-interface"></div>IRenderableFace4</a></li>
+<li><a href="../ThreeD/IRenderableObj.html"><div class="icon-interface"></div>IRenderableObj</a></li>
+<li><a href="../ThreeD/ITextureMapMaterial.html"><div class="icon-interface"></div>ITextureMapMaterial</a></li>
+<li><a href="../ThreeD/IVector2.html"><div class="icon-interface"></div>IVector2</a></li>
+<li><a href="../ThreeD/IVector3.html"><div class="icon-interface"></div>IVector3</a></li>
+<li><a href="../ThreeD/IVector4.html"><div class="icon-interface"></div>IVector4</a></li>
+<li><a href="../ThreeD/IcosahedronGeometry.html"><div class="icon-class"></div>IcosahedronGeometry</a></li>
+<li><a href="../ThreeD/ImageLoader.html"><div class="icon-class"></div>ImageLoader</a></li>
+<li><a href="../ThreeD/ImmediateRenderObject.html"><div class="icon-class"></div>ImmediateRenderObject</a></li>
+<li><a href="../ThreeD/Intersect.html"><div class="icon-class"></div>Intersect</a></li>
+<li><a href="../ThreeD/JSONLoader.html"><div class="icon-class"></div>JSONLoader</a></li>
+<li><a href="../ThreeD/LOD.html"><div class="icon-class"></div>LOD</a></li>
+<li><a href="../ThreeD/LatheGeometry.html"><div class="icon-class"></div>LatheGeometry</a></li>
+<li><a href="../ThreeD/LensFlare.html"><div class="icon-class"></div>LensFlare</a></li>
+<li><a href="../ThreeD/Light.html"><div class="icon-class"></div>Light</a></li>
+<li><a href="../ThreeD/Line.html"><div class="icon-class"></div>Line</a></li>
+<li><a href="../ThreeD/LineBasicMaterial.html"><div class="icon-class"></div>LineBasicMaterial</a></li>
+<li><a href="../ThreeD/LineCurve.html"><div class="icon-class"></div>LineCurve</a></li>
+<li><a href="../ThreeD/LineCurve3.html"><div class="icon-class"></div>LineCurve3</a></li>
+<li><a href="../ThreeD/LoadCompleteCallback.html"><div class="icon-interface"></div>LoadCompleteCallback</a></li>
+<li><a href="../ThreeD/LoadProgressCallback.html"><div class="icon-interface"></div>LoadProgressCallback</a></li>
+<li><a href="../ThreeD/LoadStartCallback.html"><div class="icon-interface"></div>LoadStartCallback</a></li>
+<li><a href="../ThreeD/LoadedCallback.html"><div class="icon-interface"></div>LoadedCallback</a></li>
+<li><a href="../ThreeD/Loader.html"><div class="icon-class"></div>Loader</a></li>
+<li><a href="../ThreeD/Material.html"><div class="icon-class"></div>Material</a></li>
+<li><a href="../ThreeD/Matrix3.html"><div class="icon-class"></div>Matrix3</a></li>
+<li><a href="../ThreeD/Matrix4.html"><div class="icon-class"></div>Matrix4</a></li>
+<li><a href="../ThreeD/Mesh.html"><div class="icon-class"></div>Mesh</a></li>
+<li><a href="../ThreeD/MeshBasicMaterial.html"><div class="icon-class"></div>MeshBasicMaterial</a></li>
+<li><a href="../ThreeD/MeshDepthMaterial.html"><div class="icon-class"></div>MeshDepthMaterial</a></li>
+<li><a href="../ThreeD/MeshFaceMaterial.html"><div class="icon-class"></div>MeshFaceMaterial</a></li>
+<li><a href="../ThreeD/MeshLambertMaterial.html"><div class="icon-class"></div>MeshLambertMaterial</a></li>
+<li><a href="../ThreeD/MeshNormalMaterial.html"><div class="icon-class"></div>MeshNormalMaterial</a></li>
+<li><a href="../ThreeD/MeshPhongMaterial.html"><div class="icon-class"></div>MeshPhongMaterial</a></li>
+<li><a href="../ThreeD/MorphAnimMesh.html"><div class="icon-class"></div>MorphAnimMesh</a></li>
+<li><a href="../ThreeD/Object3D.html"><div class="icon-class"></div>Object3D</a></li>
+<li><a href="../ThreeD/OctahedronGeometry.html"><div class="icon-class"></div>OctahedronGeometry</a></li>
+<li><a href="../ThreeD/OrthographicCamera.html"><div class="icon-class"></div>OrthographicCamera</a></li>
+<li><a href="../ThreeD/ParametricGeometry.html"><div class="icon-class"></div>ParametricGeometry</a></li>
+<li><a href="../ThreeD/Particle.html"><div class="icon-class"></div>Particle</a></li>
+<li><a href="../ThreeD/ParticleBasicMaterial.html"><div class="icon-class"></div>ParticleBasicMaterial</a></li>
+<li><a href="../ThreeD/ParticleCanvasMaterial.html"><div class="icon-class"></div>ParticleCanvasMaterial</a></li>
+<li><a href="../ThreeD/ParticleCanvasMaterialProgram.html"><div class="icon-interface"></div>ParticleCanvasMaterialProgram</a></li>
+<li><a href="../ThreeD/ParticleSystem.html"><div class="icon-class"></div>ParticleSystem</a></li>
+<li><a href="../ThreeD/Path.html"><div class="icon-class"></div>Path</a></li>
+<li><a href="../ThreeD/PathAction.html"><div class="icon-class"></div>PathAction</a></li>
+<li><a href="../ThreeD/PerspectiveCamera.html"><div class="icon-class"></div>PerspectiveCamera</a></li>
+<li><a href="../ThreeD/PlaneGeometry.html"><div class="icon-class"></div>PlaneGeometry</a></li>
+<li><a href="../ThreeD/PointLight.html"><div class="icon-class"></div>PointLight</a></li>
+<li><a href="../ThreeD/PolyhedronGeometry.html"><div class="icon-class"></div>PolyhedronGeometry</a></li>
+<li><a href="../ThreeD/PolyhedronGeometryVertex.html"><div class="icon-class"></div>PolyhedronGeometryVertex</a></li>
+<li><a href="../ThreeD/Program.html"><div class="icon-class"></div>Program</a></li>
+<li><div class="icon-class"></div><strong>Projector</strong></li>
+<li><a href="../ThreeD/ProjectorRenderData.html"><div class="icon-class"></div>ProjectorRenderData</a></li>
+<li><a href="../ThreeD/QuadraticBezierCurve.html"><div class="icon-class"></div>QuadraticBezierCurve</a></li>
+<li><a href="../ThreeD/QuadraticBezierCurve3.html"><div class="icon-class"></div>QuadraticBezierCurve3</a></li>
+<li><a href="../ThreeD/Quaternion.html"><div class="icon-class"></div>Quaternion</a></li>
+<li><a href="../ThreeD/Ray.html"><div class="icon-class"></div>Ray</a></li>
+<li><a href="../ThreeD/Rectangle.html"><div class="icon-class"></div>Rectangle</a></li>
+<li><a href="../ThreeD/RenderInts.html"><div class="icon-class"></div>RenderInts</a></li>
+<li><a href="../ThreeD/RenderableFace3.html"><div class="icon-class"></div>RenderableFace3</a></li>
+<li><a href="../ThreeD/RenderableFace4.html"><div class="icon-class"></div>RenderableFace4</a></li>
+<li><a href="../ThreeD/RenderableLine.html"><div class="icon-class"></div>RenderableLine</a></li>
+<li><a href="../ThreeD/RenderableObject.html"><div class="icon-class"></div>RenderableObject</a></li>
+<li><a href="../ThreeD/RenderableParticle.html"><div class="icon-class"></div>RenderableParticle</a></li>
+<li><a href="../ThreeD/RenderableVertex.html"><div class="icon-class"></div>RenderableVertex</a></li>
+<li><a href="../ThreeD/Renderer.html"><div class="icon-class"></div>Renderer</a></li>
+<li><a href="../ThreeD/Ribbon.html"><div class="icon-class"></div>Ribbon</a></li>
+<li><a href="../ThreeD/Scene.html"><div class="icon-class"></div>Scene</a></li>
+<li><a href="../ThreeD/ShaderMaterial.html"><div class="icon-class"></div>ShaderMaterial</a></li>
+<li><a href="../ThreeD/Shape.html"><div class="icon-class"></div>Shape</a></li>
+<li><a href="../ThreeD/SkinnedMesh.html"><div class="icon-class"></div>SkinnedMesh</a></li>
+<li><a href="../ThreeD/SphereGeometry.html"><div class="icon-class"></div>SphereGeometry</a></li>
+<li><a href="../ThreeD/SphericalReflectionMapping.html"><div class="icon-class"></div>SphericalReflectionMapping</a></li>
+<li><a href="../ThreeD/SphericalRefractionMapping.html"><div class="icon-class"></div>SphericalRefractionMapping</a></li>
+<li><a href="../ThreeD/SplineCurve.html"><div class="icon-class"></div>SplineCurve</a></li>
+<li><a href="../ThreeD/SplineCurve3.html"><div class="icon-class"></div>SplineCurve3</a></li>
+<li><a href="../ThreeD/SpotLight.html"><div class="icon-class"></div>SpotLight</a></li>
+<li><a href="../ThreeD/Sprite.html"><div class="icon-class"></div>Sprite</a></li>
+<li><a href="../ThreeD/SpriteAlignment.html"><div class="icon-class"></div>SpriteAlignment</a></li>
+<li><a href="../ThreeD/TetrahedronGeometry.html"><div class="icon-class"></div>TetrahedronGeometry</a></li>
+<li><a href="../ThreeD/TextGeometry.html"><div class="icon-class"></div>TextGeometry</a></li>
+<li><a href="../ThreeD/Texture.html"><div class="icon-class"></div>Texture</a></li>
+<li><a href="../ThreeD/Three.html"><div class="icon-class"></div>Three</a></li>
+<li><a href="../ThreeD/TorusGeometry.html"><div class="icon-class"></div>TorusGeometry</a></li>
+<li><a href="../ThreeD/TorusKnotGeometry.html"><div class="icon-class"></div>TorusKnotGeometry</a></li>
+<li><a href="../ThreeD/TubeGeometry.html"><div class="icon-class"></div>TubeGeometry</a></li>
+<li><a href="../ThreeD/UV.html"><div class="icon-class"></div>UV</a></li>
+<li><a href="../ThreeD/UVMapping.html"><div class="icon-class"></div>UVMapping</a></li>
+<li><a href="../ThreeD/Uniform.html"><div class="icon-class"></div>Uniform</a></li>
+<li><a href="../ThreeD/UniformsUtils.html"><div class="icon-class"></div>UniformsUtils</a></li>
+<li><a href="../ThreeD/Vector2.html"><div class="icon-class"></div>Vector2</a></li>
+<li><a href="../ThreeD/Vector3.html"><div class="icon-class"></div>Vector3</a></li>
+<li><a href="../ThreeD/Vector4.html"><div class="icon-class"></div>Vector4</a></li>
+<li><a href="../ThreeD/Vertex.html"><div class="icon-class"></div>Vertex</a></li>
+<li><a href="../ThreeD/WebGLCamera.html"><div class="icon-class"></div>WebGLCamera</a></li>
+<li><a href="../ThreeD/WebGLGeometry.html"><div class="icon-class"></div>WebGLGeometry</a></li>
+<li><a href="../ThreeD/WebGLMaterial.html"><div class="icon-class"></div>WebGLMaterial</a></li>
+<li><a href="../ThreeD/WebGLObject.html"><div class="icon-class"></div>WebGLObject</a></li>
+<li><a href="../ThreeD/WebGLRenderTarget.html"><div class="icon-class"></div>WebGLRenderTarget</a></li>
+<li><a href="../ThreeD/WebGLRenderTargetCube.html"><div class="icon-class"></div>WebGLRenderTargetCube</a></li>
+<li><a href="../ThreeD/WebGLRenderer.html"><div class="icon-class"></div>WebGLRenderer</a></li>
+<li><a href="../ThreeD/WebGLRendererInfo.html"><div class="icon-class"></div>WebGLRendererInfo</a></li>
+<li><a href="../ThreeD/WebGLRendererMemoryInfo.html"><div class="icon-class"></div>WebGLRendererMemoryInfo</a></li>
+<li><a href="../ThreeD/WebGLRendererRenderInfo.html"><div class="icon-class"></div>WebGLRendererRenderInfo</a></li>
+</ul>
+<h2><div class="icon-library"></div><a href="../ThreeMath.html">ThreeMath</a></h2></div>
+<div class="content">
+        <h2><strong>Projector</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>@author mr.doob / http://mrdoob.com/
+@author supereggbert / http://www.paulbrunt.co.uk/
+@author julianwa / https://github.com/julianwa</p>
+<p>Ported to Dart from JS by:
+@author rob silverton / http://www.unwrong.com/</p>
+</div>
+<h3>Constructors</h3>
+<div class="method"><h4 id="Projector">
+<span class="show-code">Code</span>
+new <strong>Projector</strong>() <a class="anchor-link" href="#Projector"
+              title="Permalink to Projector.Projector">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Projector()
+    : _objectPool = [],
+      _vertexPool = [],
+      _face3Pool = [],
+      _face4Pool = [],
+      _linePool = [],
+      _particlePool = [],
+  
+      //_renderData = { "objects": [], "sprites": [], "lights": [], "elements": [] };
+      _renderData = new ProjectorRenderData(),
+  
+      _vector3 = new Vector3(),
+      _vector4 = new Vector4(),
+  
+      _viewProjectionMatrix = new Matrix4(),
+      _modelViewProjectionMatrix = new Matrix4(),
+  
+      _frustum = new Frustum(),
+  
+      _clippedVertex1PositionScreen = new Vector4(),
+      _clippedVertex2PositionScreen = new Vector4();
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="clipLine">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/bool.html">bool</a> <strong>clipLine</strong>(<a href="../ThreeD/Vector4.html">Vector4</a> s1, <a href="../ThreeD/Vector4.html">Vector4</a> s2) <a class="anchor-link" href="#clipLine"
+              title="Permalink to Projector.clipLine">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+bool clipLine( Vector4 s1, Vector4 s2 ) {
+  num alpha1 = 0, alpha2 = 1,
+
+  // Calculate the boundary coordinate of each vertex for the near and far clip planes,
+  // Z = -1 and Z = +1, respectively.
+  bc1near =  s1.z + s1.w,
+  bc2near =  s2.z + s2.w,
+  bc1far =  - s1.z + s1.w,
+  bc2far =  - s2.z + s2.w;
+
+  if ( bc1near &gt;= 0 &amp;&amp; bc2near &gt;= 0 &amp;&amp; bc1far &gt;= 0 &amp;&amp; bc2far &gt;= 0 ) {
+    // Both vertices lie entirely within all clip planes.
+    return true;
+  } else if ( ( bc1near &lt; 0 &amp;&amp; bc2near &lt; 0) || (bc1far &lt; 0 &amp;&amp; bc2far &lt; 0 ) ) {
+    // Both vertices lie entirely outside one of the clip planes.
+    return false;
+  } else {
+    // The line segment spans at least one clip plane.
+    if ( bc1near &lt; 0 ) {
+      // v1 lies outside the near plane, v2 inside
+      alpha1 = Math.max( alpha1, bc1near / ( bc1near - bc2near ) );
+    } else if ( bc2near &lt; 0 ) {
+      // v2 lies outside the near plane, v1 inside
+      alpha2 = Math.min( alpha2, bc1near / ( bc1near - bc2near ) );
+    }
+
+    if ( bc1far &lt; 0 ) {
+      // v1 lies outside the far plane, v2 inside
+      alpha1 = Math.max( alpha1, bc1far / ( bc1far - bc2far ) );
+    } else if ( bc2far &lt; 0 ) {
+      // v2 lies outside the far plane, v2 inside
+      alpha2 = Math.min( alpha2, bc1far / ( bc1far - bc2far ) );
+    }
+
+    if ( alpha2 &lt; alpha1 ) {
+      // The line segment spans two boundaries, but is outside both of them.
+      // (This can't happen when we're only clipping against just near/far but good
+      //  to leave the check here for future usage if other clip planes are added.)
+      return false;
+    } else {
+      // Update the s1 and s2 vertices to match the clipped line segment.
+      s1.lerpSelf( s2, alpha1 );
+      s2.lerpSelf( s1, 1 - alpha2 );
+
+      return true;
+    }
+  }
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getNextFace3InPool">
+<span class="show-code">Code</span>
+<a href="../ThreeD/IRenderableFace3.html">IRenderableFace3</a> <strong>getNextFace3InPool</strong>() <a class="anchor-link" href="#getNextFace3InPool"
+              title="Permalink to Projector.getNextFace3InPool">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+IRenderableFace3 getNextFace3InPool() {
+  //TODO: make sure I've interpreted this logic correctly
+  // RenderableFace3 face = _face3Pool[ _face3Count ] = _face3Pool[ _face3Count ] || new RenderableFace3();
+  RenderableFace3 face;
+  if ( _face3Count &lt; _face3Pool.length ) {
+    face = ( _face3Pool[ _face3Count ] != null ) ? _face3Pool[ _face3Count ] : new RenderableFace3();
+  } else {
+    face = new RenderableFace3();
+    _face3Pool.add(face);
+  }
+  
+  _face3Count ++;
+
+  return face;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getNextFace4InPool">
+<span class="show-code">Code</span>
+<a href="../ThreeD/IRenderableFace4.html">IRenderableFace4</a> <strong>getNextFace4InPool</strong>() <a class="anchor-link" href="#getNextFace4InPool"
+              title="Permalink to Projector.getNextFace4InPool">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+IRenderableFace4 getNextFace4InPool() {
+
+  RenderableFace4 face;
+  if ( _face4Count &lt; _face4Pool.length ) {
+    face = ( _face4Pool[ _face4Count ] != null ) ? _face4Pool[ _face4Count ] : new RenderableFace4();
+  } else {
+    face = new RenderableFace4();
+    _face4Pool.add(face);
+  }
+  
+  _face4Count ++;
+
+  return face;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getNextLineInPool">
+<span class="show-code">Code</span>
+<a href="../ThreeD/RenderableLine.html">RenderableLine</a> <strong>getNextLineInPool</strong>() <a class="anchor-link" href="#getNextLineInPool"
+              title="Permalink to Projector.getNextLineInPool">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+RenderableLine getNextLineInPool() {
+  //TODO: make sure I've interpreted this logic correctly
+  //RenderableLine line = _linePool[ _lineCount ] = _linePool[ _lineCount ] || new RenderableLine();
+  RenderableLine line;
+  if ( _lineCount &lt; _linePool.length ) {
+    line = ( _linePool[ _lineCount ] != null ) ? _linePool[ _lineCount ] : new RenderableLine();
+  } else {
+    line = new RenderableLine();
+    _linePool.add(line);
+  }
+ 
+  _lineCount ++;
+
+  return line;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getNextObjectInPool">
+<span class="show-code">Code</span>
+<a href="../ThreeD/RenderableObject.html">RenderableObject</a> <strong>getNextObjectInPool</strong>() <a class="anchor-link" href="#getNextObjectInPool"
+              title="Permalink to Projector.getNextObjectInPool">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+RenderableObject getNextObjectInPool() {
+  //TODO: make sure I've interpreted this logic correctly
+  // RenderableObject object = _objectPool[ _objectCount ] = _objectPool[ _objectCount ] || new RenderableObject();
+  
+  RenderableObject object;
+  if ( _objectCount &lt; _objectPool.length ) {
+    object = ( _objectPool[ _objectCount ] != null ) ? _objectPool[ _objectCount ] : new RenderableObject();
+  } else {
+    object = new RenderableObject(); 
+    _objectPool.add(object);
+  }
+  
+  _objectCount ++;
+
+  return object;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getNextParticleInPool">
+<span class="show-code">Code</span>
+<a href="../ThreeD/RenderableParticle.html">RenderableParticle</a> <strong>getNextParticleInPool</strong>() <a class="anchor-link" href="#getNextParticleInPool"
+              title="Permalink to Projector.getNextParticleInPool">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+RenderableParticle getNextParticleInPool() {
+  //TODO: make sure I've interpreted this logic correctly
+  //RenderableParticle particle = _particlePool[ _particleCount ] = _particlePool[ _particleCount ] || new RenderableParticle();
+  RenderableParticle particle;
+  if ( _particleCount &lt; _particlePool.length ) {
+    particle = ( _particlePool[ _particleCount ] != null ) ? _particlePool[ _particleCount ] : new RenderableParticle();
+  } else {
+    particle = new RenderableParticle();
+    _particlePool.add(particle);
+  }
+  
+  _particleCount ++;
+  return particle;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="getNextVertexInPool">
+<span class="show-code">Code</span>
+<a href="../ThreeD/RenderableVertex.html">RenderableVertex</a> <strong>getNextVertexInPool</strong>() <a class="anchor-link" href="#getNextVertexInPool"
+              title="Permalink to Projector.getNextVertexInPool">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+RenderableVertex getNextVertexInPool() {
+  //TODO: make sure I've interpreted this logic correctly
+  // var vertex = _vertexPool[ _vertexCount ] = _vertexPool[ _vertexCount ] || new THREE.RenderableVertex();
+  RenderableVertex vertex;
+  
+  // Vertex is already within List    
+  if ( _vertexCount &lt; _vertexPool.length ) {
+    vertex = ( _vertexPool[ _vertexCount ] != null ) ? _vertexPool[ _vertexCount ] : new RenderableVertex(); 
+  } else {
+    vertex = new RenderableVertex();
+    _vertexPool.add(vertex);
+  }
+  
+  _vertexCount ++;
+
+  return vertex;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="painterSort">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/int.html">int</a> <strong>painterSort</strong>(a, b) <a class="anchor-link" href="#painterSort"
+              title="Permalink to Projector.painterSort">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+int painterSort( a, b ) =&gt; b.z.compareTo(a.z);
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="pickingRay">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Ray.html">Ray</a> <strong>pickingRay</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> vector, <a href="../ThreeD/Camera.html">Camera</a> camera) <a class="anchor-link" href="#pickingRay"
+              title="Permalink to Projector.pickingRay">#</a></h4>
+<div class="doc">
+<p>Translates a 2D point from NDC to a THREE.Ray
+that can be used for picking.
+@vector - THREE.Vector3 that represents 2D point
+@camera - THREE.Camera</p>
+<pre class="source">
+Ray pickingRay( Vector3 vector, Camera camera ) {
+  Vector3 end, ray, t;
+
+  // set two vectors with opposing z values
+  vector.z = -1.0;
+  end = new Vector3( vector.x, vector.y, 1.0 );
+
+  unprojectVector( vector, camera );
+  unprojectVector( end, camera );
+
+  // find direction from vector to end
+  end.subSelf( vector ).normalize();
+
+  return new Ray( vector, end );
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="projectGraph">
+<span class="show-code">Code</span>
+<a href="../ThreeD/ProjectorRenderData.html">ProjectorRenderData</a> <strong>projectGraph</strong>(<a href="../ThreeD/Object3D.html">Object3D</a> root, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sort) <a class="anchor-link" href="#projectGraph"
+              title="Permalink to Projector.projectGraph">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ProjectorRenderData projectGraph( Object3D root, bool sort ) {
+  _objectCount = 0;
+  
+  _renderData.objects = [];
+  _renderData.sprites = [];
+  _renderData.lights = [];
+
+  var projectObject;
+  
+  projectObject = ( Object3D object ) {
+    if ( !object.visible ) return null;
+    
+    if ( ( object is Mesh || object is Line ) &amp;&amp;
+        ( object.frustumCulled === false || _frustum.contains( object ) ) ) {
+      
+      _vector3.copy( object.matrixWorld.getPosition() );
+      _viewProjectionMatrix.multiplyVector3( _vector3.copy( object.position ) );
+
+      _object = getNextObjectInPool();
+      _object.object = object;
+      _object.z = _vector3.z;
+
+      _renderData.objects.add( _object );
+      
+    } else if ( object is Sprite || object is Particle ) {
+      
+      _vector3.copy( object.matrixWorld.getPosition() );
+      _viewProjectionMatrix.multiplyVector3( _vector3.copy( object.position ) );
+
+      _object = getNextObjectInPool();
+      _object.object = object;
+      _object.z = _vector3.z;
+
+      _renderData.sprites.add( _object );
+      
+    } else if ( object is Light ) {
+      _renderData.lights.add( object );
+    }
+    
+   object.children.forEach(projectObject);
+    
+  };
+  
+  projectObject( root );
+
+  //TODO: assuming this is a form of 'if' statement.
+  //sort &amp;&amp; _renderData.objects.sort( painterSort );
+
+  if (sort) {
+    _renderData.objects.sort( painterSort );
+  }
+  
+  return _renderData;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="projectScene">
+<span class="show-code">Code</span>
+<a href="../ThreeD/ProjectorRenderData.html">ProjectorRenderData</a> <strong>projectScene</strong>(<a href="../ThreeD/Scene.html">Scene</a> scene, <a href="../ThreeD/Camera.html">Camera</a> camera, <a href="http://api.dartlang.org/dart_core/bool.html">bool</a> sort) <a class="anchor-link" href="#projectScene"
+              title="Permalink to Projector.projectScene">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+ProjectorRenderData projectScene( Scene scene, Camera camera, bool sort ) {
+  num near = camera.near, far = camera.far;
+  bool visible = false;
+  int o, ol, v, vl, f, fl, n, nl, c, cl, u, ul;
+  Object3D object;
+  Matrix4 modelMatrix, rotationMatrix;
+  Geometry geometry;
+  List geometryMaterials;
+  List&lt;Vector3&gt; vertices; 
+  Vertex vertex; 
+  Vector3 vertexPositionScreen, normal;
+  List&lt;IFace3&gt; faces;
+  IFace3 face;
+  IRenderableFace3 _face;
+  List faceVertexNormals;
+  List&lt;List&gt; faceVertexUvs;
+  RenderableVertex v1, v2, v3, v4;
+  bool isFaceMaterial;
+  Material material;
+  int side;
+
+  _face3Count = 0;
+  _face4Count = 0;
+  _lineCount = 0;
+  _particleCount = 0;
+
+  _renderData.elements = [];
+
+  scene.updateMatrixWorld();
+
+  if ( camera.parent == null ) {
+    // console.warn( 'DEPRECATED: Camera hasn\'t been added to a Scene. Adding it...' );
+    // scene.add( camera );
+    camera.updateMatrixWorld();
+  }
+
+  camera.matrixWorldInverse.getInverse( camera.matrixWorld );
+
+  _viewProjectionMatrix.multiply( camera.projectionMatrix, camera.matrixWorldInverse );
+
+  _frustum.setFromMatrix( _viewProjectionMatrix );
+
+  _renderData = projectGraph( scene, false );
+
+  _renderData.objects.forEach((o) {
+    
+    object = o.object;
+    
+    modelMatrix = object.matrixWorld;
+    
+    _vertexCount = 0;
+    
+    if ( object is Mesh ) {
+      
+      geometry = object.geometry;
+      geometryMaterials = object.geometry.materials;
+      vertices = geometry.vertices;
+      faces = geometry.faces;
+      faceVertexUvs = geometry.faceVertexUvs;
+      
+      rotationMatrix = object.matrixRotationWorld.extractRotation( modelMatrix );
+      
+      isFaceMaterial = (object.material is MeshFaceMaterial);
+      side = object.material.side;
+    
+      vertices.forEach((v) {
+        _vertex = getNextVertexInPool();
+        _vertex.positionWorld.copy( v );
+    
+        modelMatrix.multiplyVector3( _vertex.positionWorld );
+        _vertex.positionScreen.copy( _vertex.positionWorld );
+        _viewProjectionMatrix.multiplyVector4( _vertex.positionScreen );
+        _vertex.positionScreen.x /= _vertex.positionScreen.w;
+        _vertex.positionScreen.y /= _vertex.positionScreen.w;
+    
+        _vertex.visible = _vertex.positionScreen.z &gt; near &amp;&amp; _vertex.positionScreen.z &lt; far;
+      });
+    
+      fl = faces.length;
+      for ( f = 0; f &lt; fl; f ++ ) {
+        
+        face = faces[ f ];
+
+        material = isFaceMaterial === true ? geometryMaterials[ face.materialIndex ] : object.material;
+        
+        if ( material == null ) continue;
+        
+        side = material.side;
+        
+        if ( face is Face3 ) {
+          v1 = _vertexPool[ face.a ];
+          v2 = _vertexPool[ face.b ];
+          v3 = _vertexPool[ face.c ];
+        
+          if ( v1.visible &amp;&amp; v2.visible &amp;&amp; v3.visible ) {
+            
+            visible = (
+                ( ( v3.positionScreen.x - v1.positionScreen.x ) * ( v2.positionScreen.y - v1.positionScreen.y ) -
+                  ( v3.positionScreen.y - v1.positionScreen.y ) * ( v2.positionScreen.x - v1.positionScreen.x ) ) &lt; 0);
+            
+            if ( side === Three.DoubleSide || visible === ( side === Three.FrontSide ) ) {
+        
+        
+            _face = getNextFace3InPool();
+        
+            _face.v1.copy( v1 );
+            _face.v2.copy( v2 );
+            _face.v3.copy( v3 );
+        
+            } else {
+              continue;
+            }
+          } else {
+            continue;
+          }
+          
+        } else if ( face is Face4 ) {
+          
+          Face4 face4 = face;
+          v1 = _vertexPool[ face4.a ];
+          v2 = _vertexPool[ face4.b ];
+          v3 = _vertexPool[ face4.c ];
+          v4 = _vertexPool[ face4.d ];
+          
+          if ( v1.visible &amp;&amp; v2.visible &amp;&amp; v3.visible &amp;&amp; v4.visible ) {
+            
+            visible = ( v4.positionScreen.x - v1.positionScreen.x ) * ( v2.positionScreen.y - v1.positionScreen.y ) -
+                ( v4.positionScreen.y - v1.positionScreen.y ) * ( v2.positionScreen.x - v1.positionScreen.x ) &lt; 0 ||
+                ( v2.positionScreen.x - v3.positionScreen.x ) * ( v4.positionScreen.y - v3.positionScreen.y ) -
+                ( v2.positionScreen.y - v3.positionScreen.y ) * ( v4.positionScreen.x - v3.positionScreen.x ) &lt; 0;
+            
+            if ( side == Three.DoubleSide || visible == ( side == Three.FrontSide ) ) {
+              
+              _face = getNextFace4InPool();
+            
+              _face.v1.copy( v1 );
+              _face.v2.copy( v2 );
+              _face.v3.copy( v3 );
+              (_face as IRenderableFace4).v4.copy( v4 );
+            } else {
+              continue;
+            }
+          } else {
+            continue;
+          }
+        }
+        
+        _face.normalWorld.copy( face.normal );
+
+		      if ( visible === false &amp;&amp; ( side === Three.BackSide || side === Three.DoubleSide ) ) _face.normalWorld.negate();
+        rotationMatrix.multiplyVector3( _face.normalWorld );
+
+        _face.centroidWorld.copy( face.centroid );
+        modelMatrix.multiplyVector3( _face.centroidWorld );
+
+        _face.centroidScreen.copy( _face.centroidWorld );
+        _viewProjectionMatrix.multiplyVector3( _face.centroidScreen );
+
+        faceVertexNormals = face.vertexNormals;
+
+        nl = faceVertexNormals.length;
+        for ( n = 0; n &lt; nl; n ++ ) {
+          normal = _face.vertexNormalsWorld[ n ];
+          normal.copy( faceVertexNormals[ n ] );
+          
+          if ( !visible &amp;&amp; ( side == Three.BackSide || side == Three.DoubleSide ) ) normal.negate();
+          
+          rotationMatrix.multiplyVector3( normal );
+        }
+
+        cl = faceVertexUvs.length;
+        for ( c = 0; c &lt; cl; c ++ ) {
+          List&lt;UV&gt; uvs = faceVertexUvs[ c ][ f ];
+
+          if ( uvs == null ) continue;
+          
+          //TODO: interpreting this code as dynamically creating arrays.
+          ul = uvs.length;
+          for ( u = 0; u &lt; ul; u ++ ) {
+            List faceUVs = _face.uvs[c];
+            faceUVs.add(uvs[u]);
+            //_face.uvs[ c ][ u ] = uvs[ u ];
+          }
+        }
+
+        _face.material = material;
+        _face.faceMaterial = face.materialIndex !== null ? geometryMaterials[ face.materialIndex ] : null;
+
+        _face.z = _face.centroidScreen.z;
+
+        _renderData.elements.add( _face );
+      }
+      
+    } else if ( object is Line ) {
+      _modelViewProjectionMatrix.multiply( _viewProjectionMatrix, modelMatrix );
+
+      vertices = object.geometry.vertices;
+
+      v1 = getNextVertexInPool();
+      v1.positionScreen.copy( vertices[ 0 ] );
+      _modelViewProjectionMatrix.multiplyVector4( v1.positionScreen );
+
+    // Handle LineStrip and LinePieces
+      var step = object.type === Three.LinePieces ? 2 : 1;
+      
+      vl = vertices.length;
+      for ( v = 1; v &lt; vl; v++ ) {
+        
+        v1 = getNextVertexInPool();
+        v1.positionScreen.copy( vertices[ v ] );
+        _modelViewProjectionMatrix.multiplyVector4( v1.positionScreen );
+
+        if ( ( v + 1 ) % step &gt; 0 ) continue;
+        
+        v2 = _vertexPool[ _vertexCount - 2 ];
+
+        _clippedVertex1PositionScreen.copy( v1.positionScreen );
+        _clippedVertex2PositionScreen.copy( v2.positionScreen );
+
+        if ( clipLine( _clippedVertex1PositionScreen, _clippedVertex2PositionScreen ) ) {
+          // Perform the perspective divide
+          _clippedVertex1PositionScreen.multiplyScalar( 1 / _clippedVertex1PositionScreen.w );
+          _clippedVertex2PositionScreen.multiplyScalar( 1 / _clippedVertex2PositionScreen.w );
+
+          _line = getNextLineInPool();
+          _line.v1.positionScreen.copy( _clippedVertex1PositionScreen );
+          _line.v2.positionScreen.copy( _clippedVertex2PositionScreen );
+
+          _line.z = Math.max( _clippedVertex1PositionScreen.z, _clippedVertex2PositionScreen.z );
+
+          _line.material = object.material;
+
+          _renderData.elements.add( _line );
+        }
+      }
+    }
+  });
+  
+ _renderData.sprites.forEach((o) {
+
+    object = o.object;
+
+    modelMatrix = object.matrixWorld;
+
+    if ( object is Particle ) {
+      _vector4.setValues( modelMatrix.elements[12], modelMatrix.elements[13], modelMatrix.elements[14], 1 );
+      _viewProjectionMatrix.multiplyVector4( _vector4 );
+
+      _vector4.z /= _vector4.w;
+
+      if ( _vector4.z &gt; 0 &amp;&amp; _vector4.z &lt; 1 ) {         
+        _particle = getNextParticleInPool();
+        _particle.x = _vector4.x / _vector4.w;
+        _particle.y = _vector4.y / _vector4.w;
+        _particle.z = _vector4.z;
+
+        _particle.rotation = object.rotation.z;
+        
+        _particle.scale.x = object.scale.x * ( _particle.x - ( _vector4.x + camera.projectionMatrix.elements[0] ) / ( _vector4.w + camera.projectionMatrix.elements[12] ) ).abs();
+        _particle.scale.y = object.scale.y * ( _particle.y - ( _vector4.y + camera.projectionMatrix.elements[5] ) / ( _vector4.w + camera.projectionMatrix.elements[13] ) ).abs();
+
+        _particle.material = object.material as Material;
+
+        _renderData.elements.add( _particle );
+      }
+    }
+  });
+ 
+  if ( sort ) {
+    _renderData.elements.sort( painterSort );
+  }
+  
+  return _renderData;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="projectVector">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a> <strong>projectVector</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> vector, <a href="../ThreeD/Camera.html">Camera</a> camera) <a class="anchor-link" href="#projectVector"
+              title="Permalink to Projector.projectVector">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Vector3 projectVector( Vector3 vector, Camera camera ) {
+  camera.matrixWorldInverse.getInverse( camera.matrixWorld );
+
+  _viewProjectionMatrix.multiply( camera.projectionMatrix, camera.matrixWorldInverse );
+  _viewProjectionMatrix.multiplyVector3( vector );
+
+  return vector;
+}
+</pre>
+</div>
+</div>
+<div class="method"><h4 id="unprojectVector">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a> <strong>unprojectVector</strong>(<a href="../ThreeD/Vector3.html">Vector3</a> vector, <a href="../ThreeD/Camera.html">Camera</a> camera) <a class="anchor-link" href="#unprojectVector"
+              title="Permalink to Projector.unprojectVector">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Vector3 unprojectVector( Vector3 vector, Camera camera ) {
+  camera.projectionMatrixInverse.getInverse( camera.projectionMatrix );
+
+  _viewProjectionMatrix.multiply( camera.matrixWorld, camera.projectionMatrixInverse );
+  _viewProjectionMatrix.multiplyVector3( vector );
+
+  return vector;
+}
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page was generated at 2012-10-01 16:04:46.432</div>
+        </div>
+        <script async src="../client-static.js"></script>
+        </body></html>
+        

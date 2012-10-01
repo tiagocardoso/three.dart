@@ -1,0 +1,419 @@
+        <!DOCTYPE html>
+        <html>
+        <head>
+                <meta charset="utf-8">
+        <title>TorusKnotGeometry Class / ThreeD Library / Dart Documentation</title>
+        <link rel="stylesheet" type="text/css"
+            href="../styles.css">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+        <link rel="shortcut icon" href="../favicon.ico">
+        
+        </head>
+        <body data-library="ThreeD" data-type="TorusKnotGeometry">
+        <div class="page">
+        <div class="header">
+          <a href="../index.html"><div class="logo"></div></a>
+          <a href="../index.html">Dart Documentation</a>
+         &rsaquo; <a href="../ThreeD.html">ThreeD</a> &rsaquo; <a href="../ThreeD/TorusKnotGeometry.html">TorusKnotGeometry</a>        <div id="search-box">
+          <input type="search" name="q" id="q" autocomplete="off"
+              class="search-input" placeholder="Search API">
+        </div>
+        
+      </div>
+      <div class="drop-down" id="drop-down"></div>
+      
+        <div class="nav">
+        
+<h2><div class="icon-library"></div><a href="../CurveUtils.html">CurveUtils</a></h2><h2><div class="icon-library"></div><a href="../FontUtils.html">FontUtils</a></h2><h2><div class="icon-library"></div><a href="../GeometryUtils.html">GeometryUtils</a></h2><h2><div class="icon-library"></div><a href="../ImageUtils.html">ImageUtils</a></h2><h2><div class="icon-library"></div><a href="../SceneUtils.html">SceneUtils</a></h2><h2><div class="icon-library"></div><a href="../ShapeUtils.html">ShapeUtils</a></h2><h2><div class="icon-library"></div><a href="../ThreeD.html">ThreeD</a></h2><ul class="icon">
+<li><a href="../ThreeD/AmbientLight.html"><div class="icon-class"></div>AmbientLight</a></li>
+<li><a href="../ThreeD/ArcCurve.html"><div class="icon-class"></div>ArcCurve</a></li>
+<li><a href="../ThreeD/ArrowHelper.html"><div class="icon-class"></div>ArrowHelper</a></li>
+<li><a href="../ThreeD/AxisHelper.html"><div class="icon-class"></div>AxisHelper</a></li>
+<li><a href="../ThreeD/Bone.html"><div class="icon-class"></div>Bone</a></li>
+<li><a href="../ThreeD/BoundingBox.html"><div class="icon-class"></div>BoundingBox</a></li>
+<li><a href="../ThreeD/BoundingSphere.html"><div class="icon-class"></div>BoundingSphere</a></li>
+<li><a href="../ThreeD/Buffer.html"><div class="icon-class"></div>Buffer</a></li>
+<li><a href="../ThreeD/BufferGeometry.html"><div class="icon-class"></div>BufferGeometry</a></li>
+<li><a href="../ThreeD/Camera.html"><div class="icon-class"></div>Camera</a></li>
+<li><a href="../ThreeD/CanvasRenderData.html"><div class="icon-class"></div>CanvasRenderData</a></li>
+<li><a href="../ThreeD/CanvasRenderer.html"><div class="icon-class"></div>CanvasRenderer</a></li>
+<li><a href="../ThreeD/CircleGeometry.html"><div class="icon-class"></div>CircleGeometry</a></li>
+<li><a href="../ThreeD/ClosedSplineCurve3.html"><div class="icon-class"></div>ClosedSplineCurve3</a></li>
+<li><a href="../ThreeD/Color.html"><div class="icon-class"></div>Color</a></li>
+<li><a href="../ThreeD/ConvexGeometry.html"><div class="icon-class"></div>ConvexGeometry</a></li>
+<li><a href="../ThreeD/CubeGeomSides.html"><div class="icon-class"></div>CubeGeomSides</a></li>
+<li><a href="../ThreeD/CubeGeometry.html"><div class="icon-class"></div>CubeGeometry</a></li>
+<li><a href="../ThreeD/CubeReflectionMapping.html"><div class="icon-class"></div>CubeReflectionMapping</a></li>
+<li><a href="../ThreeD/CubeRefractionMapping.html"><div class="icon-class"></div>CubeRefractionMapping</a></li>
+<li><a href="../ThreeD/CubicBezierCurve.html"><div class="icon-class"></div>CubicBezierCurve</a></li>
+<li><a href="../ThreeD/CubicBezierCurve3.html"><div class="icon-class"></div>CubicBezierCurve3</a></li>
+<li><a href="../ThreeD/Curve.html"><div class="icon-class"></div>Curve&lt;V&gt;</a></li>
+<li><a href="../ThreeD/Curve2D.html"><div class="icon-class"></div>Curve2D</a></li>
+<li><a href="../ThreeD/Curve3D.html"><div class="icon-class"></div>Curve3D</a></li>
+<li><a href="../ThreeD/CurvePath.html"><div class="icon-class"></div>CurvePath</a></li>
+<li><a href="../ThreeD/CylinderGeometry.html"><div class="icon-class"></div>CylinderGeometry</a></li>
+<li><a href="../ThreeD/DataTexture.html"><div class="icon-class"></div>DataTexture</a></li>
+<li><a href="../ThreeD/DirectionalLight.html"><div class="icon-class"></div>DirectionalLight</a></li>
+<li><a href="../ThreeD/EllipseCurve.html"><div class="icon-class"></div>EllipseCurve</a></li>
+<li><a href="../ThreeD/EventEmitter.html"><div class="icon-class"></div>EventEmitter</a></li>
+<li><a href="../ThreeD/EventEmitterEvent.html"><div class="icon-class"></div>EventEmitterEvent</a></li>
+<li><a href="../ThreeD/ExtrudeGeometry.html"><div class="icon-class"></div>ExtrudeGeometry</a></li>
+<li><a href="../ThreeD/ExtrudeGeometryWorldUVGenerator.html"><div class="icon-class"></div>ExtrudeGeometryWorldUVGenerator</a></li>
+<li><a href="../ThreeD/Face3.html"><div class="icon-class"></div>Face3</a></li>
+<li><a href="../ThreeD/Face4.html"><div class="icon-class"></div>Face4</a></li>
+<li><a href="../ThreeD/Fog.html"><div class="icon-class"></div>Fog</a></li>
+<li><a href="../ThreeD/FogExp2.html"><div class="icon-class"></div>FogExp2</a></li>
+<li><a href="../ThreeD/FogLinear.html"><div class="icon-class"></div>FogLinear</a></li>
+<li><a href="../ThreeD/Frustum.html"><div class="icon-class"></div>Frustum</a></li>
+<li><a href="../ThreeD/Geometry.html"><div class="icon-class"></div>Geometry</a></li>
+<li><a href="../ThreeD/IFace3.html"><div class="icon-interface"></div>IFace3</a></li>
+<li><a href="../ThreeD/IFace4.html"><div class="icon-interface"></div>IFace4</a></li>
+<li><a href="../ThreeD/IMaterial.html"><div class="icon-interface"></div>IMaterial</a></li>
+<li><a href="../ThreeD/IParticleMaterial.html"><div class="icon-interface"></div>IParticleMaterial</a></li>
+<li><a href="../ThreeD/IRenderableFace3.html"><div class="icon-interface"></div>IRenderableFace3</a></li>
+<li><a href="../ThreeD/IRenderableFace4.html"><div class="icon-interface"></div>IRenderableFace4</a></li>
+<li><a href="../ThreeD/IRenderableObj.html"><div class="icon-interface"></div>IRenderableObj</a></li>
+<li><a href="../ThreeD/ITextureMapMaterial.html"><div class="icon-interface"></div>ITextureMapMaterial</a></li>
+<li><a href="../ThreeD/IVector2.html"><div class="icon-interface"></div>IVector2</a></li>
+<li><a href="../ThreeD/IVector3.html"><div class="icon-interface"></div>IVector3</a></li>
+<li><a href="../ThreeD/IVector4.html"><div class="icon-interface"></div>IVector4</a></li>
+<li><a href="../ThreeD/IcosahedronGeometry.html"><div class="icon-class"></div>IcosahedronGeometry</a></li>
+<li><a href="../ThreeD/ImageLoader.html"><div class="icon-class"></div>ImageLoader</a></li>
+<li><a href="../ThreeD/ImmediateRenderObject.html"><div class="icon-class"></div>ImmediateRenderObject</a></li>
+<li><a href="../ThreeD/Intersect.html"><div class="icon-class"></div>Intersect</a></li>
+<li><a href="../ThreeD/JSONLoader.html"><div class="icon-class"></div>JSONLoader</a></li>
+<li><a href="../ThreeD/LOD.html"><div class="icon-class"></div>LOD</a></li>
+<li><a href="../ThreeD/LatheGeometry.html"><div class="icon-class"></div>LatheGeometry</a></li>
+<li><a href="../ThreeD/LensFlare.html"><div class="icon-class"></div>LensFlare</a></li>
+<li><a href="../ThreeD/Light.html"><div class="icon-class"></div>Light</a></li>
+<li><a href="../ThreeD/Line.html"><div class="icon-class"></div>Line</a></li>
+<li><a href="../ThreeD/LineBasicMaterial.html"><div class="icon-class"></div>LineBasicMaterial</a></li>
+<li><a href="../ThreeD/LineCurve.html"><div class="icon-class"></div>LineCurve</a></li>
+<li><a href="../ThreeD/LineCurve3.html"><div class="icon-class"></div>LineCurve3</a></li>
+<li><a href="../ThreeD/LoadCompleteCallback.html"><div class="icon-interface"></div>LoadCompleteCallback</a></li>
+<li><a href="../ThreeD/LoadProgressCallback.html"><div class="icon-interface"></div>LoadProgressCallback</a></li>
+<li><a href="../ThreeD/LoadStartCallback.html"><div class="icon-interface"></div>LoadStartCallback</a></li>
+<li><a href="../ThreeD/LoadedCallback.html"><div class="icon-interface"></div>LoadedCallback</a></li>
+<li><a href="../ThreeD/Loader.html"><div class="icon-class"></div>Loader</a></li>
+<li><a href="../ThreeD/Material.html"><div class="icon-class"></div>Material</a></li>
+<li><a href="../ThreeD/Matrix3.html"><div class="icon-class"></div>Matrix3</a></li>
+<li><a href="../ThreeD/Matrix4.html"><div class="icon-class"></div>Matrix4</a></li>
+<li><a href="../ThreeD/Mesh.html"><div class="icon-class"></div>Mesh</a></li>
+<li><a href="../ThreeD/MeshBasicMaterial.html"><div class="icon-class"></div>MeshBasicMaterial</a></li>
+<li><a href="../ThreeD/MeshDepthMaterial.html"><div class="icon-class"></div>MeshDepthMaterial</a></li>
+<li><a href="../ThreeD/MeshFaceMaterial.html"><div class="icon-class"></div>MeshFaceMaterial</a></li>
+<li><a href="../ThreeD/MeshLambertMaterial.html"><div class="icon-class"></div>MeshLambertMaterial</a></li>
+<li><a href="../ThreeD/MeshNormalMaterial.html"><div class="icon-class"></div>MeshNormalMaterial</a></li>
+<li><a href="../ThreeD/MeshPhongMaterial.html"><div class="icon-class"></div>MeshPhongMaterial</a></li>
+<li><a href="../ThreeD/MorphAnimMesh.html"><div class="icon-class"></div>MorphAnimMesh</a></li>
+<li><a href="../ThreeD/Object3D.html"><div class="icon-class"></div>Object3D</a></li>
+<li><a href="../ThreeD/OctahedronGeometry.html"><div class="icon-class"></div>OctahedronGeometry</a></li>
+<li><a href="../ThreeD/OrthographicCamera.html"><div class="icon-class"></div>OrthographicCamera</a></li>
+<li><a href="../ThreeD/ParametricGeometry.html"><div class="icon-class"></div>ParametricGeometry</a></li>
+<li><a href="../ThreeD/Particle.html"><div class="icon-class"></div>Particle</a></li>
+<li><a href="../ThreeD/ParticleBasicMaterial.html"><div class="icon-class"></div>ParticleBasicMaterial</a></li>
+<li><a href="../ThreeD/ParticleCanvasMaterial.html"><div class="icon-class"></div>ParticleCanvasMaterial</a></li>
+<li><a href="../ThreeD/ParticleCanvasMaterialProgram.html"><div class="icon-interface"></div>ParticleCanvasMaterialProgram</a></li>
+<li><a href="../ThreeD/ParticleSystem.html"><div class="icon-class"></div>ParticleSystem</a></li>
+<li><a href="../ThreeD/Path.html"><div class="icon-class"></div>Path</a></li>
+<li><a href="../ThreeD/PathAction.html"><div class="icon-class"></div>PathAction</a></li>
+<li><a href="../ThreeD/PerspectiveCamera.html"><div class="icon-class"></div>PerspectiveCamera</a></li>
+<li><a href="../ThreeD/PlaneGeometry.html"><div class="icon-class"></div>PlaneGeometry</a></li>
+<li><a href="../ThreeD/PointLight.html"><div class="icon-class"></div>PointLight</a></li>
+<li><a href="../ThreeD/PolyhedronGeometry.html"><div class="icon-class"></div>PolyhedronGeometry</a></li>
+<li><a href="../ThreeD/PolyhedronGeometryVertex.html"><div class="icon-class"></div>PolyhedronGeometryVertex</a></li>
+<li><a href="../ThreeD/Program.html"><div class="icon-class"></div>Program</a></li>
+<li><a href="../ThreeD/Projector.html"><div class="icon-class"></div>Projector</a></li>
+<li><a href="../ThreeD/ProjectorRenderData.html"><div class="icon-class"></div>ProjectorRenderData</a></li>
+<li><a href="../ThreeD/QuadraticBezierCurve.html"><div class="icon-class"></div>QuadraticBezierCurve</a></li>
+<li><a href="../ThreeD/QuadraticBezierCurve3.html"><div class="icon-class"></div>QuadraticBezierCurve3</a></li>
+<li><a href="../ThreeD/Quaternion.html"><div class="icon-class"></div>Quaternion</a></li>
+<li><a href="../ThreeD/Ray.html"><div class="icon-class"></div>Ray</a></li>
+<li><a href="../ThreeD/Rectangle.html"><div class="icon-class"></div>Rectangle</a></li>
+<li><a href="../ThreeD/RenderInts.html"><div class="icon-class"></div>RenderInts</a></li>
+<li><a href="../ThreeD/RenderableFace3.html"><div class="icon-class"></div>RenderableFace3</a></li>
+<li><a href="../ThreeD/RenderableFace4.html"><div class="icon-class"></div>RenderableFace4</a></li>
+<li><a href="../ThreeD/RenderableLine.html"><div class="icon-class"></div>RenderableLine</a></li>
+<li><a href="../ThreeD/RenderableObject.html"><div class="icon-class"></div>RenderableObject</a></li>
+<li><a href="../ThreeD/RenderableParticle.html"><div class="icon-class"></div>RenderableParticle</a></li>
+<li><a href="../ThreeD/RenderableVertex.html"><div class="icon-class"></div>RenderableVertex</a></li>
+<li><a href="../ThreeD/Renderer.html"><div class="icon-class"></div>Renderer</a></li>
+<li><a href="../ThreeD/Ribbon.html"><div class="icon-class"></div>Ribbon</a></li>
+<li><a href="../ThreeD/Scene.html"><div class="icon-class"></div>Scene</a></li>
+<li><a href="../ThreeD/ShaderMaterial.html"><div class="icon-class"></div>ShaderMaterial</a></li>
+<li><a href="../ThreeD/Shape.html"><div class="icon-class"></div>Shape</a></li>
+<li><a href="../ThreeD/SkinnedMesh.html"><div class="icon-class"></div>SkinnedMesh</a></li>
+<li><a href="../ThreeD/SphereGeometry.html"><div class="icon-class"></div>SphereGeometry</a></li>
+<li><a href="../ThreeD/SphericalReflectionMapping.html"><div class="icon-class"></div>SphericalReflectionMapping</a></li>
+<li><a href="../ThreeD/SphericalRefractionMapping.html"><div class="icon-class"></div>SphericalRefractionMapping</a></li>
+<li><a href="../ThreeD/SplineCurve.html"><div class="icon-class"></div>SplineCurve</a></li>
+<li><a href="../ThreeD/SplineCurve3.html"><div class="icon-class"></div>SplineCurve3</a></li>
+<li><a href="../ThreeD/SpotLight.html"><div class="icon-class"></div>SpotLight</a></li>
+<li><a href="../ThreeD/Sprite.html"><div class="icon-class"></div>Sprite</a></li>
+<li><a href="../ThreeD/SpriteAlignment.html"><div class="icon-class"></div>SpriteAlignment</a></li>
+<li><a href="../ThreeD/TetrahedronGeometry.html"><div class="icon-class"></div>TetrahedronGeometry</a></li>
+<li><a href="../ThreeD/TextGeometry.html"><div class="icon-class"></div>TextGeometry</a></li>
+<li><a href="../ThreeD/Texture.html"><div class="icon-class"></div>Texture</a></li>
+<li><a href="../ThreeD/Three.html"><div class="icon-class"></div>Three</a></li>
+<li><a href="../ThreeD/TorusGeometry.html"><div class="icon-class"></div>TorusGeometry</a></li>
+<li><div class="icon-class"></div><strong>TorusKnotGeometry</strong></li>
+<li><a href="../ThreeD/TubeGeometry.html"><div class="icon-class"></div>TubeGeometry</a></li>
+<li><a href="../ThreeD/UV.html"><div class="icon-class"></div>UV</a></li>
+<li><a href="../ThreeD/UVMapping.html"><div class="icon-class"></div>UVMapping</a></li>
+<li><a href="../ThreeD/Uniform.html"><div class="icon-class"></div>Uniform</a></li>
+<li><a href="../ThreeD/UniformsUtils.html"><div class="icon-class"></div>UniformsUtils</a></li>
+<li><a href="../ThreeD/Vector2.html"><div class="icon-class"></div>Vector2</a></li>
+<li><a href="../ThreeD/Vector3.html"><div class="icon-class"></div>Vector3</a></li>
+<li><a href="../ThreeD/Vector4.html"><div class="icon-class"></div>Vector4</a></li>
+<li><a href="../ThreeD/Vertex.html"><div class="icon-class"></div>Vertex</a></li>
+<li><a href="../ThreeD/WebGLCamera.html"><div class="icon-class"></div>WebGLCamera</a></li>
+<li><a href="../ThreeD/WebGLGeometry.html"><div class="icon-class"></div>WebGLGeometry</a></li>
+<li><a href="../ThreeD/WebGLMaterial.html"><div class="icon-class"></div>WebGLMaterial</a></li>
+<li><a href="../ThreeD/WebGLObject.html"><div class="icon-class"></div>WebGLObject</a></li>
+<li><a href="../ThreeD/WebGLRenderTarget.html"><div class="icon-class"></div>WebGLRenderTarget</a></li>
+<li><a href="../ThreeD/WebGLRenderTargetCube.html"><div class="icon-class"></div>WebGLRenderTargetCube</a></li>
+<li><a href="../ThreeD/WebGLRenderer.html"><div class="icon-class"></div>WebGLRenderer</a></li>
+<li><a href="../ThreeD/WebGLRendererInfo.html"><div class="icon-class"></div>WebGLRendererInfo</a></li>
+<li><a href="../ThreeD/WebGLRendererMemoryInfo.html"><div class="icon-class"></div>WebGLRendererMemoryInfo</a></li>
+<li><a href="../ThreeD/WebGLRendererRenderInfo.html"><div class="icon-class"></div>WebGLRendererRenderInfo</a></li>
+</ul>
+<h2><div class="icon-library"></div><a href="../ThreeMath.html">ThreeMath</a></h2></div>
+<div class="content">
+        <h2><strong>TorusKnotGeometry</strong>
+          Class
+        </h2>
+        
+<div class="doc">
+<p>@author oosmoxiecode
+based on http://code.google.com/p/away3d/source/browse/trunk/fp10/Away3D/src/away3d/primitives/TorusKnot.as?spec=svn2473&amp;r=2473</p>
+</div>
+<h3>Extends</h3>
+<p>
+<span class="type-box"><span class="icon-class"></span><a href="../ThreeD/Geometry.html">Geometry</a></span>&nbsp;&gt;&nbsp;<span class="type-box"><span class="icon-class"></span><strong>TorusKnotGeometry</strong></span></p>
+<h3>Constructors</h3>
+<div class="method"><h4 id="TorusKnotGeometry">
+<span class="show-code">Code</span>
+new <strong>TorusKnotGeometry</strong>([<a href="http://api.dartlang.org/dart_core/num.html">num</a> radius = 200, <a href="http://api.dartlang.org/dart_core/num.html">num</a> tube = 40, <a href="http://api.dartlang.org/dart_core/num.html">num</a> segmentsR = 64, <a href="http://api.dartlang.org/dart_core/num.html">num</a> segmentsT = 8, <a href="http://api.dartlang.org/dart_core/num.html">num</a> p = 2, <a href="http://api.dartlang.org/dart_core/num.html">num</a> q = 3, <a href="http://api.dartlang.org/dart_core/num.html">num</a> heightScale = 1]) <a class="anchor-link" href="#TorusKnotGeometry"
+              title="Permalink to TorusKnotGeometry.TorusKnotGeometry">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+TorusKnotGeometry( [ this.radius = 200, 
+                     this.tube = 40, 
+                     this.segmentsR = 64, 
+                     this.segmentsT = 8, 
+                     this.p = 2, 
+                     this.q = 3, 
+                     this.heightScale = 1]) : super() {
+                       
+  grid = new List(segmentsR);
+  
+  var tang = new Vector3();
+  var n = new Vector3();
+  var bitan = new Vector3();
+
+  for ( var i = 0; i &lt; segmentsR; ++ i ) {
+
+    this.grid[ i ] = new List( this.segmentsT );
+
+    for ( var j = 0; j &lt; this.segmentsT; ++ j ) {
+
+      var u = i / this.segmentsR * 2 * this.p * Math.PI;
+      var v = j / this.segmentsT * 2 * Math.PI;
+      var p1 = getPos( u, v, this.q, this.p, this.radius, this.heightScale );
+      var p2 = getPos( u + 0.01, v, this.q, this.p, this.radius, this.heightScale );
+      var cx, cy;
+
+      tang.sub( p2, p1 );
+      n.add( p2, p1 );
+
+      bitan.cross( tang, n );
+      n.cross( bitan, tang );
+      bitan.normalize();
+      n.normalize();
+
+      cx = - this.tube * Math.cos( v ); // TODO: Hack: Negating it so it faces outside.
+      cy = this.tube * Math.sin( v );
+
+      p1.x += cx * n.x + cy * bitan.x;
+      p1.y += cx * n.y + cy * bitan.y;
+      p1.z += cx * n.z + cy * bitan.z;
+
+      this.grid[ i ][ j ] = _vert( p1.x, p1.y, p1.z );
+
+    }
+
+  }
+
+  for ( var i = 0; i &lt; this.segmentsR; ++ i ) {
+
+    for ( var j = 0; j &lt; this.segmentsT; ++ j ) {
+
+      var ip = ( i + 1 ) % this.segmentsR;
+      var jp = ( j + 1 ) % this.segmentsT;
+
+      var a = this.grid[ i ][ j ];
+      var b = this.grid[ ip ][ j ];
+      var c = this.grid[ ip ][ jp ];
+      var d = this.grid[ i ][ jp ];
+
+      var uva = new UV( i / this.segmentsR, j / this.segmentsT );
+      var uvb = new UV( ( i + 1 ) / this.segmentsR, j / this.segmentsT );
+      var uvc = new UV( ( i + 1 ) / this.segmentsR, ( j + 1 ) / this.segmentsT );
+      var uvd = new UV( i / this.segmentsR, ( j + 1 ) / this.segmentsT );
+
+      this.faces.add( new Face4( a, b, c, d ) );
+      this.faceVertexUvs[ 0 ].add( [ uva,uvb,uvc, uvd ] );
+
+    }
+  }
+
+  this.computeCentroids();
+  this.computeFaceNormals();
+  this.computeVertexNormals();
+      
+ }
+</pre>
+</div>
+</div>
+<h3>Methods</h3>
+<div class="method"><h4 id="getPos">
+<span class="show-code">Code</span>
+<a href="../ThreeD/Vector3.html">Vector3</a> <strong>getPos</strong>(u, v, in_q, in_p, radius, heightScale) <a class="anchor-link" href="#getPos"
+              title="Permalink to TorusKnotGeometry.getPos">#</a></h4>
+<div class="doc">
+
+<pre class="source">
+Vector3 getPos( u, v, in_q, in_p, radius, heightScale ) {
+
+  var cu = Math.cos( u );
+  var cv = Math.cos( v );
+  var su = Math.sin( u );
+  var quOverP = in_q / in_p * u;
+  var cs = Math.cos( quOverP );
+
+  var tx = radius * ( 2 + cs ) * 0.5 * cu;
+  var ty = radius * ( 2 + cs ) * su * 0.5;
+  var tz = heightScale * radius * Math.sin( quOverP ) * 0.5;
+
+  return new Vector3( tx, ty, tz );
+
+}
+</pre>
+</div>
+</div>
+<h3>Fields</h3>
+<div class="field"><h4 id="grid">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/List.html">List</a>         <strong>grid</strong> <a class="anchor-link"
+            href="#grid"
+            title="Permalink to TorusKnotGeometry.grid">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+List grid;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="heightScale">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>heightScale</strong> <a class="anchor-link"
+            href="#heightScale"
+            title="Permalink to TorusKnotGeometry.heightScale">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num radius, tube, segmentsR, segmentsT, p, q, heightScale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="p">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>p</strong> <a class="anchor-link"
+            href="#p"
+            title="Permalink to TorusKnotGeometry.p">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num radius, tube, segmentsR, segmentsT, p, q, heightScale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="q">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>q</strong> <a class="anchor-link"
+            href="#q"
+            title="Permalink to TorusKnotGeometry.q">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num radius, tube, segmentsR, segmentsT, p, q, heightScale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="radius">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>radius</strong> <a class="anchor-link"
+            href="#radius"
+            title="Permalink to TorusKnotGeometry.radius">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num radius, tube, segmentsR, segmentsT, p, q, heightScale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="segmentsR">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>segmentsR</strong> <a class="anchor-link"
+            href="#segmentsR"
+            title="Permalink to TorusKnotGeometry.segmentsR">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num radius, tube, segmentsR, segmentsT, p, q, heightScale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="segmentsT">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>segmentsT</strong> <a class="anchor-link"
+            href="#segmentsT"
+            title="Permalink to TorusKnotGeometry.segmentsT">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num radius, tube, segmentsR, segmentsT, p, q, heightScale;
+</pre>
+</div>
+</div>
+<div class="field"><h4 id="tube">
+<span class="show-code">Code</span>
+<a href="http://api.dartlang.org/dart_core/num.html">num</a>         <strong>tube</strong> <a class="anchor-link"
+            href="#tube"
+            title="Permalink to TorusKnotGeometry.tube">#</a>
+        </h4>
+        <div class="doc">
+
+<pre class="source">
+num radius, tube, segmentsR, segmentsT, p, q, heightScale;
+</pre>
+</div>
+</div>
+        </div>
+        <div class="clear"></div>
+        </div>
+        
+        <div class="footer">
+          <div>This page was generated at 2012-10-01 16:04:45.056</div>
+        </div>
+        <script async src="../client-static.js"></script>
+        </body></html>
+        
