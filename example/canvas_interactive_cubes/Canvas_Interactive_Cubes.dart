@@ -1,5 +1,6 @@
 #import('dart:html');
-#import('../../src/ThreeD.dart');
+#import('dart:math', prefix:'Math');
+#import('package:three.dart/ThreeD.dart');
 
 class Canvas_Interactive_Cubes 
 {
@@ -50,27 +51,28 @@ class Canvas_Interactive_Cubes
 
     CubeGeometry geometry = new CubeGeometry( 100, 100, 100 );
 
+    var rnd = new Math.Random();
     for ( int i = 0; i < 10; i ++ )
     {
       Particle particle = new Particle( particleMaterial );
-      particle.position.x = Math.random() * 800 - 400;
-      particle.position.y = Math.random() * 800 - 400;
-      particle.position.z = Math.random() * 800 - 400;
+      particle.position.x = rnd.nextInt(800) - 400;
+      particle.position.y = rnd.nextInt(800) - 400;
+      particle.position.z = rnd.nextInt(800) - 400;
       particle.scale.x = particle.scale.y = 8;
       scene.add( particle );
       
-      Mesh object = new Mesh( geometry, new MeshBasicMaterial( { 'color': Math.random() * 0xffffff, 'opacity': 0.5 } ) );
-      object.position.x = Math.random() * 800 - 400;
-      object.position.y = Math.random() * 800 - 400;
-      object.position.z = Math.random() * 800 - 400;
+      Mesh object = new Mesh( geometry, new MeshBasicMaterial( color: rnd.nextDouble() * 0xffffff, opacity: 0.5 ) );
+      object.position.x = rnd.nextInt(800) - 400;
+      object.position.y = rnd.nextInt(800) - 400;
+      object.position.z = rnd.nextInt(800) - 400;
 
-      object.scale.x = Math.random() * 2 + 1;
-      object.scale.y = Math.random() * 2 + 1;
-      object.scale.z = Math.random() * 2 + 1;
+      object.scale.x = rnd.nextDouble() * 2 + 1;
+      object.scale.y = rnd.nextDouble() * 2 + 1;
+      object.scale.z =  rnd.nextDouble() * 2 + 1;
 
-      object.rotation.x = ( Math.random() * 360 ) * Math.PI / 180;
-      object.rotation.y = ( Math.random() * 360 ) * Math.PI / 180;
-      object.rotation.z = ( Math.random() * 360 ) * Math.PI / 180;
+      object.rotation.x = ( rnd.nextDouble() * 360 ) * Math.PI / 180;
+      object.rotation.y = ( rnd.nextDouble() * 360 ) * Math.PI / 180;
+      object.rotation.z = ( rnd.nextDouble() * 360 ) * Math.PI / 180;
 
       scene.add( object );
 
@@ -78,17 +80,17 @@ class Canvas_Interactive_Cubes
     }
 
     
-    particleMaterial = new ParticleCanvasMaterial( {
+    particleMaterial = new ParticleCanvasMaterial(
 
-      'color': 0x000000,
-      'program': function( CanvasRenderingContext2D context ) {
+      color: 0x000000,
+      program: ( CanvasRenderingContext2D context) {
         context.beginPath();
         context.arc( 0, 0, 1, 0, Math.PI * 2, false );
         context.closePath();
         context.fill();
       }
 
-    } );
+    );
     
     projector = new Projector();
 
@@ -126,7 +128,7 @@ class Canvas_Interactive_Cubes
       Intersect intersect = intersects[0];
       Mesh mesh = intersect.object;
       MeshBasicMaterial material = mesh.material;
-      material.color.setHex( Math.random() * 0xffffff );
+      material.color.setHex( new Math.Random().nextDouble() * 0xffffff );
 
       Particle particle = new Particle( particleMaterial );
       particle.position = intersect.point;

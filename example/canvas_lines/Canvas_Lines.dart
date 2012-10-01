@@ -1,5 +1,6 @@
 #import('dart:html');
-#import('../../src/ThreeD.dart');
+#import('dart:math', prefix:'Math');
+#import('package:three.dart/ThreeD.dart');
 
 class Canvas_Lines {
   Element container;
@@ -41,34 +42,35 @@ class Canvas_Lines {
     
     // particles
     final num Tau = Math.PI * 2;
-    material = new ParticleCanvasMaterial( {
-      'color': 0xffffff,
-      'program': function (CanvasRenderingContext2D context ) {
+    material = new ParticleCanvasMaterial(
+      color: 0xffffff,
+      program: (CanvasRenderingContext2D context ) {
         context.beginPath();
         context.arc( 0, 0, 1, 0, Tau, false );
         context.closePath();
         context.fill();
       }
-    });
+    );
     
     geometry = new Geometry();
 
+    var rnd = new Math.Random();
     for ( var i = 0; i < 100; i ++ ) {
       particle = new Particle( material );
-      particle.position.x = Math.random() * 2 - 1;
-      particle.position.y = Math.random() * 2 - 1;
-      particle.position.z = Math.random() * 2 - 1;
+      particle.position.x = rnd.nextDouble() * 2 - 1;
+      particle.position.y = rnd.nextDouble() * 2 - 1;
+      particle.position.z = rnd.nextDouble() * 2 - 1;
       particle.position.normalize();
-      particle.position.multiplyScalar( Math.random() * 10 + 450 );
+      particle.position.multiplyScalar( rnd.nextDouble() * 10 + 450 );
       particle.scale.x = particle.scale.y = 5;
       scene.add( particle );
 
-      geometry.vertices.add( new Vertex( particle.position ) );
+      geometry.vertices.add( particle.position );
     }
    
     // lines
 
-    var line = new Line( geometry, new LineBasicMaterial( { 'color': 0xffffff, 'opacity': 0.5 } ) );
+    var line = new Line( geometry, new LineBasicMaterial( color: 0xffffff, opacity: 0.5 ) );
     scene.add( line );
 
     document.on.mouseMove.add(onDocumentMouseMove);

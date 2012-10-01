@@ -1,18 +1,21 @@
 #import('dart:html');
 #import('dart:math', prefix:'Math');
 #import('package:three.dart/ThreeD.dart');
+//#import('package:stats/stats.dart');
 
-class WebGL_Geometry_Hierarchy  {
+class WebGL_Performance  {
   Element container;
 
   PerspectiveCamera camera;
   Scene scene;
   WebGLRenderer renderer;
 
+  //Stats stats;
+  
   var windowHalfX, windowHalfY;
   var mouseX = 0, mouseY = 0;
   
-  Object3D group;
+  List objects = [];
   
   void run() {
     windowHalfX = window.innerWidth / 2;
@@ -30,45 +33,51 @@ class WebGL_Geometry_Hierarchy  {
     document.body.nodes.add( container );
 
     camera = new PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
-    camera.position.z = 500;
+    camera.position.z = 3200;
 
     scene = new Scene();
-    scene.fog = new FogLinear( 0xffffff, 1, 10000 );
-    scene.add(camera);
-    
-    var geometry = new CubeGeometry( 100, 100, 100 );
-    var material = new MeshNormalMaterial();
 
-    group = new Object3D();
+    var material = new MeshNormalMaterial( shading: Three.SmoothShading );
 
-    var rnd = new Math.Random();
-    
-    for ( var i = 0; i < 1000; i ++ ) {
+    var loader = new JSONLoader();
+    loader.load( 'obj/Suzanne.js', ( geometry ) {
 
-      var mesh = new Mesh( geometry, material );
-      mesh.position.x = rnd.nextInt(2000) - 1000;
-      mesh.position.y = rnd.nextInt(2000) - 1000;
-      mesh.position.z = rnd.nextInt(2000) - 1000;
+      geometry.computeVertexNormals();
 
-      mesh.rotation.x = rnd.nextDouble() * 360 * ( Math.PI / 180 );
-      mesh.rotation.y = rnd.nextDouble() * 360 * ( Math.PI / 180 );
+      var rnd = new Math.Random();
+      
+      for ( var i = 0; i < 5000; i ++ ) {
 
-      mesh.matrixAutoUpdate = false;
-      mesh.updateMatrix();
+        var mesh = new Mesh( geometry, material );
 
-      group.add( mesh );
+        mesh.position.x = rnd.nextDouble() * 8000 - 4000;
+        mesh.position.y = rnd.nextDouble() * 8000 - 4000;
+        mesh.position.z = rnd.nextDouble() * 8000 - 4000;
+        mesh.rotation.x = rnd.nextDouble() * 360 * ( Math.PI / 180 );
+        mesh.rotation.y = rnd.nextDouble() * 360 * ( Math.PI / 180 );
+        mesh.scale.x = mesh.scale.y = mesh.scale.z = rnd.nextDouble() * 50 + 100;
 
-    }
+        objects.add( mesh );
 
-    scene.add( group );
+        scene.add( mesh );
 
-    renderer = new WebGLRenderer();
+      }
+
+    } );
+
+    renderer = new WebGLRenderer( clearColorHex: 0xffffff );
     renderer.setSize( window.innerWidth, window.innerHeight );
-    renderer.sortObjects = false;
-    
-    container.nodes.add( renderer.domElement );
-    
-    window.on.resize.add(onWindowResize);
+    container.elements.add( renderer.domElement );
+
+    /*
+    stats = new Stats();
+    stats.container.style.position = 'absolute';
+    stats.container.style.top = '0px';
+    stats.container.style.zIndex = '100';
+    container.elements.add( stats.container );
+    */
+
+    window.on.resize.add( onWindowResize, false );
   }
   
   onWindowResize(event) {
@@ -89,24 +98,22 @@ class WebGL_Geometry_Hierarchy  {
   bool animate(int time) {
     window.requestAnimationFrame( animate );
     render();
+    //stats.update();
   }
   
   render() {
 
-    var time = new Date.now().millisecondsSinceEpoch * 0.001;
-
-    var rx = Math.sin( time * 0.7 ) * 0.5,
-        ry = Math.sin( time * 0.3 ) * 0.5,
-        rz = Math.sin( time * 0.2 ) * 0.5;
-
     camera.position.x += ( mouseX - camera.position.x ) * .05;
     camera.position.y += ( - mouseY - camera.position.y ) * .05;
-
     camera.lookAt( scene.position );
 
-    group.rotation.x = rx;
-    group.rotation.y = ry;
-    group.rotation.z = rz;
+    for ( var i = 0, il = objects.length; i < il; i ++ ) {
+
+      objects[ i ].rotation.x += 0.01;
+      objects[ i ].rotation.y += 0.02;
+
+    }
+
 
     renderer.render( scene, camera );
 
@@ -115,5 +122,5 @@ class WebGL_Geometry_Hierarchy  {
 }
 
 void main() {
-  new WebGL_Geometry_Hierarchy().run();
+  new WebGL_Performance().run();
 }

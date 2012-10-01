@@ -1,5 +1,6 @@
 #import('dart:html');
-#import('../../src/ThreeD.dart');
+#import('dart:math', prefix:'Math');
+#import('package:three.dart/ThreeD.dart');
 
 class Canvas_Geometry_Cube 
 {
@@ -67,8 +68,9 @@ class Canvas_Geometry_Cube
 
     List materials = [];
 
+    var rnd = new Math.Random();
     for ( int i = 0; i < 6; i ++ ) {
-      materials.add( new MeshBasicMaterial( { 'color' : Math.random() * 0xffffff } ) );
+      materials.add( new MeshBasicMaterial( color: rnd.nextDouble() * 0xffffff ) );
     }
 
     cube = new Mesh( new CubeGeometry( 200, 200, 200, 1, 1, 1, materials ), new MeshFaceMaterial());// { 'overdraw' : true }) );
@@ -78,7 +80,7 @@ class Canvas_Geometry_Cube
 
     // Plane
 
-    plane = new Mesh( new PlaneGeometry( 200, 200 ), new MeshBasicMaterial( { 'color': 0xe0e0e0, 'overdraw' : true } ) );
+    plane = new Mesh( new PlaneGeometry( 200, 200 ), new MeshBasicMaterial( color: 0xe0e0e0, overdraw: true ) );
     plane.rotation.x = - 90 * ( Math.PI / 180 );
     //plane.overdraw = true; //TODO where is this prop?
     scene.add( plane );

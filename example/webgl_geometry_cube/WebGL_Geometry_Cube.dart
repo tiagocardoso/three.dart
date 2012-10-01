@@ -1,5 +1,6 @@
 #import('dart:html');
-#import('../../src/ThreeD.dart');
+#import('package:three.dart/ThreeD.dart');
+#import('package:three.dart/extras/ImageUtils.dart', prefix:'ImageUtils'); // TODO - Use Re-export
 
 class WebGL_Geometry_Cube  {
   Element container;
@@ -29,7 +30,7 @@ class WebGL_Geometry_Cube  {
     scene.add(camera);
     
     var geometry = new CubeGeometry( 200, 200, 200 );
-    var material = new MeshBasicMaterial( { "map": ImageUtils.loadTexture( 'textures/crate.gif' ) });
+    var material = new MeshBasicMaterial( map: ImageUtils.loadTexture( 'textures/crate.gif' ));
 
     cube = new Mesh( geometry, material);
     scene.add( cube );
