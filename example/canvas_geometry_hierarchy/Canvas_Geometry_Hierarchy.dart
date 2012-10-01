@@ -1,7 +1,8 @@
 #import('dart:html');
-#import('../../src/ThreeD.dart');
+#import('dart:math', prefix:'Math');
+#import('package:three.dart/ThreeD.dart');
 
-class Canvas_Geometry_Heirarchy 
+class Canvas_Geometry_Hierarchy 
 {
   Element container;// stats;
 
@@ -17,7 +18,7 @@ class Canvas_Geometry_Heirarchy
   num windowHalfX;
   num windowHalfY;
   
-  Canvas_Geometry_Heirarchy() 
+  Canvas_Geometry_Hierarchy() 
   {
     
   }
@@ -52,8 +53,9 @@ class Canvas_Geometry_Heirarchy
 
     List materials = [];
 
+    var rnd = new Math.Random();
     for ( int i = 0; i < 6; i ++ ) {
-      materials.add( new MeshBasicMaterial( { 'color' : Math.random() * 0xffffff } ) );
+      materials.add( new MeshBasicMaterial( color:  rnd.nextDouble() * 0xffffff ) );
     }
     
     geometry = new CubeGeometry( 100, 100, 100 );
@@ -65,11 +67,11 @@ class Canvas_Geometry_Heirarchy
     {
       Mesh mesh = new Mesh( geometry, material );
       //mesh.overdraw = true; //TODO: No such property?
-      mesh.position.x = Math.random() * 2000 - 1000;
-      mesh.position.y = Math.random() * 2000 - 1000;
-      mesh.position.z = Math.random() * 2000 - 1000;
-      mesh.rotation.x = Math.random() * 360 * ( Math.PI / 180 );
-      mesh.rotation.y = Math.random() * 360 * ( Math.PI / 180 );
+      mesh.position.x = rnd.nextInt(2000) - 1000;
+      mesh.position.y = rnd.nextInt(2000) - 1000;
+      mesh.position.z = rnd.nextInt(2000) - 1000;
+      mesh.rotation.x = rnd.nextInt(360) * ( Math.PI / 180 );
+      mesh.rotation.y = rnd.nextInt(360) * ( Math.PI / 180 );
       mesh.matrixAutoUpdate = false;
       mesh.updateMatrix();
       group.add( mesh );
@@ -127,5 +129,5 @@ class Canvas_Geometry_Heirarchy
 }
 
 void main() {
-  new Canvas_Geometry_Heirarchy().run();
+  new Canvas_Geometry_Hierarchy().run();
 }
